@@ -40,10 +40,12 @@ public class SeleccionNiveles extends javax.swing.JFrame {
         jButton1.setBackground(new java.awt.Color(135, 105, 85));
         jButton1.setFont(new java.awt.Font("Segoe UI", 0, 100)); // NOI18N
         jButton1.setText("2");
+        jButton1.setBorderPainted(false);
 
         jButton2.setBackground(new java.awt.Color(135, 105, 85));
         jButton2.setFont(new java.awt.Font("Segoe UI", 0, 100)); // NOI18N
         jButton2.setText("1");
+        jButton2.setBorderPainted(false);
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -53,10 +55,16 @@ public class SeleccionNiveles extends javax.swing.JFrame {
         jButton3.setBackground(new java.awt.Color(135, 105, 85));
         jButton3.setFont(new java.awt.Font("Segoe UI", 0, 100)); // NOI18N
         jButton3.setText("3");
+        jButton3.setBorderPainted(false);
 
         jButton4.setBackground(new java.awt.Color(159, 133, 116));
         jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/grupo8/senku/UI/resources/flecha atras.png"))); // NOI18N
-        jButton4.setText("jButton4");
+        jButton4.setBorderPainted(false);
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -111,6 +119,10 @@ public class SeleccionNiveles extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton4ActionPerformed
 
     /**
      * @param args the command line arguments
