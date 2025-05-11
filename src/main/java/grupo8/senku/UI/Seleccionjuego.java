@@ -113,7 +113,7 @@ public class Seleccionjuego extends javax.swing.JFrame {
 
         jButton4.setBackground(new java.awt.Color(159, 133, 116));
         jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/grupo8/senku/UI/resources/flecha atras.png"))); // NOI18N
-        jButton4.setText("jButton4");
+        jButton4.setBorderPainted(false);
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
