@@ -99,13 +99,13 @@ public class VentanaJuego extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        Fondo.setBackground(new java.awt.Color(159, 133, 116));
+        Fondo.setBackground(new java.awt.Color(180, 132, 108));
         Fondo.setPreferredSize(new java.awt.Dimension(1947, 1423));
 
-        Tablero.setBackground(new java.awt.Color(135, 105, 85));
+        Tablero.setBackground(new java.awt.Color(125, 90, 80));
         Tablero.setLayout(new java.awt.GridLayout(7, 7));
 
-        Ficha1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/grupo8/senku/UI/resources/ficha.png"))); // NOI18N
+        Ficha1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/grupo8/senku/UI/resources/fichaActiva.png"))); // NOI18N
         Ficha1.setBorderPainted(false);
         Ficha1.setContentAreaFilled(false);
         Ficha1.addActionListener(new java.awt.event.ActionListener() {
@@ -195,7 +195,7 @@ public class VentanaJuego extends javax.swing.JFrame {
         });
         Tablero.add(Ficha11);
 
-        Ficha12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/grupo8/senku/UI/resources/ficha.png"))); // NOI18N
+        Ficha12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/grupo8/senku/UI/resources/fichaActiva.png"))); // NOI18N
         Ficha12.setBorderPainted(false);
         Ficha12.setContentAreaFilled(false);
         Ficha12.addActionListener(new java.awt.event.ActionListener() {
@@ -285,7 +285,7 @@ public class VentanaJuego extends javax.swing.JFrame {
         });
         Tablero.add(Ficha18);
 
-        Ficha19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/grupo8/senku/UI/resources/ficha.png"))); // NOI18N
+        Ficha19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/grupo8/senku/UI/resources/fichaActiva.png"))); // NOI18N
         Ficha19.setBorderPainted(false);
         Ficha19.setContentAreaFilled(false);
         Ficha19.addActionListener(new java.awt.event.ActionListener() {
@@ -375,7 +375,7 @@ public class VentanaJuego extends javax.swing.JFrame {
         });
         Tablero.add(Ficha27);
 
-        Ficha28.setIcon(new javax.swing.ImageIcon(getClass().getResource("/grupo8/senku/UI/resources/ficha.png"))); // NOI18N
+        Ficha28.setIcon(new javax.swing.ImageIcon(getClass().getResource("/grupo8/senku/UI/resources/fichaActiva.png"))); // NOI18N
         Ficha28.setBorderPainted(false);
         Ficha28.setContentAreaFilled(false);
         Ficha28.addActionListener(new java.awt.event.ActionListener() {
@@ -600,20 +600,27 @@ public class VentanaJuego extends javax.swing.JFrame {
 
         jLabel1.setText("Temporizador");
 
-        jToolBar1.setBackground(new java.awt.Color(159, 133, 116));
+        jToolBar1.setBackground(jLabel1.getBackground());
         jToolBar1.setRollover(true);
+        jToolBar1.setBorderPainted(false);
+        jToolBar1.setOpaque(false);
 
-        jButton2.setBackground(new java.awt.Color(159, 133, 116));
-        jButton2.setText("ReStart");
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/grupo8/senku/UI/resources/restart.png"))); // NOI18N
+        jButton2.setFocusable(false);
+        jButton2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButton2.setOpaque(true);
+        jButton2.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
         jToolBar1.add(jButton2);
+        jButton2.getAccessibleContext().setAccessibleDescription("");
 
         jButton3.setBackground(new java.awt.Color(159, 133, 116));
         jButton3.setText("Pausa");
+        jButton3.setOpaque(true);
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
@@ -623,6 +630,7 @@ public class VentanaJuego extends javax.swing.JFrame {
 
         jButton4.setBackground(new java.awt.Color(159, 133, 116));
         jButton4.setText("Menu");
+        jButton4.setOpaque(true);
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
@@ -635,14 +643,14 @@ public class VentanaJuego extends javax.swing.JFrame {
         FondoLayout.setHorizontalGroup(
             FondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(FondoLayout.createSequentialGroup()
-                .addGap(412, 412, 412)
+                .addGap(505, 505, 505)
                 .addComponent(Tablero, javax.swing.GroupLayout.PREFERRED_SIZE, 880, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(655, Short.MAX_VALUE))
+                .addContainerGap(562, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, FondoLayout.createSequentialGroup()
                 .addGap(17, 17, 17)
                 .addComponent(jButton5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 1532, Short.MAX_VALUE)
-                .addComponent(jToolBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jToolBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(146, 146, 146))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, FondoLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -658,10 +666,10 @@ public class VentanaJuego extends javax.swing.JFrame {
                         .addComponent(jButton5))
                     .addGroup(FondoLayout.createSequentialGroup()
                         .addGap(30, 30, 30)
-                        .addComponent(jToolBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(118, 118, 118)
+                        .addComponent(jToolBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(35, 35, 35)
                 .addComponent(Tablero, javax.swing.GroupLayout.PREFERRED_SIZE, 628, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 86, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 84, Short.MAX_VALUE)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(452, 452, 452))
         );
@@ -777,7 +785,7 @@ public class VentanaJuego extends javax.swing.JFrame {
     }//GEN-LAST:event_Ficha29ActionPerformed
 
     private void Ficha28ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Ficha28ActionPerformed
-        // TODO add your handling code here:
+        // TODO add your handling code here:                
     }//GEN-LAST:event_Ficha28ActionPerformed
 
     private void Ficha27ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Ficha27ActionPerformed
@@ -840,10 +848,6 @@ public class VentanaJuego extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_Ficha8ActionPerformed
 
-    private void Ficha7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Ficha7ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Ficha7ActionPerformed
-
     private void Ficha13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Ficha13ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_Ficha13ActionPerformed
@@ -887,6 +891,10 @@ public class VentanaJuego extends javax.swing.JFrame {
     private void Ficha1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Ficha1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_Ficha1ActionPerformed
+
+    private void Ficha7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Ficha7ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Ficha7ActionPerformed
 
     /**
      * @param args the command line arguments
