@@ -36,7 +36,7 @@ public class SeleccionNiveles extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(159, 133, 116));
+        jPanel1.setBackground(new java.awt.Color(180, 132, 108));
 
         jButton1.setBackground(new java.awt.Color(125, 90, 80));
         jButton1.setFont(new java.awt.Font("Segoe UI", 0, 100)); // NOI18N
@@ -61,7 +61,7 @@ public class SeleccionNiveles extends javax.swing.JFrame {
         jToolBar1.setRollover(true);
         jToolBar1.setOpaque(false);
 
-        jButton5.setBackground(new java.awt.Color(159, 133, 116));
+        jButton5.setBackground(new java.awt.Color(180, 132, 108));
         jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/grupo8/senku/UI/resources/atras.png"))); // NOI18N
         jButton5.setBorderPainted(false);
         jButton5.addActionListener(new java.awt.event.ActionListener() {
@@ -71,7 +71,7 @@ public class SeleccionNiveles extends javax.swing.JFrame {
         });
         jToolBar1.add(jButton5);
 
-        jButton4.setBackground(new java.awt.Color(159, 133, 116));
+        jButton4.setBackground(new java.awt.Color(180, 132, 108));
         jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/grupo8/senku/UI/resources/casa.png"))); // NOI18N
         jButton4.setBorderPainted(false);
         jButton4.addActionListener(new java.awt.event.ActionListener() {
