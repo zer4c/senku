@@ -38,13 +38,12 @@ public class Seleccionjuego extends javax.swing.JFrame {
         jButton4 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(865, 1161));
 
-        jPanel1.setBackground(new java.awt.Color(159, 133, 116));
+        jPanel1.setBackground(new java.awt.Color(180, 132, 108));
 
-        jPanel2.setBackground(new java.awt.Color(135, 105, 85));
+        jPanel2.setBackground(new java.awt.Color(125, 90, 80));
 
-        jButton1.setBackground(new java.awt.Color(135, 105, 85));
+        jButton1.setBackground(new java.awt.Color(125, 90, 80));
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/grupo8/senku/UI/resources/triangulo.png"))); // NOI18N
         jButton1.setBorderPainted(false);
         jButton1.setRolloverEnabled(false);
@@ -60,13 +59,12 @@ public class Seleccionjuego extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addGap(0, 77, Short.MAX_VALUE)
-                        .addComponent(jButton1)
-                        .addGap(75, 75, 75)))
+                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 688, Short.MAX_VALUE)
                 .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton1)
+                .addGap(77, 77, 77))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -77,9 +75,9 @@ public class Seleccionjuego extends javax.swing.JFrame {
                 .addGap(12, 12, 12))
         );
 
-        jPanel3.setBackground(new java.awt.Color(135, 105, 85));
+        jPanel3.setBackground(new java.awt.Color(125, 90, 80));
 
-        jButton2.setBackground(new java.awt.Color(135, 105, 85));
+        jButton2.setBackground(new java.awt.Color(125, 90, 80));
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/grupo8/senku/UI/resources/cruz.png"))); // NOI18N
         jButton2.setBorderPainted(false);
         jButton2.setRolloverEnabled(false);
@@ -111,8 +109,8 @@ public class Seleccionjuego extends javax.swing.JFrame {
                 .addGap(12, 12, 12))
         );
 
-        jButton4.setBackground(new java.awt.Color(159, 133, 116));
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/grupo8/senku/UI/resources/flecha atras.png"))); // NOI18N
+        jButton4.setBackground(new java.awt.Color(180, 132, 108));
+        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/grupo8/senku/UI/resources/casa.png"))); // NOI18N
         jButton4.setBorderPainted(false);
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -127,18 +125,18 @@ public class Seleccionjuego extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(56, 56, 56)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton4)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(473, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(52, 52, 52)
-                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(19, 19, 19)
+                .addComponent(jButton4)
                 .addGap(41, 41, 41)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
