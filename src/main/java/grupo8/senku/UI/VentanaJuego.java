@@ -595,8 +595,8 @@ public class VentanaJuego extends javax.swing.JFrame {
         });
         Tablero.add(Ficha49);
 
-        jButton5.setBackground(new java.awt.Color(159, 133, 116));
-        jButton5.setText("Pista");
+        jButton5.setBackground(new java.awt.Color(180, 132, 108));
+        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/grupo8/senku/UI/resources/pista.png"))); // NOI18N
 
         jLabel1.setText("Temporizador");
 
@@ -605,6 +605,7 @@ public class VentanaJuego extends javax.swing.JFrame {
         jToolBar1.setBorderPainted(false);
         jToolBar1.setOpaque(false);
 
+        jButton2.setBackground(new java.awt.Color(180, 132, 108));
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/grupo8/senku/UI/resources/restart.png"))); // NOI18N
         jButton2.setFocusable(false);
         jButton2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -618,8 +619,8 @@ public class VentanaJuego extends javax.swing.JFrame {
         jToolBar1.add(jButton2);
         jButton2.getAccessibleContext().setAccessibleDescription("");
 
-        jButton3.setBackground(new java.awt.Color(159, 133, 116));
-        jButton3.setText("Pausa");
+        jButton3.setBackground(new java.awt.Color(180, 132, 108));
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/grupo8/senku/UI/resources/pausa.png"))); // NOI18N
         jButton3.setOpaque(true);
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -628,8 +629,8 @@ public class VentanaJuego extends javax.swing.JFrame {
         });
         jToolBar1.add(jButton3);
 
-        jButton4.setBackground(new java.awt.Color(159, 133, 116));
-        jButton4.setText("Menu");
+        jButton4.setBackground(new java.awt.Color(180, 132, 108));
+        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/grupo8/senku/UI/resources/casa.png"))); // NOI18N
         jButton4.setOpaque(true);
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
