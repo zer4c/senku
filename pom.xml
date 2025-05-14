@@ -12,11 +12,16 @@
             <version>17.0.7</version>
             <classifier>linux</classifier>
         </dependency>
+        <dependency>
+            <groupId>org.netbeans.external</groupId>
+            <artifactId>AbsoluteLayout</artifactId>
+            <version>RELEASE250</version>
+        </dependency>
     </dependencies>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>21</maven.compiler.source>
         <maven.compiler.target>21</maven.compiler.target>
-        <exec.mainClass>grupo8.senku.Senku</exec.mainClass>
+        <exec.mainClass>grupo8.senku1</exec.mainClass>
     </properties>
 </project>
