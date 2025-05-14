@@ -109,7 +109,7 @@
             <Component class="javax.swing.JButton" name="Ficha1">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/grupo8/senku/UI/resources/fichaActiva.png"/>
+                  <Image iconType="3" name="/fichaActiva.png"/>
                 </Property>
                 <Property name="borderPainted" type="boolean" value="false"/>
                 <Property name="contentAreaFilled" type="boolean" value="false"/>
@@ -121,7 +121,7 @@
             <Component class="javax.swing.JButton" name="Ficha2">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/grupo8/senku/UI/resources/ficha.png"/>
+                  <Image iconType="3" name="/ficha.png"/>
                 </Property>
                 <Property name="borderPainted" type="boolean" value="false"/>
                 <Property name="contentAreaFilled" type="boolean" value="false"/>
@@ -132,8 +132,8 @@
             </Component>
             <Component class="javax.swing.JButton" name="Ficha3">
               <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/grupo8/senku/UI/resources/ficha.png"/>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                  <Connection component="Ficha2" name="icon" type="property"/>
                 </Property>
                 <Property name="borderPainted" type="boolean" value="false"/>
                 <Property name="contentAreaFilled" type="boolean" value="false"/>
@@ -702,7 +702,7 @@
               <Color blue="6c" green="84" red="b4" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/grupo8/senku/UI/resources/pista.png"/>
+              <Image iconType="3" name="/pista.png"/>
             </Property>
           </Properties>
         </Component>
@@ -729,7 +729,7 @@
                   <Color blue="6c" green="84" red="b4" type="rgb"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/grupo8/senku/UI/resources/restart.png"/>
+                  <Image iconType="3" name="/restart.png"/>
                 </Property>
                 <Property name="focusable" type="boolean" value="false"/>
                 <Property name="horizontalTextPosition" type="int" value="0"/>
@@ -749,7 +749,7 @@
                   <Color blue="6c" green="84" red="b4" type="rgb"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/grupo8/senku/UI/resources/pausa.png"/>
+                  <Image iconType="3" name="/pausa.png"/>
                 </Property>
                 <Property name="opaque" type="boolean" value="true"/>
               </Properties>
@@ -763,7 +763,7 @@
                   <Color blue="6c" green="84" red="b4" type="rgb"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/grupo8/senku/UI/resources/casa.png"/>
+                  <Image iconType="3" name="/casa.png"/>
                 </Property>
                 <Property name="opaque" type="boolean" value="true"/>
               </Properties>
