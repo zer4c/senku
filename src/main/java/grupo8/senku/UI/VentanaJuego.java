@@ -39,8 +39,8 @@ public class VentanaJuego extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        Fondo = new FondoPanel();
-        Tablero = new javax.swing.JPanel();
+        ventanaJuego = new FondoPanel();
+        tablero = new javax.swing.JPanel();
         Ficha1 = new javax.swing.JButton();
         Ficha2 = new javax.swing.JButton();
         Ficha3 = new javax.swing.JButton();
@@ -90,20 +90,20 @@ public class VentanaJuego extends javax.swing.JFrame {
         Ficha47 = new javax.swing.JButton();
         Ficha48 = new javax.swing.JButton();
         Ficha49 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
-        jToolBar1 = new javax.swing.JToolBar();
-        jButton2 = new javax.swing.JButton();
+        pista = new javax.swing.JButton();
+        cronometro = new javax.swing.JLabel();
+        botonesTablero = new javax.swing.JToolBar();
+        restart = new javax.swing.JButton();
         pausa = new javax.swing.JButton();
         menu = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        Fondo.setBackground(new java.awt.Color(180, 132, 108));
-        Fondo.setPreferredSize(new java.awt.Dimension(1947, 1423));
+        ventanaJuego.setBackground(new java.awt.Color(180, 132, 108));
+        ventanaJuego.setPreferredSize(new java.awt.Dimension(1947, 1423));
 
-        Tablero.setBackground(new java.awt.Color(125, 90, 80));
-        Tablero.setLayout(new java.awt.GridLayout(7, 7));
+        tablero.setBackground(new java.awt.Color(125, 90, 80));
+        tablero.setLayout(new java.awt.GridLayout(7, 7));
 
         Ficha1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fichaActiva.png"))); // NOI18N
         Ficha1.setBorderPainted(false);
@@ -113,7 +113,7 @@ public class VentanaJuego extends javax.swing.JFrame {
                 Ficha1ActionPerformed(evt);
             }
         });
-        Tablero.add(Ficha1);
+        tablero.add(Ficha1);
 
         Ficha2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ficha.png"))); // NOI18N
         Ficha2.setBorderPainted(false);
@@ -123,7 +123,7 @@ public class VentanaJuego extends javax.swing.JFrame {
                 Ficha2ActionPerformed(evt);
             }
         });
-        Tablero.add(Ficha2);
+        tablero.add(Ficha2);
 
         Ficha3.setIcon(Ficha2.getIcon());
         Ficha3.setBorderPainted(false);
@@ -133,7 +133,7 @@ public class VentanaJuego extends javax.swing.JFrame {
                 Ficha3ActionPerformed(evt);
             }
         });
-        Tablero.add(Ficha3);
+        tablero.add(Ficha3);
 
         Ficha4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/grupo8/senku/UI/resources/ficha.png"))); // NOI18N
         Ficha4.setBorderPainted(false);
@@ -143,7 +143,7 @@ public class VentanaJuego extends javax.swing.JFrame {
                 Ficha4ActionPerformed(evt);
             }
         });
-        Tablero.add(Ficha4);
+        tablero.add(Ficha4);
 
         Ficha5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/grupo8/senku/UI/resources/ficha.png"))); // NOI18N
         Ficha5.setBorderPainted(false);
@@ -153,7 +153,7 @@ public class VentanaJuego extends javax.swing.JFrame {
                 Ficha5ActionPerformed(evt);
             }
         });
-        Tablero.add(Ficha5);
+        tablero.add(Ficha5);
 
         Ficha6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/grupo8/senku/UI/resources/ficha.png"))); // NOI18N
         Ficha6.setBorderPainted(false);
@@ -163,7 +163,7 @@ public class VentanaJuego extends javax.swing.JFrame {
                 Ficha6ActionPerformed(evt);
             }
         });
-        Tablero.add(Ficha6);
+        tablero.add(Ficha6);
 
         Ficha9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/grupo8/senku/UI/resources/ficha.png"))); // NOI18N
         Ficha9.setBorderPainted(false);
@@ -173,7 +173,7 @@ public class VentanaJuego extends javax.swing.JFrame {
                 Ficha9ActionPerformed(evt);
             }
         });
-        Tablero.add(Ficha9);
+        tablero.add(Ficha9);
 
         Ficha10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/grupo8/senku/UI/resources/ficha.png"))); // NOI18N
         Ficha10.setBorderPainted(false);
@@ -183,7 +183,7 @@ public class VentanaJuego extends javax.swing.JFrame {
                 Ficha10ActionPerformed(evt);
             }
         });
-        Tablero.add(Ficha10);
+        tablero.add(Ficha10);
 
         Ficha11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/grupo8/senku/UI/resources/ficha.png"))); // NOI18N
         Ficha11.setBorderPainted(false);
@@ -193,7 +193,7 @@ public class VentanaJuego extends javax.swing.JFrame {
                 Ficha11ActionPerformed(evt);
             }
         });
-        Tablero.add(Ficha11);
+        tablero.add(Ficha11);
 
         Ficha12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/grupo8/senku/UI/resources/fichaActiva.png"))); // NOI18N
         Ficha12.setBorderPainted(false);
@@ -203,7 +203,7 @@ public class VentanaJuego extends javax.swing.JFrame {
                 Ficha12ActionPerformed(evt);
             }
         });
-        Tablero.add(Ficha12);
+        tablero.add(Ficha12);
 
         Ficha13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/grupo8/senku/UI/resources/ficha.png"))); // NOI18N
         Ficha13.setBorderPainted(false);
@@ -213,7 +213,7 @@ public class VentanaJuego extends javax.swing.JFrame {
                 Ficha13ActionPerformed(evt);
             }
         });
-        Tablero.add(Ficha13);
+        tablero.add(Ficha13);
 
         Ficha7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/grupo8/senku/UI/resources/ficha.png"))); // NOI18N
         Ficha7.setBorderPainted(false);
@@ -223,7 +223,7 @@ public class VentanaJuego extends javax.swing.JFrame {
                 Ficha7ActionPerformed(evt);
             }
         });
-        Tablero.add(Ficha7);
+        tablero.add(Ficha7);
 
         Ficha8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/grupo8/senku/UI/resources/ficha.png"))); // NOI18N
         Ficha8.setBorderPainted(false);
@@ -233,7 +233,7 @@ public class VentanaJuego extends javax.swing.JFrame {
                 Ficha8ActionPerformed(evt);
             }
         });
-        Tablero.add(Ficha8);
+        tablero.add(Ficha8);
 
         Ficha14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/grupo8/senku/UI/resources/ficha.png"))); // NOI18N
         Ficha14.setBorderPainted(false);
@@ -243,7 +243,7 @@ public class VentanaJuego extends javax.swing.JFrame {
                 Ficha14ActionPerformed(evt);
             }
         });
-        Tablero.add(Ficha14);
+        tablero.add(Ficha14);
 
         Ficha15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/grupo8/senku/UI/resources/ficha.png"))); // NOI18N
         Ficha15.setBorderPainted(false);
@@ -253,7 +253,7 @@ public class VentanaJuego extends javax.swing.JFrame {
                 Ficha15ActionPerformed(evt);
             }
         });
-        Tablero.add(Ficha15);
+        tablero.add(Ficha15);
 
         Ficha16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/grupo8/senku/UI/resources/ficha.png"))); // NOI18N
         Ficha16.setBorderPainted(false);
@@ -263,7 +263,7 @@ public class VentanaJuego extends javax.swing.JFrame {
                 Ficha16ActionPerformed(evt);
             }
         });
-        Tablero.add(Ficha16);
+        tablero.add(Ficha16);
 
         Ficha17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/grupo8/senku/UI/resources/ficha.png"))); // NOI18N
         Ficha17.setBorderPainted(false);
@@ -273,7 +273,7 @@ public class VentanaJuego extends javax.swing.JFrame {
                 Ficha17ActionPerformed(evt);
             }
         });
-        Tablero.add(Ficha17);
+        tablero.add(Ficha17);
 
         Ficha18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/grupo8/senku/UI/resources/ficha.png"))); // NOI18N
         Ficha18.setBorderPainted(false);
@@ -283,7 +283,7 @@ public class VentanaJuego extends javax.swing.JFrame {
                 Ficha18ActionPerformed(evt);
             }
         });
-        Tablero.add(Ficha18);
+        tablero.add(Ficha18);
 
         Ficha19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/grupo8/senku/UI/resources/fichaActiva.png"))); // NOI18N
         Ficha19.setBorderPainted(false);
@@ -293,7 +293,7 @@ public class VentanaJuego extends javax.swing.JFrame {
                 Ficha19ActionPerformed(evt);
             }
         });
-        Tablero.add(Ficha19);
+        tablero.add(Ficha19);
 
         Ficha20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/grupo8/senku/UI/resources/ficha.png"))); // NOI18N
         Ficha20.setBorderPainted(false);
@@ -303,7 +303,7 @@ public class VentanaJuego extends javax.swing.JFrame {
                 Ficha20ActionPerformed(evt);
             }
         });
-        Tablero.add(Ficha20);
+        tablero.add(Ficha20);
 
         Ficha21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/grupo8/senku/UI/resources/ficha.png"))); // NOI18N
         Ficha21.setBorderPainted(false);
@@ -313,7 +313,7 @@ public class VentanaJuego extends javax.swing.JFrame {
                 Ficha21ActionPerformed(evt);
             }
         });
-        Tablero.add(Ficha21);
+        tablero.add(Ficha21);
 
         Ficha22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/grupo8/senku/UI/resources/ficha.png"))); // NOI18N
         Ficha22.setBorderPainted(false);
@@ -323,7 +323,7 @@ public class VentanaJuego extends javax.swing.JFrame {
                 Ficha22ActionPerformed(evt);
             }
         });
-        Tablero.add(Ficha22);
+        tablero.add(Ficha22);
 
         Ficha23.setIcon(new javax.swing.ImageIcon(getClass().getResource("/grupo8/senku/UI/resources/ficha.png"))); // NOI18N
         Ficha23.setBorderPainted(false);
@@ -333,7 +333,7 @@ public class VentanaJuego extends javax.swing.JFrame {
                 Ficha23ActionPerformed(evt);
             }
         });
-        Tablero.add(Ficha23);
+        tablero.add(Ficha23);
 
         Ficha24.setIcon(new javax.swing.ImageIcon(getClass().getResource("/grupo8/senku/UI/resources/ficha.png"))); // NOI18N
         Ficha24.setBorderPainted(false);
@@ -343,7 +343,7 @@ public class VentanaJuego extends javax.swing.JFrame {
                 Ficha24ActionPerformed(evt);
             }
         });
-        Tablero.add(Ficha24);
+        tablero.add(Ficha24);
 
         Ficha25.setIcon(new javax.swing.ImageIcon(getClass().getResource("/grupo8/senku/UI/resources/ficha.png"))); // NOI18N
         Ficha25.setBorderPainted(false);
@@ -353,7 +353,7 @@ public class VentanaJuego extends javax.swing.JFrame {
                 Ficha25ActionPerformed(evt);
             }
         });
-        Tablero.add(Ficha25);
+        tablero.add(Ficha25);
 
         Ficha26.setIcon(new javax.swing.ImageIcon(getClass().getResource("/grupo8/senku/UI/resources/ficha.png"))); // NOI18N
         Ficha26.setBorderPainted(false);
@@ -363,7 +363,7 @@ public class VentanaJuego extends javax.swing.JFrame {
                 Ficha26ActionPerformed(evt);
             }
         });
-        Tablero.add(Ficha26);
+        tablero.add(Ficha26);
 
         Ficha27.setIcon(new javax.swing.ImageIcon(getClass().getResource("/grupo8/senku/UI/resources/ficha.png"))); // NOI18N
         Ficha27.setBorderPainted(false);
@@ -373,7 +373,7 @@ public class VentanaJuego extends javax.swing.JFrame {
                 Ficha27ActionPerformed(evt);
             }
         });
-        Tablero.add(Ficha27);
+        tablero.add(Ficha27);
 
         Ficha28.setIcon(new javax.swing.ImageIcon(getClass().getResource("/grupo8/senku/UI/resources/fichaActiva.png"))); // NOI18N
         Ficha28.setBorderPainted(false);
@@ -383,7 +383,7 @@ public class VentanaJuego extends javax.swing.JFrame {
                 Ficha28ActionPerformed(evt);
             }
         });
-        Tablero.add(Ficha28);
+        tablero.add(Ficha28);
 
         Ficha29.setIcon(new javax.swing.ImageIcon(getClass().getResource("/grupo8/senku/UI/resources/ficha.png"))); // NOI18N
         Ficha29.setBorderPainted(false);
@@ -393,7 +393,7 @@ public class VentanaJuego extends javax.swing.JFrame {
                 Ficha29ActionPerformed(evt);
             }
         });
-        Tablero.add(Ficha29);
+        tablero.add(Ficha29);
 
         Ficha30.setIcon(new javax.swing.ImageIcon(getClass().getResource("/grupo8/senku/UI/resources/ficha.png"))); // NOI18N
         Ficha30.setBorderPainted(false);
@@ -403,7 +403,7 @@ public class VentanaJuego extends javax.swing.JFrame {
                 Ficha30ActionPerformed(evt);
             }
         });
-        Tablero.add(Ficha30);
+        tablero.add(Ficha30);
 
         Ficha31.setIcon(new javax.swing.ImageIcon(getClass().getResource("/grupo8/senku/UI/resources/ficha.png"))); // NOI18N
         Ficha31.setBorderPainted(false);
@@ -413,7 +413,7 @@ public class VentanaJuego extends javax.swing.JFrame {
                 Ficha31ActionPerformed(evt);
             }
         });
-        Tablero.add(Ficha31);
+        tablero.add(Ficha31);
 
         Ficha32.setIcon(new javax.swing.ImageIcon(getClass().getResource("/grupo8/senku/UI/resources/ficha.png"))); // NOI18N
         Ficha32.setBorderPainted(false);
@@ -423,7 +423,7 @@ public class VentanaJuego extends javax.swing.JFrame {
                 Ficha32ActionPerformed(evt);
             }
         });
-        Tablero.add(Ficha32);
+        tablero.add(Ficha32);
 
         Ficha33.setIcon(new javax.swing.ImageIcon(getClass().getResource("/grupo8/senku/UI/resources/ficha.png"))); // NOI18N
         Ficha33.setBorderPainted(false);
@@ -433,7 +433,7 @@ public class VentanaJuego extends javax.swing.JFrame {
                 Ficha33ActionPerformed(evt);
             }
         });
-        Tablero.add(Ficha33);
+        tablero.add(Ficha33);
 
         Ficha34.setIcon(new javax.swing.ImageIcon(getClass().getResource("/grupo8/senku/UI/resources/ficha.png"))); // NOI18N
         Ficha34.setBorderPainted(false);
@@ -443,7 +443,7 @@ public class VentanaJuego extends javax.swing.JFrame {
                 Ficha34ActionPerformed(evt);
             }
         });
-        Tablero.add(Ficha34);
+        tablero.add(Ficha34);
 
         Ficha35.setIcon(new javax.swing.ImageIcon(getClass().getResource("/grupo8/senku/UI/resources/ficha.png"))); // NOI18N
         Ficha35.setBorderPainted(false);
@@ -453,7 +453,7 @@ public class VentanaJuego extends javax.swing.JFrame {
                 Ficha35ActionPerformed(evt);
             }
         });
-        Tablero.add(Ficha35);
+        tablero.add(Ficha35);
 
         Ficha36.setIcon(new javax.swing.ImageIcon(getClass().getResource("/grupo8/senku/UI/resources/ficha.png"))); // NOI18N
         Ficha36.setBorderPainted(false);
@@ -463,7 +463,7 @@ public class VentanaJuego extends javax.swing.JFrame {
                 Ficha36ActionPerformed(evt);
             }
         });
-        Tablero.add(Ficha36);
+        tablero.add(Ficha36);
 
         Ficha37.setIcon(new javax.swing.ImageIcon(getClass().getResource("/grupo8/senku/UI/resources/ficha.png"))); // NOI18N
         Ficha37.setBorderPainted(false);
@@ -473,7 +473,7 @@ public class VentanaJuego extends javax.swing.JFrame {
                 Ficha37ActionPerformed(evt);
             }
         });
-        Tablero.add(Ficha37);
+        tablero.add(Ficha37);
 
         Ficha38.setIcon(new javax.swing.ImageIcon(getClass().getResource("/grupo8/senku/UI/resources/ficha.png"))); // NOI18N
         Ficha38.setBorderPainted(false);
@@ -483,7 +483,7 @@ public class VentanaJuego extends javax.swing.JFrame {
                 Ficha38ActionPerformed(evt);
             }
         });
-        Tablero.add(Ficha38);
+        tablero.add(Ficha38);
 
         Ficha39.setIcon(new javax.swing.ImageIcon(getClass().getResource("/grupo8/senku/UI/resources/ficha.png"))); // NOI18N
         Ficha39.setBorderPainted(false);
@@ -493,7 +493,7 @@ public class VentanaJuego extends javax.swing.JFrame {
                 Ficha39ActionPerformed(evt);
             }
         });
-        Tablero.add(Ficha39);
+        tablero.add(Ficha39);
 
         Ficha40.setIcon(new javax.swing.ImageIcon(getClass().getResource("/grupo8/senku/UI/resources/ficha.png"))); // NOI18N
         Ficha40.setBorderPainted(false);
@@ -503,7 +503,7 @@ public class VentanaJuego extends javax.swing.JFrame {
                 Ficha40ActionPerformed(evt);
             }
         });
-        Tablero.add(Ficha40);
+        tablero.add(Ficha40);
 
         Ficha41.setIcon(new javax.swing.ImageIcon(getClass().getResource("/grupo8/senku/UI/resources/ficha.png"))); // NOI18N
         Ficha41.setBorderPainted(false);
@@ -513,7 +513,7 @@ public class VentanaJuego extends javax.swing.JFrame {
                 Ficha41ActionPerformed(evt);
             }
         });
-        Tablero.add(Ficha41);
+        tablero.add(Ficha41);
 
         Ficha42.setIcon(new javax.swing.ImageIcon(getClass().getResource("/grupo8/senku/UI/resources/ficha.png"))); // NOI18N
         Ficha42.setBorderPainted(false);
@@ -523,7 +523,7 @@ public class VentanaJuego extends javax.swing.JFrame {
                 Ficha42ActionPerformed(evt);
             }
         });
-        Tablero.add(Ficha42);
+        tablero.add(Ficha42);
 
         Ficha43.setIcon(new javax.swing.ImageIcon(getClass().getResource("/grupo8/senku/UI/resources/ficha.png"))); // NOI18N
         Ficha43.setBorderPainted(false);
@@ -533,7 +533,7 @@ public class VentanaJuego extends javax.swing.JFrame {
                 Ficha43ActionPerformed(evt);
             }
         });
-        Tablero.add(Ficha43);
+        tablero.add(Ficha43);
 
         Ficha44.setIcon(new javax.swing.ImageIcon(getClass().getResource("/grupo8/senku/UI/resources/ficha.png"))); // NOI18N
         Ficha44.setBorderPainted(false);
@@ -543,7 +543,7 @@ public class VentanaJuego extends javax.swing.JFrame {
                 Ficha44ActionPerformed(evt);
             }
         });
-        Tablero.add(Ficha44);
+        tablero.add(Ficha44);
 
         Ficha45.setIcon(new javax.swing.ImageIcon(getClass().getResource("/grupo8/senku/UI/resources/ficha.png"))); // NOI18N
         Ficha45.setBorderPainted(false);
@@ -553,7 +553,7 @@ public class VentanaJuego extends javax.swing.JFrame {
                 Ficha45ActionPerformed(evt);
             }
         });
-        Tablero.add(Ficha45);
+        tablero.add(Ficha45);
 
         Ficha46.setIcon(new javax.swing.ImageIcon(getClass().getResource("/grupo8/senku/UI/resources/ficha.png"))); // NOI18N
         Ficha46.setBorderPainted(false);
@@ -563,7 +563,7 @@ public class VentanaJuego extends javax.swing.JFrame {
                 Ficha46ActionPerformed(evt);
             }
         });
-        Tablero.add(Ficha46);
+        tablero.add(Ficha46);
 
         Ficha47.setIcon(new javax.swing.ImageIcon(getClass().getResource("/grupo8/senku/UI/resources/ficha.png"))); // NOI18N
         Ficha47.setBorderPainted(false);
@@ -573,7 +573,7 @@ public class VentanaJuego extends javax.swing.JFrame {
                 Ficha47ActionPerformed(evt);
             }
         });
-        Tablero.add(Ficha47);
+        tablero.add(Ficha47);
 
         Ficha48.setIcon(new javax.swing.ImageIcon(getClass().getResource("/grupo8/senku/UI/resources/ficha.png"))); // NOI18N
         Ficha48.setBorderPainted(false);
@@ -583,7 +583,7 @@ public class VentanaJuego extends javax.swing.JFrame {
                 Ficha48ActionPerformed(evt);
             }
         });
-        Tablero.add(Ficha48);
+        tablero.add(Ficha48);
 
         Ficha49.setIcon(new javax.swing.ImageIcon(getClass().getResource("/grupo8/senku/UI/resources/ficha.png"))); // NOI18N
         Ficha49.setBorderPainted(false);
@@ -593,31 +593,36 @@ public class VentanaJuego extends javax.swing.JFrame {
                 Ficha49ActionPerformed(evt);
             }
         });
-        Tablero.add(Ficha49);
+        tablero.add(Ficha49);
 
-        jButton5.setBackground(new java.awt.Color(180, 132, 108));
-        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pista.png"))); // NOI18N
-
-        jLabel1.setText("Temporizador");
-
-        jToolBar1.setBackground(jLabel1.getBackground());
-        jToolBar1.setRollover(true);
-        jToolBar1.setBorderPainted(false);
-        jToolBar1.setOpaque(false);
-
-        jButton2.setBackground(new java.awt.Color(180, 132, 108));
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/restart.png"))); // NOI18N
-        jButton2.setFocusable(false);
-        jButton2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton2.setOpaque(true);
-        jButton2.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        pista.setBackground(new java.awt.Color(180, 132, 108));
+        pista.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pista.png"))); // NOI18N
+        pista.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                pistaActionPerformed(evt);
             }
         });
-        jToolBar1.add(jButton2);
-        jButton2.getAccessibleContext().setAccessibleDescription("");
+
+        cronometro.setText("Cronometro");
+
+        botonesTablero.setBackground(cronometro.getBackground());
+        botonesTablero.setRollover(true);
+        botonesTablero.setBorderPainted(false);
+        botonesTablero.setOpaque(false);
+
+        restart.setBackground(new java.awt.Color(180, 132, 108));
+        restart.setIcon(new javax.swing.ImageIcon(getClass().getResource("/restart.png"))); // NOI18N
+        restart.setFocusable(false);
+        restart.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        restart.setOpaque(true);
+        restart.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        restart.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                restartActionPerformed(evt);
+            }
+        });
+        botonesTablero.add(restart);
+        restart.getAccessibleContext().setAccessibleDescription("");
 
         pausa.setBackground(new java.awt.Color(180, 132, 108));
         pausa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pausa.png"))); // NOI18N
@@ -627,7 +632,7 @@ public class VentanaJuego extends javax.swing.JFrame {
                 pausaActionPerformed(evt);
             }
         });
-        jToolBar1.add(pausa);
+        botonesTablero.add(pausa);
 
         menu.setBackground(new java.awt.Color(180, 132, 108));
         menu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/casa.png"))); // NOI18N
@@ -637,41 +642,41 @@ public class VentanaJuego extends javax.swing.JFrame {
                 menuActionPerformed(evt);
             }
         });
-        jToolBar1.add(menu);
+        botonesTablero.add(menu);
 
-        javax.swing.GroupLayout FondoLayout = new javax.swing.GroupLayout(Fondo);
-        Fondo.setLayout(FondoLayout);
-        FondoLayout.setHorizontalGroup(
-            FondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(FondoLayout.createSequentialGroup()
+        javax.swing.GroupLayout ventanaJuegoLayout = new javax.swing.GroupLayout(ventanaJuego);
+        ventanaJuego.setLayout(ventanaJuegoLayout);
+        ventanaJuegoLayout.setHorizontalGroup(
+            ventanaJuegoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ventanaJuegoLayout.createSequentialGroup()
                 .addGap(505, 505, 505)
-                .addComponent(Tablero, javax.swing.GroupLayout.PREFERRED_SIZE, 880, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(tablero, javax.swing.GroupLayout.PREFERRED_SIZE, 880, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(562, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, FondoLayout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ventanaJuegoLayout.createSequentialGroup()
                 .addGap(17, 17, 17)
-                .addComponent(jButton5)
+                .addComponent(pista)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jToolBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(botonesTablero, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(146, 146, 146))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, FondoLayout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ventanaJuegoLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(cronometro, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(111, 111, 111))
         );
-        FondoLayout.setVerticalGroup(
-            FondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, FondoLayout.createSequentialGroup()
-                .addGroup(FondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(FondoLayout.createSequentialGroup()
+        ventanaJuegoLayout.setVerticalGroup(
+            ventanaJuegoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ventanaJuegoLayout.createSequentialGroup()
+                .addGroup(ventanaJuegoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(ventanaJuegoLayout.createSequentialGroup()
                         .addGap(17, 17, 17)
-                        .addComponent(jButton5))
-                    .addGroup(FondoLayout.createSequentialGroup()
+                        .addComponent(pista))
+                    .addGroup(ventanaJuegoLayout.createSequentialGroup()
                         .addGap(30, 30, 30)
-                        .addComponent(jToolBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(botonesTablero, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(35, 35, 35)
-                .addComponent(Tablero, javax.swing.GroupLayout.PREFERRED_SIZE, 628, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(tablero, javax.swing.GroupLayout.PREFERRED_SIZE, 628, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 84, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(cronometro, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(452, 452, 452))
         );
 
@@ -679,11 +684,16 @@ public class VentanaJuego extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Fondo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(ventanaJuego, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Fondo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 12, Short.MAX_VALUE)
+                .addComponent(ventanaJuego, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
@@ -697,9 +707,9 @@ public class VentanaJuego extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_pausaActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void restartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_restartActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_restartActionPerformed
 
     private void Ficha49ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Ficha49ActionPerformed
         // TODO add your handling code here:
@@ -897,6 +907,10 @@ public class VentanaJuego extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_Ficha7ActionPerformed
 
+    private void pistaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pistaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_pistaActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Ficha1;
     private javax.swing.JButton Ficha10;
@@ -947,14 +961,14 @@ public class VentanaJuego extends javax.swing.JFrame {
     private javax.swing.JButton Ficha7;
     private javax.swing.JButton Ficha8;
     private javax.swing.JButton Ficha9;
-    private javax.swing.JPanel Fondo;
-    private javax.swing.JPanel Tablero;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JToolBar jToolBar1;
+    private javax.swing.JToolBar botonesTablero;
+    private javax.swing.JLabel cronometro;
     private javax.swing.JButton menu;
     private javax.swing.JButton pausa;
+    private javax.swing.JButton pista;
+    private javax.swing.JButton restart;
+    private javax.swing.JPanel tablero;
+    private javax.swing.JPanel ventanaJuego;
     // End of variables declaration//GEN-END:variables
 
     class FondoPanel extends JPanel{

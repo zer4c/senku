@@ -28,119 +28,119 @@ public class Seleccionjuego extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
-        jPanel3 = new javax.swing.JPanel();
-        jButton2 = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
-        jButton4 = new javax.swing.JButton();
+        seleccionJuego = new javax.swing.JPanel();
+        contenedorTriangulo = new javax.swing.JPanel();
+        opcionTriangulo = new javax.swing.JButton();
+        dificultadTriangulo = new javax.swing.JLabel();
+        contenedorCruz = new javax.swing.JPanel();
+        opcionCruz = new javax.swing.JButton();
+        dificultadCruz = new javax.swing.JLabel();
+        menu = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(180, 132, 108));
+        seleccionJuego.setBackground(new java.awt.Color(180, 132, 108));
 
-        jPanel2.setBackground(new java.awt.Color(125, 90, 80));
+        contenedorTriangulo.setBackground(new java.awt.Color(125, 90, 80));
 
-        jButton1.setBackground(new java.awt.Color(125, 90, 80));
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/triangulo.png"))); // NOI18N
-        jButton1.setBorderPainted(false);
-        jButton1.setRolloverEnabled(false);
-        jButton1.setVerifyInputWhenFocusTarget(false);
+        opcionTriangulo.setBackground(new java.awt.Color(125, 90, 80));
+        opcionTriangulo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/triangulo.png"))); // NOI18N
+        opcionTriangulo.setBorderPainted(false);
+        opcionTriangulo.setRolloverEnabled(false);
+        opcionTriangulo.setVerifyInputWhenFocusTarget(false);
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("DIFICULTAD FACIL");
+        dificultadTriangulo.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        dificultadTriangulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        dificultadTriangulo.setText("DIFICULTAD FACIL");
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
+        javax.swing.GroupLayout contenedorTrianguloLayout = new javax.swing.GroupLayout(contenedorTriangulo);
+        contenedorTriangulo.setLayout(contenedorTrianguloLayout);
+        contenedorTrianguloLayout.setHorizontalGroup(
+            contenedorTrianguloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(contenedorTrianguloLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 688, Short.MAX_VALUE)
+                .addComponent(dificultadTriangulo, javax.swing.GroupLayout.DEFAULT_SIZE, 688, Short.MAX_VALUE)
                 .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, contenedorTrianguloLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton1)
+                .addComponent(opcionTriangulo)
                 .addGap(77, 77, 77))
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addComponent(jButton1)
+        contenedorTrianguloLayout.setVerticalGroup(
+            contenedorTrianguloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(contenedorTrianguloLayout.createSequentialGroup()
+                .addComponent(opcionTriangulo)
                 .addGap(18, 18, 18)
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(dificultadTriangulo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(12, 12, 12))
         );
 
-        jPanel3.setBackground(new java.awt.Color(125, 90, 80));
+        contenedorCruz.setBackground(new java.awt.Color(125, 90, 80));
 
-        jButton2.setBackground(new java.awt.Color(125, 90, 80));
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cruz.png"))); // NOI18N
-        jButton2.setBorderPainted(false);
-        jButton2.setRolloverEnabled(false);
-        jButton2.setVerifyInputWhenFocusTarget(false);
+        opcionCruz.setBackground(new java.awt.Color(125, 90, 80));
+        opcionCruz.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cruz.png"))); // NOI18N
+        opcionCruz.setBorderPainted(false);
+        opcionCruz.setRolloverEnabled(false);
+        opcionCruz.setVerifyInputWhenFocusTarget(false);
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("DIFICULTAD DIFICIL");
+        dificultadCruz.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        dificultadCruz.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        dificultadCruz.setText("DIFICULTAD DIFICIL");
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
+        javax.swing.GroupLayout contenedorCruzLayout = new javax.swing.GroupLayout(contenedorCruz);
+        contenedorCruz.setLayout(contenedorCruzLayout);
+        contenedorCruzLayout.setHorizontalGroup(
+            contenedorCruzLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(contenedorCruzLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(dificultadCruz, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
-            .addGroup(jPanel3Layout.createSequentialGroup()
+            .addGroup(contenedorCruzLayout.createSequentialGroup()
                 .addGap(76, 76, 76)
-                .addComponent(jButton2)
+                .addComponent(opcionCruz)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addComponent(jButton2)
+        contenedorCruzLayout.setVerticalGroup(
+            contenedorCruzLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(contenedorCruzLayout.createSequentialGroup()
+                .addComponent(opcionCruz)
                 .addGap(18, 18, 18)
-                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(dificultadCruz, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(12, 12, 12))
         );
 
-        jButton4.setBackground(new java.awt.Color(180, 132, 108));
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/casa.png"))); // NOI18N
-        jButton4.setBorderPainted(false);
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        menu.setBackground(new java.awt.Color(180, 132, 108));
+        menu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/casa.png"))); // NOI18N
+        menu.setBorderPainted(false);
+        menu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                menuActionPerformed(evt);
             }
         });
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        javax.swing.GroupLayout seleccionJuegoLayout = new javax.swing.GroupLayout(seleccionJuego);
+        seleccionJuego.setLayout(seleccionJuegoLayout);
+        seleccionJuegoLayout.setHorizontalGroup(
+            seleccionJuegoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(seleccionJuegoLayout.createSequentialGroup()
                 .addGap(56, 56, 56)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton4)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(seleccionJuegoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(menu)
+                    .addGroup(seleccionJuegoLayout.createSequentialGroup()
+                        .addComponent(contenedorTriangulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(contenedorCruz, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(473, Short.MAX_VALUE))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        seleccionJuegoLayout.setVerticalGroup(
+            seleccionJuegoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(seleccionJuegoLayout.createSequentialGroup()
                 .addGap(19, 19, 19)
-                .addComponent(jButton4)
+                .addComponent(menu)
                 .addGap(41, 41, 41)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(seleccionJuegoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(contenedorTriangulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(contenedorCruz, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(530, Short.MAX_VALUE))
         );
 
@@ -150,32 +150,32 @@ public class Seleccionjuego extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(seleccionJuego, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(157, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(seleccionJuego, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 543, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void menuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_menuActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel contenedorCruz;
+    private javax.swing.JPanel contenedorTriangulo;
+    private javax.swing.JLabel dificultadCruz;
+    private javax.swing.JLabel dificultadTriangulo;
+    private javax.swing.JButton menu;
+    private javax.swing.JButton opcionCruz;
+    private javax.swing.JButton opcionTriangulo;
+    private javax.swing.JPanel seleccionJuego;
     // End of variables declaration//GEN-END:variables
 }
