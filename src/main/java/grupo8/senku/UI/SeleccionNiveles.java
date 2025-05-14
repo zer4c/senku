@@ -26,88 +26,88 @@ public class SeleccionNiveles extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jToolBar1 = new javax.swing.JToolBar();
-        jButton5 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        seleccionNiveles = new javax.swing.JPanel();
+        nivelDos = new javax.swing.JButton();
+        nivelUno = new javax.swing.JButton();
+        nivelTres = new javax.swing.JButton();
+        botonesNiveles = new javax.swing.JToolBar();
+        atras = new javax.swing.JButton();
+        menu = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(180, 132, 108));
+        seleccionNiveles.setBackground(new java.awt.Color(180, 132, 108));
 
-        jButton1.setBackground(new java.awt.Color(125, 90, 80));
-        jButton1.setFont(new java.awt.Font("Segoe UI", 0, 100)); // NOI18N
-        jButton1.setText("2");
-        jButton1.setBorderPainted(false);
+        nivelDos.setBackground(new java.awt.Color(125, 90, 80));
+        nivelDos.setFont(new java.awt.Font("Segoe UI", 0, 100)); // NOI18N
+        nivelDos.setText("2");
+        nivelDos.setBorderPainted(false);
 
-        jButton2.setBackground(new java.awt.Color(125, 90, 80));
-        jButton2.setFont(new java.awt.Font("Segoe UI", 0, 100)); // NOI18N
-        jButton2.setText("1");
-        jButton2.setBorderPainted(false);
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        nivelUno.setBackground(new java.awt.Color(125, 90, 80));
+        nivelUno.setFont(new java.awt.Font("Segoe UI", 0, 100)); // NOI18N
+        nivelUno.setText("1");
+        nivelUno.setBorderPainted(false);
+        nivelUno.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                nivelUnoActionPerformed(evt);
             }
         });
 
-        jButton3.setBackground(new java.awt.Color(125, 90, 80));
-        jButton3.setFont(new java.awt.Font("Segoe UI", 0, 100)); // NOI18N
-        jButton3.setText("3");
-        jButton3.setBorderPainted(false);
+        nivelTres.setBackground(new java.awt.Color(125, 90, 80));
+        nivelTres.setFont(new java.awt.Font("Segoe UI", 0, 100)); // NOI18N
+        nivelTres.setText("3");
+        nivelTres.setBorderPainted(false);
 
-        jToolBar1.setRollover(true);
-        jToolBar1.setOpaque(false);
+        botonesNiveles.setRollover(true);
+        botonesNiveles.setOpaque(false);
 
-        jButton5.setBackground(new java.awt.Color(180, 132, 108));
-        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/atras.png"))); // NOI18N
-        jButton5.setBorderPainted(false);
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        atras.setBackground(new java.awt.Color(180, 132, 108));
+        atras.setIcon(new javax.swing.ImageIcon(getClass().getResource("/atras.png"))); // NOI18N
+        atras.setBorderPainted(false);
+        atras.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                atrasActionPerformed(evt);
             }
         });
-        jToolBar1.add(jButton5);
+        botonesNiveles.add(atras);
 
-        jButton4.setBackground(new java.awt.Color(180, 132, 108));
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/casa.png"))); // NOI18N
-        jButton4.setBorderPainted(false);
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        menu.setBackground(new java.awt.Color(180, 132, 108));
+        menu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/casa.png"))); // NOI18N
+        menu.setBorderPainted(false);
+        menu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                menuActionPerformed(evt);
             }
         });
-        jToolBar1.add(jButton4);
+        botonesNiveles.add(menu);
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+        javax.swing.GroupLayout seleccionNivelesLayout = new javax.swing.GroupLayout(seleccionNiveles);
+        seleccionNiveles.setLayout(seleccionNivelesLayout);
+        seleccionNivelesLayout.setHorizontalGroup(
+            seleccionNivelesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, seleccionNivelesLayout.createSequentialGroup()
                 .addContainerGap(248, Short.MAX_VALUE)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(nivelUno, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(nivelDos, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(nivelTres, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(132, 132, 132))
-            .addGroup(jPanel1Layout.createSequentialGroup()
+            .addGroup(seleccionNivelesLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jToolBar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(botonesNiveles, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+        seleccionNivelesLayout.setVerticalGroup(
+            seleccionNivelesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, seleccionNivelesLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jToolBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(botonesNiveles, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 125, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(seleccionNivelesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(nivelUno, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(nivelDos, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(nivelTres, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(132, 132, 132))
         );
 
@@ -116,41 +116,41 @@ public class SeleccionNiveles extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(105, 105, 105)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(199, Short.MAX_VALUE))
+                .addGap(20, 20, 20)
+                .addComponent(seleccionNiveles, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(284, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(237, Short.MAX_VALUE))
+                .addGap(33, 33, 33)
+                .addComponent(seleccionNiveles, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(234, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void nivelUnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nivelUnoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_nivelUnoActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void menuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_menuActionPerformed
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+    private void atrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_atrasActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton5ActionPerformed
+    }//GEN-LAST:event_atrasActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JToolBar jToolBar1;
+    private javax.swing.JButton atras;
+    private javax.swing.JToolBar botonesNiveles;
+    private javax.swing.JButton menu;
+    private javax.swing.JButton nivelDos;
+    private javax.swing.JButton nivelTres;
+    private javax.swing.JButton nivelUno;
+    private javax.swing.JPanel seleccionNiveles;
     // End of variables declaration//GEN-END:variables
 }
