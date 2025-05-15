@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package grupo8.senku.UI;
+import grupo8.senku.controller.ControllerUI;
 import javax.swing.ImageIcon;
 import java.awt.Image;
 
@@ -11,11 +12,12 @@ import java.awt.Image;
  * @author Azurduy
  */
 public class Seleccionjuego extends javax.swing.JFrame {
-
+    private ControllerUI control;
     /**
      * Creates new form Seleccionjuego
      */
-    public Seleccionjuego() {
+    public Seleccionjuego(ControllerUI control) {
+        this.control = control;
         initComponents();
     }
 
@@ -48,6 +50,11 @@ public class Seleccionjuego extends javax.swing.JFrame {
         opcionTriangulo.setBorderPainted(false);
         opcionTriangulo.setRolloverEnabled(false);
         opcionTriangulo.setVerifyInputWhenFocusTarget(false);
+        opcionTriangulo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                opcionTrianguloActionPerformed(evt);
+            }
+        });
 
         dificultadTriangulo.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         dificultadTriangulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -164,8 +171,12 @@ public class Seleccionjuego extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void menuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuActionPerformed
-        // TODO add your handling code here:
+        control.irHome();
     }//GEN-LAST:event_menuActionPerformed
+
+    private void opcionTrianguloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcionTrianguloActionPerformed
+        control.seleccionarFacil();
+    }//GEN-LAST:event_opcionTrianguloActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -4,16 +4,19 @@
  */
 package grupo8.senku.UI;
 
+import grupo8.senku.controller.ControllerUI;
+
 /**
  *
  * @author Azurduy
  */
 public class SeleccionNiveles extends javax.swing.JFrame {
-
+    private ControllerUI control;
     /**
      * Creates new form SeleccionNiveles
      */
-    public SeleccionNiveles() {
+    public SeleccionNiveles(ControllerUI control) {
+        this.control = control;
         initComponents();
     }
 
@@ -132,15 +135,15 @@ public class SeleccionNiveles extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void nivelUnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nivelUnoActionPerformed
-        // TODO add your handling code here:
+        control.iniciarJuego();
     }//GEN-LAST:event_nivelUnoActionPerformed
 
     private void menuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuActionPerformed
-        // TODO add your handling code here:
+        control.irHome();
     }//GEN-LAST:event_menuActionPerformed
 
     private void atrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_atrasActionPerformed
-        // TODO add your handling code here:
+        control.regresarPantalla();
     }//GEN-LAST:event_atrasActionPerformed
 
 

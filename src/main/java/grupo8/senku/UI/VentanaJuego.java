@@ -5,7 +5,7 @@
 
 package grupo8.senku.UI;
 
-import grupo8.senku.UI.*;
+import grupo8.senku.controller.ControllerUI;
 import javax.swing.*;
 import java.awt.*;
 
@@ -19,11 +19,12 @@ import java.awt.*;
 //Subclase por defecto ---------------------------------------------------------
 public class VentanaJuego extends javax.swing.JFrame {
     FondoPanel fondo = new FondoPanel();
-
-    /** Creates new form Tablero */
-    public VentanaJuego() {
+    private ControllerUI control;
+    /** Creates new form Tablero
+     * @param control */
+    public VentanaJuego(ControllerUI control) {
+        this.control = control;
         this.setContentPane(fondo);
-        
         initComponents();
     }
     
@@ -700,7 +701,7 @@ public class VentanaJuego extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void menuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuActionPerformed
-        // TODO add your handling code here:
+        control.irHome();
     }//GEN-LAST:event_menuActionPerformed
 
     private void pausaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pausaActionPerformed
