@@ -4,15 +4,13 @@
  */
 package grupo8.senku;
 import grupo8.senku.controller.ControllerUI;
-import grupo8.senku.UI.Seleccionjuego;
 /**
  *
  * @author pablo
  */
 public class Senku {
     public static void main(String[] args){
-        javax.swing.JFrame inicio = new Seleccionjuego();
-        ControllerUI control = new ControllerUI(inicio);
-        control.iniciarPantalla();        
+        ControllerUI control = new ControllerUI();
+        control.iniciarApp();        
     }
 }

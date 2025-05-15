@@ -3,30 +3,61 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package grupo8.senku.controller;
-import java.util.ArrayList;
+import java.util.List;
+import grupo8.senku.UI.*;
 /**
  *
  * @author pablo
  */
 public class ControllerUI {
     private javax.swing.JFrame actualPantalla;
-    private ArrayList<javax.swing.JFrame> histPantallas;
+    private List<javax.swing.JFrame> histPantallas;
     private int contadorPantalla;
     
-    public ControllerUI(javax.swing.JFrame inicio){
-        actualPantalla = inicio;
-        histPantallas = new ArrayList<>();
+    public ControllerUI(){
+        histPantallas = List.of(new Seleccionjuego(this), 
+                                        new SeleccionNiveles(this), 
+                                        new VentanaJuego(this));
         contadorPantalla = 0;
+        actualPantalla = histPantallas.get(contadorPantalla);
     }
-    public void iniciarPantalla(){
+    public void iniciarApp(){
         actualPantalla.setVisible(true);
         actualPantalla.setLocationRelativeTo(null);
-        histPantallas.add(actualPantalla);
-        contadorPantalla += 1;
     }
     public void regresarPantalla(){
+        actualPantalla.setVisible(false);
         contadorPantalla -= 1;
         actualPantalla = histPantallas.get(contadorPantalla);
         actualPantalla.setVisible(true);
+     
+    }
+    public void seleccionarFacil(){
+        actualPantalla.setVisible(false);
+        actualPantalla = histPantallas.get(1);
+        actualPantalla.setVisible(true);
+        actualPantalla.setLocationRelativeTo(null);
+        contadorPantalla += 1;
+    }
+    public void seleccionarDificil(){
+        actualPantalla.setVisible(false);
+        actualPantalla = histPantallas.get(1);
+        actualPantalla.setVisible(true);
+        actualPantalla.setLocationRelativeTo(null);
+        contadorPantalla += 1;
+    }
+    public void iniciarJuego(){
+        actualPantalla.setVisible(false);
+        actualPantalla = histPantallas.get(2);
+        actualPantalla.setVisible(true);
+        actualPantalla.setLocationRelativeTo(null);
+        contadorPantalla += 1;
+    }
+    public void irHome(){
+        actualPantalla.setVisible(false);
+        actualPantalla = histPantallas.get(0);
+        actualPantalla.setVisible(true);
+        actualPantalla.setLocationRelativeTo(null);
+        contadorPantalla += 1;
     }
 }
