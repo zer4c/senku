@@ -55,19 +55,13 @@ public class FrameWelcomeS extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jLabel1)
-                .addGap(0, 25, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-        new javax.swing.Timer(3000, e -> {
-                new FrameJugar(control).setVisible(true);
-                this.dispose(); // cierra el frame anterior
-
-                }).start();
-        System.out.println("pasaron 3 segundos baboso");
     }//GEN-LAST:event_formWindowOpened
 
     /**

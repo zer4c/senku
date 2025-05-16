@@ -5,6 +5,8 @@
 package grupo8.senku.controller;
 import java.util.List;
 import grupo8.senku.UI.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 /**
  *
  * @author pablo
@@ -15,14 +17,21 @@ public class ControllerUI {
     
     public ControllerUI(){
         histPantallas = List.of(new FrameWelcomeS(this),
+                                new FrameJugar(this),
                                 new Seleccionjuego(this), 
-                                        new SeleccionNiveles(this), 
-                                        new VentanaJuego(this));
-        actualPantalla = histPantallas.get(1);
+                                new SeleccionNiveles(this), 
+                                new VentanaJuego(this));
+        actualPantalla = histPantallas.get(0);
     }
     public void iniciarApp(){
         actualPantalla.setVisible(true);
         actualPantalla.setLocationRelativeTo(null);
+        try {
+            Thread.sleep(2000);
+            cambiarPantalla(1);
+        } catch (InterruptedException ex) {
+            Logger.getLogger(ControllerUI.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
     public void regresarPantalla(){
         actualPantalla.setVisible(false);
@@ -40,28 +49,28 @@ public class ControllerUI {
         actualPantalla.setVisible(true);
     }   
     public void seleccionarFacil() {
-        cambiarPantalla(2);
-    }
-
-    public void seleccionarDificil() {
-        cambiarPantalla(2);
-    }
-
-    public void iniciarJuego() {
         cambiarPantalla(3);
     }
 
+    public void seleccionarDificil() {
+        cambiarPantalla(3);
+    }
+
+    public void iniciarJuego() {
+        cambiarPantalla(4);
+    }
+
     public void irHome() {
-        cambiarPantalla(0);
+        cambiarPantalla(1);
     }
     public void jugar(){
-        cambiarPantalla(1);
+        cambiarPantalla(2);
     }
     
     private void cambiarPantalla(int indice) {
         actualPantalla.setVisible(false);
         actualPantalla = histPantallas.get(indice);
         actualPantalla.setVisible(true);
-        actualPantalla.setLocationRelativeTo(null);
+        actualPantalla.setLocationRelativeTo(histPantallas.get(0));
     }
 }
