@@ -14,10 +14,11 @@ public class ControllerUI {
     private List<javax.swing.JFrame> histPantallas;
     
     public ControllerUI(){
-        histPantallas = List.of(new Seleccionjuego(this), 
+        histPantallas = List.of(new FrameWelcomeS(this),
+                                new Seleccionjuego(this), 
                                         new SeleccionNiveles(this), 
                                         new VentanaJuego(this));
-        actualPantalla = histPantallas.get(0);
+        actualPantalla = histPantallas.get(1);
     }
     public void iniciarApp(){
         actualPantalla.setVisible(true);
@@ -39,21 +40,24 @@ public class ControllerUI {
         actualPantalla.setVisible(true);
     }   
     public void seleccionarFacil() {
-        cambiarPantalla(1);
+        cambiarPantalla(2);
     }
 
     public void seleccionarDificil() {
-        cambiarPantalla(1);
+        cambiarPantalla(2);
     }
 
     public void iniciarJuego() {
-        cambiarPantalla(2);
+        cambiarPantalla(3);
     }
 
     public void irHome() {
         cambiarPantalla(0);
     }
-
+    public void jugar(){
+        cambiarPantalla(1);
+    }
+    
     private void cambiarPantalla(int indice) {
         actualPantalla.setVisible(false);
         actualPantalla = histPantallas.get(indice);

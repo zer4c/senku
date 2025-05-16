@@ -4,6 +4,7 @@
  */
 package grupo8.senku.UI;
 import grupo8.senku.UI.FondoPanel;
+import grupo8.senku.controller.ControllerUI;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
@@ -17,14 +18,15 @@ import javax.swing.plaf.basic.BasicButtonUI;
  */
 
 public class FrameJugar extends javax.swing.JFrame {
-
+    private ControllerUI control;
     /**
      * Creates new form FrameJugar
      */
     private int WIDTH = 1920;
     private int HEIGHT = 1080;
     FondoPanel fondo = new FondoPanel();
-    public FrameJugar() {
+    public FrameJugar(ControllerUI control) {
+        this.control = control;
         this.setContentPane(fondo);
         initComponents();
         personalizarBoton(); // <- ACÁ
@@ -51,10 +53,19 @@ public class FrameJugar extends javax.swing.JFrame {
         jButton1.setName("botonJugar"); // NOI18N
         jButton1.setOpaque(true);
         jButton1.setPreferredSize(new java.awt.Dimension(400, 250));
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 350, 430, 290));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        control.jugar();
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     private void personalizarBoton() {
         jButton1.setContentAreaFilled(false);

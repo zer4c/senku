@@ -16,7 +16,7 @@ public class FondoPanel extends JPanel {
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
-        imagen = new ImageIcon(getClass().getResource("/grupo8/senku/UI/img/borr.jpg")).getImage();
+        imagen = new ImageIcon(getClass().getResource("/img/borr.jpg")).getImage();
         g.drawImage(imagen, 0, 0, getWidth(), getHeight(), this);
     }
 }

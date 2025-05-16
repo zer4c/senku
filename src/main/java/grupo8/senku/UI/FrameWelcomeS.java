@@ -3,19 +3,21 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package grupo8.senku.UI;
+import grupo8.senku.controller.ControllerUI;
 
 /**
  *
  * @author brenda
  */
 public class FrameWelcomeS extends javax.swing.JFrame {
-
+    private ControllerUI control; 
     /**
      * Creates new form FrameWelcomeS
      */
     private int WIDTH = 1920;
     private int HEIGHT = 1080;
-    public FrameWelcomeS() {
+    public FrameWelcomeS(ControllerUI control) {
+        this.control = control;
         initComponents();
         setSize(WIDTH, HEIGHT);
     }
@@ -38,7 +40,7 @@ public class FrameWelcomeS extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/grupo8/senku/UI/Welcome/img/20250512_141027_244.jpg"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/20250512_141027_244.jpg"))); // NOI18N
         jLabel1.setText("label_image_senku");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -61,7 +63,7 @@ public class FrameWelcomeS extends javax.swing.JFrame {
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         new javax.swing.Timer(3000, e -> {
-                new FrameJugar().setVisible(true);
+                new FrameJugar(control).setVisible(true);
                 this.dispose(); // cierra el frame anterior
 
                 }).start();
@@ -98,7 +100,7 @@ public class FrameWelcomeS extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new FrameWelcomeS().setVisible(true);
+                new FrameWelcomeS(control).setVisible(true);
             }
         });
     }
