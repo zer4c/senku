@@ -18,7 +18,7 @@ import java.awt.*;
 
 //Subclase por defecto ---------------------------------------------------------
 public class VentanaJuego extends javax.swing.JFrame {
-    FondoPanel fondo = new FondoPanel();
+    private FondoPanel fondo = new FondoPanel();
     private ControllerUI control;
     /** Creates new form Tablero
      * @param control */

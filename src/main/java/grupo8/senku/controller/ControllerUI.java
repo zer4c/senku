@@ -14,7 +14,8 @@ import java.util.logging.Logger;
 public class ControllerUI {
     private javax.swing.JFrame actualPantalla;
     private List<javax.swing.JFrame> histPantallas;
-    
+    private int ancho;
+    private int alto;
     public ControllerUI(){
         histPantallas = List.of(new FrameWelcomeS(this),
                                 new FrameJugar(this),
@@ -22,6 +23,8 @@ public class ControllerUI {
                                 new SeleccionNiveles(this), 
                                 new VentanaJuego(this));
         actualPantalla = histPantallas.get(0);
+        ancho = 720;
+        alto = 1280;
     }
     public void iniciarApp(){
         actualPantalla.setVisible(true);
@@ -70,7 +73,8 @@ public class ControllerUI {
     private void cambiarPantalla(int indice) {
         actualPantalla.setVisible(false);
         actualPantalla = histPantallas.get(indice);
-        actualPantalla.setVisible(true);
+        actualPantalla.setSize(alto,ancho);
         actualPantalla.setLocationRelativeTo(histPantallas.get(0));
+        actualPantalla.setVisible(true);
     }
 }

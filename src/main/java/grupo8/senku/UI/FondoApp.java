@@ -11,12 +11,14 @@ import javax.swing.JPanel;
  *
  * @author brenda
  */
-public class FondoPanel extends JPanel {
+public class FondoApp extends JPanel {
     private Image imagen;
     @Override
-    protected void paintComponent(Graphics g) {
+    public void paint(Graphics g) {
         super.paintComponent(g);
         imagen = new ImageIcon(getClass().getResource("/img/borr.jpg")).getImage();
         g.drawImage(imagen, 0, 0, getWidth(), getHeight(), this);
+        setOpaque(false);
+        super.paint(g);
     }
 }
