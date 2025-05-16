@@ -2,8 +2,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package grupo8.senku.UI.Welcome;
-import grupo8.senku.UI.Welcome.FondoPanel;
+package grupo8.senku.UI;
+import grupo8.senku.UI.FondoPanel;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
