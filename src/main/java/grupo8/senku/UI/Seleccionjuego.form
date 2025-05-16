@@ -187,6 +187,9 @@
                 <Property name="rolloverEnabled" type="boolean" value="false"/>
                 <Property name="verifyInputWhenFocusTarget" type="boolean" value="false"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="opcionCruzActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="dificultadCruz">
               <Properties>

@@ -12,14 +12,12 @@ import grupo8.senku.UI.*;
 public class ControllerUI {
     private javax.swing.JFrame actualPantalla;
     private List<javax.swing.JFrame> histPantallas;
-    private int contadorPantalla;
     
     public ControllerUI(){
         histPantallas = List.of(new Seleccionjuego(this), 
                                         new SeleccionNiveles(this), 
                                         new VentanaJuego(this));
-        contadorPantalla = 0;
-        actualPantalla = histPantallas.get(contadorPantalla);
+        actualPantalla = histPantallas.get(0);
     }
     public void iniciarApp(){
         actualPantalla.setVisible(true);
@@ -27,37 +25,39 @@ public class ControllerUI {
     }
     public void regresarPantalla(){
         actualPantalla.setVisible(false);
-        contadorPantalla -= 1;
-        actualPantalla = histPantallas.get(contadorPantalla);
+        int contPant = 0; 
+        boolean Encontrado = false;
+        while(false == Encontrado){
+            if(actualPantalla.equals(histPantallas.get(contPant))){
+                Encontrado = true;
+                contPant--;
+            }else{
+                contPant++;
+            }
+        }
+        actualPantalla = histPantallas.get(contPant);
         actualPantalla.setVisible(true);
-     
+    }   
+    public void seleccionarFacil() {
+        cambiarPantalla(1);
     }
-    public void seleccionarFacil(){
+
+    public void seleccionarDificil() {
+        cambiarPantalla(1);
+    }
+
+    public void iniciarJuego() {
+        cambiarPantalla(2);
+    }
+
+    public void irHome() {
+        cambiarPantalla(0);
+    }
+
+    private void cambiarPantalla(int indice) {
         actualPantalla.setVisible(false);
-        actualPantalla = histPantallas.get(1);
+        actualPantalla = histPantallas.get(indice);
         actualPantalla.setVisible(true);
         actualPantalla.setLocationRelativeTo(null);
-        contadorPantalla += 1;
-    }
-    public void seleccionarDificil(){
-        actualPantalla.setVisible(false);
-        actualPantalla = histPantallas.get(1);
-        actualPantalla.setVisible(true);
-        actualPantalla.setLocationRelativeTo(null);
-        contadorPantalla += 1;
-    }
-    public void iniciarJuego(){
-        actualPantalla.setVisible(false);
-        actualPantalla = histPantallas.get(2);
-        actualPantalla.setVisible(true);
-        actualPantalla.setLocationRelativeTo(null);
-        contadorPantalla += 1;
-    }
-    public void irHome(){
-        actualPantalla.setVisible(false);
-        actualPantalla = histPantallas.get(0);
-        actualPantalla.setVisible(true);
-        actualPantalla.setLocationRelativeTo(null);
-        contadorPantalla += 1;
     }
 }

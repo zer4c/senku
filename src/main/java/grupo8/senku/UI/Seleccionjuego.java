@@ -89,6 +89,11 @@ public class Seleccionjuego extends javax.swing.JFrame {
         opcionCruz.setBorderPainted(false);
         opcionCruz.setRolloverEnabled(false);
         opcionCruz.setVerifyInputWhenFocusTarget(false);
+        opcionCruz.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                opcionCruzActionPerformed(evt);
+            }
+        });
 
         dificultadCruz.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         dificultadCruz.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -177,6 +182,10 @@ public class Seleccionjuego extends javax.swing.JFrame {
     private void opcionTrianguloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcionTrianguloActionPerformed
         control.seleccionarFacil();
     }//GEN-LAST:event_opcionTrianguloActionPerformed
+
+    private void opcionCruzActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcionCruzActionPerformed
+        control.seleccionarDificil();
+    }//GEN-LAST:event_opcionCruzActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
