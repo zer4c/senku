@@ -12,11 +12,14 @@ import grupo8.senku.controller.ControllerUI;
  */
 public class SeleccionNiveles extends javax.swing.JFrame {
     private ControllerUI control;
+    private FondoApp fondo;
     /**
      * Creates new form SeleccionNiveles
      */
     public SeleccionNiveles(ControllerUI control) {
         this.control = control;
+        fondo = new FondoApp();
+        this.setContentPane(fondo);
         initComponents();
     }
 
@@ -30,9 +33,7 @@ public class SeleccionNiveles extends javax.swing.JFrame {
     private void initComponents() {
 
         seleccionNiveles = new javax.swing.JPanel();
-        nivelDos = new javax.swing.JButton();
         nivelUno = new javax.swing.JButton();
-        nivelTres = new javax.swing.JButton();
         botonesNiveles = new javax.swing.JToolBar();
         atras = new javax.swing.JButton();
         menu = new javax.swing.JButton();
@@ -40,11 +41,7 @@ public class SeleccionNiveles extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         seleccionNiveles.setBackground(new java.awt.Color(180, 132, 108));
-
-        nivelDos.setBackground(new java.awt.Color(125, 90, 80));
-        nivelDos.setFont(new java.awt.Font("Segoe UI", 0, 100)); // NOI18N
-        nivelDos.setText("2");
-        nivelDos.setBorderPainted(false);
+        seleccionNiveles.setOpaque(false);
 
         nivelUno.setBackground(new java.awt.Color(125, 90, 80));
         nivelUno.setFont(new java.awt.Font("Segoe UI", 0, 100)); // NOI18N
@@ -56,15 +53,14 @@ public class SeleccionNiveles extends javax.swing.JFrame {
             }
         });
 
-        nivelTres.setBackground(new java.awt.Color(125, 90, 80));
-        nivelTres.setFont(new java.awt.Font("Segoe UI", 0, 100)); // NOI18N
-        nivelTres.setText("3");
-        nivelTres.setBorderPainted(false);
-
+        botonesNiveles.setBackground(new java.awt.Color(215, 161, 117));
+        botonesNiveles.setFloatable(true);
+        botonesNiveles.setForeground(new java.awt.Color(215, 161, 117));
         botonesNiveles.setRollover(true);
+        botonesNiveles.setBorderPainted(false);
         botonesNiveles.setOpaque(false);
 
-        atras.setBackground(new java.awt.Color(180, 132, 108));
+        atras.setBackground(new java.awt.Color(215, 161, 117));
         atras.setIcon(new javax.swing.ImageIcon(getClass().getResource("/atras.png"))); // NOI18N
         atras.setBorderPainted(false);
         atras.addActionListener(new java.awt.event.ActionListener() {
@@ -74,7 +70,7 @@ public class SeleccionNiveles extends javax.swing.JFrame {
         });
         botonesNiveles.add(atras);
 
-        menu.setBackground(new java.awt.Color(180, 132, 108));
+        menu.setBackground(new java.awt.Color(215, 161, 117));
         menu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/casa.png"))); // NOI18N
         menu.setBorderPainted(false);
         menu.addActionListener(new java.awt.event.ActionListener() {
@@ -89,28 +85,21 @@ public class SeleccionNiveles extends javax.swing.JFrame {
         seleccionNivelesLayout.setHorizontalGroup(
             seleccionNivelesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, seleccionNivelesLayout.createSequentialGroup()
-                .addContainerGap(248, Short.MAX_VALUE)
+                .addContainerGap(36, Short.MAX_VALUE)
                 .addComponent(nivelUno, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(nivelDos, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(nivelTres, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(132, 132, 132))
+                .addGap(938, 938, 938))
             .addGroup(seleccionNivelesLayout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(0, 0, 0)
                 .addComponent(botonesNiveles, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         seleccionNivelesLayout.setVerticalGroup(
             seleccionNivelesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, seleccionNivelesLayout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(0, 14, Short.MAX_VALUE)
                 .addComponent(botonesNiveles, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 125, Short.MAX_VALUE)
-                .addGroup(seleccionNivelesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(nivelUno, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(nivelDos, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(nivelTres, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(nivelUno, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(132, 132, 132))
         );
 
@@ -119,16 +108,16 @@ public class SeleccionNiveles extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(20, 20, 20)
+                .addGap(0, 0, 0)
                 .addComponent(seleccionNiveles, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(284, Short.MAX_VALUE))
+                .addContainerGap(304, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(33, 33, 33)
+                .addGap(0, 0, 0)
                 .addComponent(seleccionNiveles, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(234, Short.MAX_VALUE))
+                .addContainerGap(267, Short.MAX_VALUE))
         );
 
         pack();
@@ -151,8 +140,6 @@ public class SeleccionNiveles extends javax.swing.JFrame {
     private javax.swing.JButton atras;
     private javax.swing.JToolBar botonesNiveles;
     private javax.swing.JButton menu;
-    private javax.swing.JButton nivelDos;
-    private javax.swing.JButton nivelTres;
     private javax.swing.JButton nivelUno;
     private javax.swing.JPanel seleccionNiveles;
     // End of variables declaration//GEN-END:variables
