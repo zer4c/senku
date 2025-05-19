@@ -3,36 +3,32 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package grupo8.senku.UI;
-import grupo8.senku.UI.FondoPanel;
+
 import grupo8.senku.controller.ControllerUI;
 import java.awt.Color;
-import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.RenderingHints;
 import javax.swing.JComponent;
-import javax.swing.plaf.basic.BasicButtonUI;
+
 /**
  *
  * @author brenda
  */
-
 public class FrameJugar extends javax.swing.JFrame {
     private ControllerUI control;
+    private FondoJugar fondo;
     /**
-     * Creates new form FrameJugar
+     * Creates new form FrameJugar2
      */
-    private int WIDTH = 1920;
-    private int HEIGHT = 1080;
-    FondoPanel fondo = new FondoPanel();
     public FrameJugar(ControllerUI control) {
         this.control = control;
+        fondo = new FondoJugar();
         this.setContentPane(fondo);
         initComponents();
-        personalizarBoton(); // <- ACÁ
-        setSize(WIDTH, HEIGHT);
+        personalizarBoton();
     }
-    
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -45,20 +41,31 @@ public class FrameJugar extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton1.setBackground(new java.awt.Color(255, 204, 255));
-        jButton1.setFont(new java.awt.Font("DejaVu Serif", 3, 70)); // NOI18N
-        jButton1.setText("Jugar");
-        jButton1.setName("botonJugar"); // NOI18N
-        jButton1.setOpaque(true);
-        jButton1.setPreferredSize(new java.awt.Dimension(400, 250));
+        jButton1.setFont(new java.awt.Font("DejaVu Serif", 2, 70)); // NOI18N
+        jButton1.setText("jugar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 350, 430, 290));
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(0, 465, Short.MAX_VALUE)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 465, Short.MAX_VALUE))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(0, 290, Short.MAX_VALUE)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 290, Short.MAX_VALUE))
+        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -66,7 +73,7 @@ public class FrameJugar extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         control.jugar();
     }//GEN-LAST:event_jButton1ActionPerformed
-
+   
     private void personalizarBoton() {
         jButton1.setContentAreaFilled(false);
         jButton1.setFocusPainted(false);
@@ -80,18 +87,13 @@ public class FrameJugar extends javax.swing.JFrame {
             public void paint(Graphics g, JComponent c) {
                 Graphics2D g2 = (Graphics2D) g.create();
                 g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
-                g2.setColor(new Color(68,124,137));
+                g2.setColor(new Color(106, 65, 60));
                 g2.fillOval(0, 0, c.getWidth(), c.getHeight());
                 g2.dispose();
                 super.paint(g, c);
             }
         });
     }
-    /**
-     * @param args the command line arguments
-     */
-   
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     // End of variables declaration//GEN-END:variables
