@@ -80,7 +80,7 @@
         <Component class="javax.swing.JButton" name="nivelUno">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="50" green="5a" red="7d" type="rgb"/>
+              <Color blue="3c" green="41" red="6a" type="rgb"/>
             </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="100" style="0"/>
@@ -117,6 +117,7 @@
                   <Image iconType="3" name="/atras.png"/>
                 </Property>
                 <Property name="borderPainted" type="boolean" value="false"/>
+                <Property name="contentAreaFilled" type="boolean" value="false"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="atrasActionPerformed"/>
@@ -131,6 +132,7 @@
                   <Image iconType="3" name="/casa.png"/>
                 </Property>
                 <Property name="borderPainted" type="boolean" value="false"/>
+                <Property name="contentAreaFilled" type="boolean" value="false"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="menuActionPerformed"/>

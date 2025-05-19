@@ -17,13 +17,13 @@ import javax.swing.JComponent;
  */
 public class FrameJugar extends javax.swing.JFrame {
     private ControllerUI control;
-    private FondoApp fondo;
+    private FondoJugar fondo;
     /**
      * Creates new form FrameJugar2
      */
     public FrameJugar(ControllerUI control) {
         this.control = control;
-        fondo = new FondoApp();
+        fondo = new FondoJugar();
         this.setContentPane(fondo);
         initComponents();
         personalizarBoton();

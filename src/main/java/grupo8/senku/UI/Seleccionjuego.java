@@ -47,11 +47,12 @@ public class Seleccionjuego extends javax.swing.JFrame {
         seleccionJuego.setBackground(new java.awt.Color(180, 132, 108));
         seleccionJuego.setOpaque(false);
 
-        contenedorTriangulo.setBackground(new java.awt.Color(125, 90, 80));
+        contenedorTriangulo.setBackground(new java.awt.Color(106, 65, 60));
 
         opcionTriangulo.setBackground(new java.awt.Color(125, 90, 80));
         opcionTriangulo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/triangulo.png"))); // NOI18N
         opcionTriangulo.setBorderPainted(false);
+        opcionTriangulo.setContentAreaFilled(false);
         opcionTriangulo.setRolloverEnabled(false);
         opcionTriangulo.setVerifyInputWhenFocusTarget(false);
         opcionTriangulo.addActionListener(new java.awt.event.ActionListener() {
@@ -60,7 +61,9 @@ public class Seleccionjuego extends javax.swing.JFrame {
             }
         });
 
+        dificultadTriangulo.setBackground(new java.awt.Color(255, 255, 255));
         dificultadTriangulo.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        dificultadTriangulo.setForeground(new java.awt.Color(255, 255, 255));
         dificultadTriangulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         dificultadTriangulo.setText("DIFICULTAD FACIL");
 
@@ -86,12 +89,13 @@ public class Seleccionjuego extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        contenedorCruz.setBackground(new java.awt.Color(125, 90, 80));
+        contenedorCruz.setBackground(contenedorTriangulo.getBackground());
         contenedorCruz.setPreferredSize(new java.awt.Dimension(320, 320));
 
         opcionCruz.setBackground(new java.awt.Color(125, 90, 80));
         opcionCruz.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cruz.png"))); // NOI18N
         opcionCruz.setBorderPainted(false);
+        opcionCruz.setContentAreaFilled(false);
         opcionCruz.setRolloverEnabled(false);
         opcionCruz.setVerifyInputWhenFocusTarget(false);
         opcionCruz.addActionListener(new java.awt.event.ActionListener() {
@@ -101,6 +105,7 @@ public class Seleccionjuego extends javax.swing.JFrame {
         });
 
         dificultadCruz.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        dificultadCruz.setForeground(new java.awt.Color(255, 255, 255));
         dificultadCruz.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         dificultadCruz.setText("DIFICULTAD DIFICIL");
 
@@ -123,9 +128,11 @@ public class Seleccionjuego extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        menu.setBackground(new java.awt.Color(215, 161, 117));
+        menu.setBackground(new java.awt.Color(106, 65, 60));
         menu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/casa.png"))); // NOI18N
         menu.setBorderPainted(false);
+        menu.setContentAreaFilled(false);
+        menu.setFocusPainted(false);
         menu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 menuActionPerformed(evt);

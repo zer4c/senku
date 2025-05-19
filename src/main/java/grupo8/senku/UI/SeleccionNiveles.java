@@ -43,7 +43,7 @@ public class SeleccionNiveles extends javax.swing.JFrame {
         seleccionNiveles.setBackground(new java.awt.Color(180, 132, 108));
         seleccionNiveles.setOpaque(false);
 
-        nivelUno.setBackground(new java.awt.Color(125, 90, 80));
+        nivelUno.setBackground(new java.awt.Color(106, 65, 60));
         nivelUno.setFont(new java.awt.Font("Segoe UI", 0, 100)); // NOI18N
         nivelUno.setText("1");
         nivelUno.setBorderPainted(false);
@@ -63,6 +63,7 @@ public class SeleccionNiveles extends javax.swing.JFrame {
         atras.setBackground(new java.awt.Color(215, 161, 117));
         atras.setIcon(new javax.swing.ImageIcon(getClass().getResource("/atras.png"))); // NOI18N
         atras.setBorderPainted(false);
+        atras.setContentAreaFilled(false);
         atras.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 atrasActionPerformed(evt);
@@ -73,6 +74,7 @@ public class SeleccionNiveles extends javax.swing.JFrame {
         menu.setBackground(new java.awt.Color(215, 161, 117));
         menu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/casa.png"))); // NOI18N
         menu.setBorderPainted(false);
+        menu.setContentAreaFilled(false);
         menu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 menuActionPerformed(evt);
