@@ -19,7 +19,7 @@ public class ModelTableroCruz extends ModelTablero {
         // Primero desactivamos todas las fichas
         for (int i = 0; i < ifilas; i++) {
             for (int j = 0; j < icolumnas; j++) {
-                fichas.get(i).get(j).vsetVisible(false);
+                fichas.get(i).get(j).vhacerInvisible();
             }
         }
 
@@ -31,7 +31,7 @@ public class ModelTableroCruz extends ModelTablero {
                 boolean noCentro = !(i == 3 && j == 3); // Centro vacío
 
                 if (enZonaCentral && noCentro) {
-                    fichas.get(i).get(j).vsetVisible(true);
+                    fichas.get(i).get(j).vactivar();
                 }
             }
         }
@@ -44,7 +44,7 @@ public class ModelTableroCruz extends ModelTablero {
     public boolean bactivarFicha(int ifila, int icolumna) {
         boolean bres = false;
         ModelFicha ficha = getFicha(ifila, icolumna);
-        if (ficha != null && ficha.bestaVisible()) {
+        if (!ficha.besInvisible() && ficha.bestaActiva()) {
             bres = true;
         }
         return bres;
@@ -54,8 +54,8 @@ public class ModelTableroCruz extends ModelTablero {
     public boolean beliminarFicha(int ifila, int icolumna) {
         boolean bres = false;
         ModelFicha ficha = getFicha(ifila, icolumna);
-        if (ficha != null && ficha.bestaVisible()) {
-            ficha.vsetVisible(false);
+        if (!ficha.besInvisible() && ficha.bestaActiva()) {
+            ficha.veliminar();
             bres = true;
         }
         return bres;
@@ -97,10 +97,10 @@ public class ModelTableroCruz extends ModelTablero {
 
         boolean bpuedeComer = false;
 
-        if (origen != null && medio != null && destino != null) {
-            boolean origenValido = origen.bestaVisible();
-            boolean medioOcupado = medio.bestaVisible();
-            boolean destinoLibre = !destino.bestaVisible();
+        if (!origen.besInvisible() && !medio.besInvisible() && !destino.besInvisible()) {
+            boolean origenValido = origen.bestaActiva();
+            boolean medioOcupado = medio.bestaActiva();
+            boolean destinoLibre = !destino.bestaActiva();
 
             bpuedeComer = origenValido && medioOcupado && destinoLibre;
         }
@@ -138,10 +138,10 @@ public class ModelTableroCruz extends ModelTablero {
             ModelFicha medio = getFicha(ifilaMedio, icolMedio);
             ModelFicha destino = getFicha(ifilaDestino, icolDestino);
 
-            if (origen != null && medio != null && destino != null) {
-                origen.vsetVisible(false);
-                medio.vsetVisible(false);
-                destino.vsetVisible(true);
+            if (!origen.besInvisible() && !medio.besInvisible() && !destino.besInvisible()) {
+                origen.veliminar();
+                medio.veliminar();
+                destino.vactivar();
                 bmovimientoValido = true;
             }
         }

@@ -19,7 +19,7 @@ public class ModelTableroTriangular extends ModelTablero {
     // Primero desactivamos todas las fichas
         for (int fila = 0; fila < ifilas; fila++) {
             for (int col = 0; col < icolumnas; col++) {
-                fichas.get(fila).get(col).vsetVisible(false);
+                fichas.get(fila).get(col).vhacerInvisible();
             }
         }
 
@@ -32,26 +32,26 @@ public class ModelTableroTriangular extends ModelTablero {
                 if (col >= 0 && col < icolumnas) {
                     // Activamos todas las fichas excepto el vértice superior
                     if (!(fila == 0 && col == 4)) {  // Esta es la corrección clave
-                        fichas.get(fila).get(col).vsetVisible(true);
+                        fichas.get(fila).get(col).vactivar();
                     }
                 }
             }
         }
     // Aseguramos explícitamente que el vértice esté vacío
-        fichas.get(0).get(4).vsetVisible(false);
+        fichas.get(0).get(4).vhacerInvisible();
 }
 
     @Override
     public boolean bactivarFicha(int ifila, int icolumna) {
         ModelFicha ficha = getFicha(ifila, icolumna);
-        return ficha != null && ficha.bestaVisible();
+        return !ficha.besInvisible() && ficha.bestaActiva();
     }
 
     @Override
     public boolean beliminarFicha(int ifila, int icolumna) {
         ModelFicha ficha = getFicha(ifila, icolumna);
-        if (ficha != null && ficha.bestaVisible()) {
-            ficha.vsetVisible(false);
+        if (!ficha.besInvisible() && ficha.bestaActiva()) {
+            ficha.vhacerInvisible();
             return true;
         }
         return false;
@@ -85,8 +85,8 @@ public class ModelTableroTriangular extends ModelTablero {
         ModelFicha medio = getFicha(fm, cm);
         ModelFicha destino = getFicha(fd, cd);
 
-        if (origen != null && medio != null && destino != null) {
-            if (origen.bestaVisible() && medio.bestaVisible() && !destino.bestaVisible()) {
+        if (!origen.besInvisible() && !medio.besInvisible() && !destino.besInvisible()) {
+            if (origen.bestaActiva() && medio.bestaActiva() && !destino.bestaActiva()) {
                 puedeComer = true;
             }
         }
@@ -123,10 +123,10 @@ public class ModelTableroTriangular extends ModelTablero {
             ModelFicha medio = getFicha(fm, cm);
             ModelFicha destino = getFicha(fd, cd);
 
-            if (origen != null && medio != null && destino != null) {
-                origen.vsetVisible(false);
-                medio.vsetVisible(false);
-                destino.vsetVisible(true);
+            if (!origen.besInvisible() && !medio.besInvisible() && !destino.besInvisible()) {
+                origen.vhacerInvisible();
+                medio.vhacerInvisible();
+                destino.vactivar();
                 movimientoRealizado = true;
             }
         }
