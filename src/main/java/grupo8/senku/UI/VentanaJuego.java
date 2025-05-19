@@ -98,11 +98,14 @@ public class VentanaJuego extends javax.swing.JFrame {
         menu = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(1280, 720));
+        setSize(new java.awt.Dimension(1280, 720));
 
         ventanaJuego.setBackground(new java.awt.Color(180, 132, 108));
-        ventanaJuego.setPreferredSize(new java.awt.Dimension(1947, 1423));
+        ventanaJuego.setPreferredSize(new java.awt.Dimension(1280, 720));
 
         tablero.setBackground(new java.awt.Color(125, 90, 80));
+        tablero.setPreferredSize(new java.awt.Dimension(300, 300));
         tablero.setLayout(new java.awt.GridLayout(7, 7));
 
         Ficha1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fichaActiva.png"))); // NOI18N
@@ -135,7 +138,7 @@ public class VentanaJuego extends javax.swing.JFrame {
         });
         tablero.add(Ficha3);
 
-        Ficha4.setIcon(Ficha2.getIcon()); // NOI18N
+        Ficha4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/grupo8/senku/UI/resources/ficha.png"))); // NOI18N
         Ficha4.setBorderPainted(false);
         Ficha4.setContentAreaFilled(false);
         Ficha4.addActionListener(new java.awt.event.ActionListener() {
@@ -145,7 +148,7 @@ public class VentanaJuego extends javax.swing.JFrame {
         });
         tablero.add(Ficha4);
 
-        Ficha5.setIcon(Ficha2.getIcon()); // NOI18N
+        Ficha5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/grupo8/senku/UI/resources/ficha.png"))); // NOI18N
         Ficha5.setBorderPainted(false);
         Ficha5.setContentAreaFilled(false);
         Ficha5.addActionListener(new java.awt.event.ActionListener() {
@@ -155,7 +158,7 @@ public class VentanaJuego extends javax.swing.JFrame {
         });
         tablero.add(Ficha5);
 
-        Ficha6.setIcon(Ficha2.getIcon()); // NOI18N
+        Ficha6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/grupo8/senku/UI/resources/ficha.png"))); // NOI18N
         Ficha6.setBorderPainted(false);
         Ficha6.setContentAreaFilled(false);
         Ficha6.addActionListener(new java.awt.event.ActionListener() {
@@ -165,7 +168,7 @@ public class VentanaJuego extends javax.swing.JFrame {
         });
         tablero.add(Ficha6);
 
-        Ficha9.setIcon(Ficha2.getIcon()); // NOI18N
+        Ficha9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/grupo8/senku/UI/resources/ficha.png"))); // NOI18N
         Ficha9.setBorderPainted(false);
         Ficha9.setContentAreaFilled(false);
         Ficha9.addActionListener(new java.awt.event.ActionListener() {
@@ -175,7 +178,7 @@ public class VentanaJuego extends javax.swing.JFrame {
         });
         tablero.add(Ficha9);
 
-        Ficha10.setIcon(Ficha2.getIcon()); // NOI18N
+        Ficha10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/grupo8/senku/UI/resources/ficha.png"))); // NOI18N
         Ficha10.setBorderPainted(false);
         Ficha10.setContentAreaFilled(false);
         Ficha10.addActionListener(new java.awt.event.ActionListener() {
@@ -185,7 +188,7 @@ public class VentanaJuego extends javax.swing.JFrame {
         });
         tablero.add(Ficha10);
 
-        Ficha11.setIcon(Ficha2.getIcon()); // NOI18N
+        Ficha11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/grupo8/senku/UI/resources/ficha.png"))); // NOI18N
         Ficha11.setBorderPainted(false);
         Ficha11.setContentAreaFilled(false);
         Ficha11.addActionListener(new java.awt.event.ActionListener() {
@@ -195,7 +198,7 @@ public class VentanaJuego extends javax.swing.JFrame {
         });
         tablero.add(Ficha11);
 
-        Ficha12.setIcon(Ficha1.getIcon()); // NOI18N
+        Ficha12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/grupo8/senku/UI/resources/fichaActiva.png"))); // NOI18N
         Ficha12.setBorderPainted(false);
         Ficha12.setContentAreaFilled(false);
         Ficha12.addActionListener(new java.awt.event.ActionListener() {
@@ -205,7 +208,7 @@ public class VentanaJuego extends javax.swing.JFrame {
         });
         tablero.add(Ficha12);
 
-        Ficha13.setIcon(Ficha2.getIcon()); // NOI18N
+        Ficha13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/grupo8/senku/UI/resources/ficha.png"))); // NOI18N
         Ficha13.setBorderPainted(false);
         Ficha13.setContentAreaFilled(false);
         Ficha13.addActionListener(new java.awt.event.ActionListener() {
@@ -215,7 +218,7 @@ public class VentanaJuego extends javax.swing.JFrame {
         });
         tablero.add(Ficha13);
 
-        Ficha7.setIcon(Ficha2.getIcon()); // NOI18N
+        Ficha7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/grupo8/senku/UI/resources/ficha.png"))); // NOI18N
         Ficha7.setBorderPainted(false);
         Ficha7.setContentAreaFilled(false);
         Ficha7.addActionListener(new java.awt.event.ActionListener() {
@@ -225,7 +228,7 @@ public class VentanaJuego extends javax.swing.JFrame {
         });
         tablero.add(Ficha7);
 
-        Ficha8.setIcon(Ficha2.getIcon()); // NOI18N
+        Ficha8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/grupo8/senku/UI/resources/ficha.png"))); // NOI18N
         Ficha8.setBorderPainted(false);
         Ficha8.setContentAreaFilled(false);
         Ficha8.addActionListener(new java.awt.event.ActionListener() {
@@ -235,7 +238,7 @@ public class VentanaJuego extends javax.swing.JFrame {
         });
         tablero.add(Ficha8);
 
-        Ficha14.setIcon(Ficha2.getIcon()); // NOI18N
+        Ficha14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/grupo8/senku/UI/resources/ficha.png"))); // NOI18N
         Ficha14.setBorderPainted(false);
         Ficha14.setContentAreaFilled(false);
         Ficha14.addActionListener(new java.awt.event.ActionListener() {
@@ -245,7 +248,7 @@ public class VentanaJuego extends javax.swing.JFrame {
         });
         tablero.add(Ficha14);
 
-        Ficha15.setIcon(Ficha2.getIcon()); // NOI18N
+        Ficha15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/grupo8/senku/UI/resources/ficha.png"))); // NOI18N
         Ficha15.setBorderPainted(false);
         Ficha15.setContentAreaFilled(false);
         Ficha15.addActionListener(new java.awt.event.ActionListener() {
@@ -255,7 +258,7 @@ public class VentanaJuego extends javax.swing.JFrame {
         });
         tablero.add(Ficha15);
 
-        Ficha16.setIcon(Ficha2.getIcon()); // NOI18N
+        Ficha16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/grupo8/senku/UI/resources/ficha.png"))); // NOI18N
         Ficha16.setBorderPainted(false);
         Ficha16.setContentAreaFilled(false);
         Ficha16.addActionListener(new java.awt.event.ActionListener() {
@@ -265,7 +268,7 @@ public class VentanaJuego extends javax.swing.JFrame {
         });
         tablero.add(Ficha16);
 
-        Ficha17.setIcon(Ficha2.getIcon()); // NOI18N
+        Ficha17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/grupo8/senku/UI/resources/ficha.png"))); // NOI18N
         Ficha17.setBorderPainted(false);
         Ficha17.setContentAreaFilled(false);
         Ficha17.addActionListener(new java.awt.event.ActionListener() {
@@ -275,7 +278,7 @@ public class VentanaJuego extends javax.swing.JFrame {
         });
         tablero.add(Ficha17);
 
-        Ficha18.setIcon(Ficha2.getIcon()); // NOI18N
+        Ficha18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/grupo8/senku/UI/resources/ficha.png"))); // NOI18N
         Ficha18.setBorderPainted(false);
         Ficha18.setContentAreaFilled(false);
         Ficha18.addActionListener(new java.awt.event.ActionListener() {
@@ -285,7 +288,7 @@ public class VentanaJuego extends javax.swing.JFrame {
         });
         tablero.add(Ficha18);
 
-        Ficha19.setIcon(Ficha1.getIcon()); // NOI18N
+        Ficha19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/grupo8/senku/UI/resources/fichaActiva.png"))); // NOI18N
         Ficha19.setBorderPainted(false);
         Ficha19.setContentAreaFilled(false);
         Ficha19.addActionListener(new java.awt.event.ActionListener() {
@@ -295,7 +298,7 @@ public class VentanaJuego extends javax.swing.JFrame {
         });
         tablero.add(Ficha19);
 
-        Ficha20.setIcon(Ficha2.getIcon()); // NOI18N
+        Ficha20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/grupo8/senku/UI/resources/ficha.png"))); // NOI18N
         Ficha20.setBorderPainted(false);
         Ficha20.setContentAreaFilled(false);
         Ficha20.addActionListener(new java.awt.event.ActionListener() {
@@ -305,7 +308,7 @@ public class VentanaJuego extends javax.swing.JFrame {
         });
         tablero.add(Ficha20);
 
-        Ficha21.setIcon(Ficha2.getIcon()); // NOI18N
+        Ficha21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/grupo8/senku/UI/resources/ficha.png"))); // NOI18N
         Ficha21.setBorderPainted(false);
         Ficha21.setContentAreaFilled(false);
         Ficha21.addActionListener(new java.awt.event.ActionListener() {
@@ -315,7 +318,7 @@ public class VentanaJuego extends javax.swing.JFrame {
         });
         tablero.add(Ficha21);
 
-        Ficha22.setIcon(Ficha2.getIcon()); // NOI18N
+        Ficha22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/grupo8/senku/UI/resources/ficha.png"))); // NOI18N
         Ficha22.setBorderPainted(false);
         Ficha22.setContentAreaFilled(false);
         Ficha22.addActionListener(new java.awt.event.ActionListener() {
@@ -325,7 +328,7 @@ public class VentanaJuego extends javax.swing.JFrame {
         });
         tablero.add(Ficha22);
 
-        Ficha23.setIcon(Ficha2.getIcon()); // NOI18N
+        Ficha23.setIcon(new javax.swing.ImageIcon(getClass().getResource("/grupo8/senku/UI/resources/ficha.png"))); // NOI18N
         Ficha23.setBorderPainted(false);
         Ficha23.setContentAreaFilled(false);
         Ficha23.addActionListener(new java.awt.event.ActionListener() {
@@ -335,7 +338,7 @@ public class VentanaJuego extends javax.swing.JFrame {
         });
         tablero.add(Ficha23);
 
-        Ficha24.setIcon(Ficha2.getIcon()); // NOI18N
+        Ficha24.setIcon(new javax.swing.ImageIcon(getClass().getResource("/grupo8/senku/UI/resources/ficha.png"))); // NOI18N
         Ficha24.setBorderPainted(false);
         Ficha24.setContentAreaFilled(false);
         Ficha24.addActionListener(new java.awt.event.ActionListener() {
@@ -345,7 +348,7 @@ public class VentanaJuego extends javax.swing.JFrame {
         });
         tablero.add(Ficha24);
 
-        Ficha25.setIcon(Ficha2.getIcon()); // NOI18N
+        Ficha25.setIcon(new javax.swing.ImageIcon(getClass().getResource("/grupo8/senku/UI/resources/ficha.png"))); // NOI18N
         Ficha25.setBorderPainted(false);
         Ficha25.setContentAreaFilled(false);
         Ficha25.addActionListener(new java.awt.event.ActionListener() {
@@ -355,7 +358,7 @@ public class VentanaJuego extends javax.swing.JFrame {
         });
         tablero.add(Ficha25);
 
-        Ficha26.setIcon(Ficha2.getIcon()); // NOI18N
+        Ficha26.setIcon(new javax.swing.ImageIcon(getClass().getResource("/grupo8/senku/UI/resources/ficha.png"))); // NOI18N
         Ficha26.setBorderPainted(false);
         Ficha26.setContentAreaFilled(false);
         Ficha26.addActionListener(new java.awt.event.ActionListener() {
@@ -365,7 +368,7 @@ public class VentanaJuego extends javax.swing.JFrame {
         });
         tablero.add(Ficha26);
 
-        Ficha27.setIcon(Ficha2.getIcon()); // NOI18N
+        Ficha27.setIcon(new javax.swing.ImageIcon(getClass().getResource("/grupo8/senku/UI/resources/ficha.png"))); // NOI18N
         Ficha27.setBorderPainted(false);
         Ficha27.setContentAreaFilled(false);
         Ficha27.addActionListener(new java.awt.event.ActionListener() {
@@ -375,7 +378,7 @@ public class VentanaJuego extends javax.swing.JFrame {
         });
         tablero.add(Ficha27);
 
-        Ficha28.setIcon(Ficha1.getIcon()); // NOI18N
+        Ficha28.setIcon(new javax.swing.ImageIcon(getClass().getResource("/grupo8/senku/UI/resources/fichaActiva.png"))); // NOI18N
         Ficha28.setBorderPainted(false);
         Ficha28.setContentAreaFilled(false);
         Ficha28.addActionListener(new java.awt.event.ActionListener() {
@@ -385,7 +388,7 @@ public class VentanaJuego extends javax.swing.JFrame {
         });
         tablero.add(Ficha28);
 
-        Ficha29.setIcon(Ficha2.getIcon()); // NOI18N
+        Ficha29.setIcon(new javax.swing.ImageIcon(getClass().getResource("/grupo8/senku/UI/resources/ficha.png"))); // NOI18N
         Ficha29.setBorderPainted(false);
         Ficha29.setContentAreaFilled(false);
         Ficha29.addActionListener(new java.awt.event.ActionListener() {
@@ -395,7 +398,7 @@ public class VentanaJuego extends javax.swing.JFrame {
         });
         tablero.add(Ficha29);
 
-        Ficha30.setIcon(Ficha2.getIcon()); // NOI18N
+        Ficha30.setIcon(new javax.swing.ImageIcon(getClass().getResource("/grupo8/senku/UI/resources/ficha.png"))); // NOI18N
         Ficha30.setBorderPainted(false);
         Ficha30.setContentAreaFilled(false);
         Ficha30.addActionListener(new java.awt.event.ActionListener() {
@@ -405,7 +408,7 @@ public class VentanaJuego extends javax.swing.JFrame {
         });
         tablero.add(Ficha30);
 
-        Ficha31.setIcon(Ficha2.getIcon()); // NOI18N
+        Ficha31.setIcon(new javax.swing.ImageIcon(getClass().getResource("/grupo8/senku/UI/resources/ficha.png"))); // NOI18N
         Ficha31.setBorderPainted(false);
         Ficha31.setContentAreaFilled(false);
         Ficha31.addActionListener(new java.awt.event.ActionListener() {
@@ -415,7 +418,7 @@ public class VentanaJuego extends javax.swing.JFrame {
         });
         tablero.add(Ficha31);
 
-        Ficha32.setIcon(Ficha2.getIcon()); // NOI18N
+        Ficha32.setIcon(new javax.swing.ImageIcon(getClass().getResource("/grupo8/senku/UI/resources/ficha.png"))); // NOI18N
         Ficha32.setBorderPainted(false);
         Ficha32.setContentAreaFilled(false);
         Ficha32.addActionListener(new java.awt.event.ActionListener() {
@@ -425,7 +428,7 @@ public class VentanaJuego extends javax.swing.JFrame {
         });
         tablero.add(Ficha32);
 
-        Ficha33.setIcon(Ficha2.getIcon()); // NOI18N
+        Ficha33.setIcon(new javax.swing.ImageIcon(getClass().getResource("/grupo8/senku/UI/resources/ficha.png"))); // NOI18N
         Ficha33.setBorderPainted(false);
         Ficha33.setContentAreaFilled(false);
         Ficha33.addActionListener(new java.awt.event.ActionListener() {
@@ -435,7 +438,7 @@ public class VentanaJuego extends javax.swing.JFrame {
         });
         tablero.add(Ficha33);
 
-        Ficha34.setIcon(Ficha2.getIcon()); // NOI18N
+        Ficha34.setIcon(new javax.swing.ImageIcon(getClass().getResource("/grupo8/senku/UI/resources/ficha.png"))); // NOI18N
         Ficha34.setBorderPainted(false);
         Ficha34.setContentAreaFilled(false);
         Ficha34.addActionListener(new java.awt.event.ActionListener() {
@@ -445,7 +448,7 @@ public class VentanaJuego extends javax.swing.JFrame {
         });
         tablero.add(Ficha34);
 
-        Ficha35.setIcon(Ficha2.getIcon()); // NOI18N
+        Ficha35.setIcon(new javax.swing.ImageIcon(getClass().getResource("/grupo8/senku/UI/resources/ficha.png"))); // NOI18N
         Ficha35.setBorderPainted(false);
         Ficha35.setContentAreaFilled(false);
         Ficha35.addActionListener(new java.awt.event.ActionListener() {
@@ -455,7 +458,7 @@ public class VentanaJuego extends javax.swing.JFrame {
         });
         tablero.add(Ficha35);
 
-        Ficha36.setIcon(Ficha2.getIcon()); // NOI18N
+        Ficha36.setIcon(new javax.swing.ImageIcon(getClass().getResource("/grupo8/senku/UI/resources/ficha.png"))); // NOI18N
         Ficha36.setBorderPainted(false);
         Ficha36.setContentAreaFilled(false);
         Ficha36.addActionListener(new java.awt.event.ActionListener() {
@@ -465,7 +468,7 @@ public class VentanaJuego extends javax.swing.JFrame {
         });
         tablero.add(Ficha36);
 
-        Ficha37.setIcon(Ficha2.getIcon()); // NOI18N
+        Ficha37.setIcon(new javax.swing.ImageIcon(getClass().getResource("/grupo8/senku/UI/resources/ficha.png"))); // NOI18N
         Ficha37.setBorderPainted(false);
         Ficha37.setContentAreaFilled(false);
         Ficha37.addActionListener(new java.awt.event.ActionListener() {
@@ -475,7 +478,7 @@ public class VentanaJuego extends javax.swing.JFrame {
         });
         tablero.add(Ficha37);
 
-        Ficha38.setIcon(Ficha2.getIcon()); // NOI18N
+        Ficha38.setIcon(new javax.swing.ImageIcon(getClass().getResource("/grupo8/senku/UI/resources/ficha.png"))); // NOI18N
         Ficha38.setBorderPainted(false);
         Ficha38.setContentAreaFilled(false);
         Ficha38.addActionListener(new java.awt.event.ActionListener() {
@@ -485,7 +488,7 @@ public class VentanaJuego extends javax.swing.JFrame {
         });
         tablero.add(Ficha38);
 
-        Ficha39.setIcon(Ficha2.getIcon()); // NOI18N
+        Ficha39.setIcon(new javax.swing.ImageIcon(getClass().getResource("/grupo8/senku/UI/resources/ficha.png"))); // NOI18N
         Ficha39.setBorderPainted(false);
         Ficha39.setContentAreaFilled(false);
         Ficha39.addActionListener(new java.awt.event.ActionListener() {
@@ -495,7 +498,7 @@ public class VentanaJuego extends javax.swing.JFrame {
         });
         tablero.add(Ficha39);
 
-        Ficha40.setIcon(Ficha2.getIcon()); // NOI18N
+        Ficha40.setIcon(new javax.swing.ImageIcon(getClass().getResource("/grupo8/senku/UI/resources/ficha.png"))); // NOI18N
         Ficha40.setBorderPainted(false);
         Ficha40.setContentAreaFilled(false);
         Ficha40.addActionListener(new java.awt.event.ActionListener() {
@@ -505,7 +508,7 @@ public class VentanaJuego extends javax.swing.JFrame {
         });
         tablero.add(Ficha40);
 
-        Ficha41.setIcon(Ficha2.getIcon()); // NOI18N
+        Ficha41.setIcon(new javax.swing.ImageIcon(getClass().getResource("/grupo8/senku/UI/resources/ficha.png"))); // NOI18N
         Ficha41.setBorderPainted(false);
         Ficha41.setContentAreaFilled(false);
         Ficha41.addActionListener(new java.awt.event.ActionListener() {
@@ -515,7 +518,7 @@ public class VentanaJuego extends javax.swing.JFrame {
         });
         tablero.add(Ficha41);
 
-        Ficha42.setIcon(Ficha2.getIcon()); // NOI18N
+        Ficha42.setIcon(new javax.swing.ImageIcon(getClass().getResource("/grupo8/senku/UI/resources/ficha.png"))); // NOI18N
         Ficha42.setBorderPainted(false);
         Ficha42.setContentAreaFilled(false);
         Ficha42.addActionListener(new java.awt.event.ActionListener() {
@@ -525,7 +528,7 @@ public class VentanaJuego extends javax.swing.JFrame {
         });
         tablero.add(Ficha42);
 
-        Ficha43.setIcon(Ficha2.getIcon()); // NOI18N
+        Ficha43.setIcon(new javax.swing.ImageIcon(getClass().getResource("/grupo8/senku/UI/resources/ficha.png"))); // NOI18N
         Ficha43.setBorderPainted(false);
         Ficha43.setContentAreaFilled(false);
         Ficha43.addActionListener(new java.awt.event.ActionListener() {
@@ -535,7 +538,7 @@ public class VentanaJuego extends javax.swing.JFrame {
         });
         tablero.add(Ficha43);
 
-        Ficha44.setIcon(Ficha2.getIcon()); // NOI18N
+        Ficha44.setIcon(new javax.swing.ImageIcon(getClass().getResource("/grupo8/senku/UI/resources/ficha.png"))); // NOI18N
         Ficha44.setBorderPainted(false);
         Ficha44.setContentAreaFilled(false);
         Ficha44.addActionListener(new java.awt.event.ActionListener() {
@@ -545,7 +548,7 @@ public class VentanaJuego extends javax.swing.JFrame {
         });
         tablero.add(Ficha44);
 
-        Ficha45.setIcon(Ficha2.getIcon()); // NOI18N
+        Ficha45.setIcon(new javax.swing.ImageIcon(getClass().getResource("/grupo8/senku/UI/resources/ficha.png"))); // NOI18N
         Ficha45.setBorderPainted(false);
         Ficha45.setContentAreaFilled(false);
         Ficha45.addActionListener(new java.awt.event.ActionListener() {
@@ -555,7 +558,7 @@ public class VentanaJuego extends javax.swing.JFrame {
         });
         tablero.add(Ficha45);
 
-        Ficha46.setIcon(Ficha2.getIcon()); // NOI18N
+        Ficha46.setIcon(new javax.swing.ImageIcon(getClass().getResource("/grupo8/senku/UI/resources/ficha.png"))); // NOI18N
         Ficha46.setBorderPainted(false);
         Ficha46.setContentAreaFilled(false);
         Ficha46.addActionListener(new java.awt.event.ActionListener() {
@@ -565,7 +568,7 @@ public class VentanaJuego extends javax.swing.JFrame {
         });
         tablero.add(Ficha46);
 
-        Ficha47.setIcon(Ficha2.getIcon()); // NOI18N
+        Ficha47.setIcon(new javax.swing.ImageIcon(getClass().getResource("/grupo8/senku/UI/resources/ficha.png"))); // NOI18N
         Ficha47.setBorderPainted(false);
         Ficha47.setContentAreaFilled(false);
         Ficha47.addActionListener(new java.awt.event.ActionListener() {
@@ -575,7 +578,7 @@ public class VentanaJuego extends javax.swing.JFrame {
         });
         tablero.add(Ficha47);
 
-        Ficha48.setIcon(Ficha2.getIcon()); // NOI18N
+        Ficha48.setIcon(new javax.swing.ImageIcon(getClass().getResource("/grupo8/senku/UI/resources/ficha.png"))); // NOI18N
         Ficha48.setBorderPainted(false);
         Ficha48.setContentAreaFilled(false);
         Ficha48.addActionListener(new java.awt.event.ActionListener() {
@@ -585,7 +588,7 @@ public class VentanaJuego extends javax.swing.JFrame {
         });
         tablero.add(Ficha48);
 
-        Ficha49.setIcon(Ficha2.getIcon()); // NOI18N
+        Ficha49.setIcon(new javax.swing.ImageIcon(getClass().getResource("/grupo8/senku/UI/resources/ficha.png"))); // NOI18N
         Ficha49.setBorderPainted(false);
         Ficha49.setContentAreaFilled(false);
         Ficha49.addActionListener(new java.awt.event.ActionListener() {
@@ -648,36 +651,35 @@ public class VentanaJuego extends javax.swing.JFrame {
         ventanaJuego.setLayout(ventanaJuegoLayout);
         ventanaJuegoLayout.setHorizontalGroup(
             ventanaJuegoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(ventanaJuegoLayout.createSequentialGroup()
-                .addGap(505, 505, 505)
-                .addComponent(tablero, javax.swing.GroupLayout.PREFERRED_SIZE, 880, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(562, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ventanaJuegoLayout.createSequentialGroup()
                 .addGap(17, 17, 17)
-                .addComponent(pista)
+                .addComponent(pista, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(botonesTablero, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(146, 146, 146))
+                .addComponent(botonesTablero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(59, 59, 59))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ventanaJuegoLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(300, 300, 300)
+                .addComponent(tablero, javax.swing.GroupLayout.PREFERRED_SIZE, 665, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 98, Short.MAX_VALUE)
                 .addComponent(cronometro, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(111, 111, 111))
+                .addGap(27, 27, 27))
         );
         ventanaJuegoLayout.setVerticalGroup(
             ventanaJuegoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ventanaJuegoLayout.createSequentialGroup()
+                .addGap(17, 17, 17)
+                .addGroup(ventanaJuegoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(pista, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(botonesTablero, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(ventanaJuegoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(ventanaJuegoLayout.createSequentialGroup()
-                        .addGap(17, 17, 17)
-                        .addComponent(pista))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(cronometro, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(298, 298, 298))
                     .addGroup(ventanaJuegoLayout.createSequentialGroup()
-                        .addGap(30, 30, 30)
-                        .addComponent(botonesTablero, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(35, 35, 35)
-                .addComponent(tablero, javax.swing.GroupLayout.PREFERRED_SIZE, 628, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 84, Short.MAX_VALUE)
-                .addComponent(cronometro, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(452, 452, 452))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(tablero, javax.swing.GroupLayout.PREFERRED_SIZE, 491, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(99, Short.MAX_VALUE))))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -686,13 +688,13 @@ public class VentanaJuego extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(ventanaJuego, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(ventanaJuego, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 12, Short.MAX_VALUE)
+                .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(ventanaJuego, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
