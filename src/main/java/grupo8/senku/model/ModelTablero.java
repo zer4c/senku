@@ -8,7 +8,7 @@ import java.util.ArrayList;
  *
  * @author INTEL
  */
-public abstract class ModelTablero {
+public abstract class ModelTablero implements Cloneable{
     protected int ifilas;
     protected int icolumnas;
     protected ArrayList<ArrayList<ModelFicha>> fichas; 
@@ -20,6 +20,11 @@ public abstract class ModelTablero {
         this.icolumnas = icolumnas;
         fichas = new ArrayList<>();
         inicializarTablero(); 
+    } 
+    
+    @Override
+    public Object clone() throws CloneNotSupportedException {
+        return super.clone();
     }
     
     private void inicializarTablero(){
