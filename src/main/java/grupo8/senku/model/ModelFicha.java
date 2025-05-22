@@ -26,7 +26,6 @@ public class ModelFicha {
         this.eliminada = false;
         this.invisible = false;
     }
-    
     public void veliminar(){
         this.activa = false;
         this.eliminada = true;

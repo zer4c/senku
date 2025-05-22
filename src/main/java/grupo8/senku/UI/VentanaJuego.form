@@ -152,7 +152,7 @@
             <Component class="javax.swing.JButton" name="Ficha4">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/grupo8/senku/UI/resources/ficha.png"/>
+                  <Image iconType="3" name="/ficha.png"/>
                 </Property>
                 <Property name="borderPainted" type="boolean" value="false"/>
                 <Property name="contentAreaFilled" type="boolean" value="false"/>
@@ -164,7 +164,7 @@
             <Component class="javax.swing.JButton" name="Ficha5">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/grupo8/senku/UI/resources/ficha.png"/>
+                  <Image iconType="3" name="/ficha.png"/>
                 </Property>
                 <Property name="borderPainted" type="boolean" value="false"/>
                 <Property name="contentAreaFilled" type="boolean" value="false"/>
@@ -176,7 +176,7 @@
             <Component class="javax.swing.JButton" name="Ficha6">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/grupo8/senku/UI/resources/ficha.png"/>
+                  <Image iconType="3" name="/ficha.png"/>
                 </Property>
                 <Property name="borderPainted" type="boolean" value="false"/>
                 <Property name="contentAreaFilled" type="boolean" value="false"/>
@@ -188,7 +188,7 @@
             <Component class="javax.swing.JButton" name="Ficha9">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/grupo8/senku/UI/resources/ficha.png"/>
+                  <Image iconType="3" name="/ficha.png"/>
                 </Property>
                 <Property name="borderPainted" type="boolean" value="false"/>
                 <Property name="contentAreaFilled" type="boolean" value="false"/>
@@ -200,7 +200,7 @@
             <Component class="javax.swing.JButton" name="Ficha10">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/grupo8/senku/UI/resources/ficha.png"/>
+                  <Image iconType="3" name="/ficha.png"/>
                 </Property>
                 <Property name="borderPainted" type="boolean" value="false"/>
                 <Property name="contentAreaFilled" type="boolean" value="false"/>
@@ -212,7 +212,7 @@
             <Component class="javax.swing.JButton" name="Ficha11">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/grupo8/senku/UI/resources/ficha.png"/>
+                  <Image iconType="3" name="/ficha.png"/>
                 </Property>
                 <Property name="borderPainted" type="boolean" value="false"/>
                 <Property name="contentAreaFilled" type="boolean" value="false"/>
@@ -224,7 +224,7 @@
             <Component class="javax.swing.JButton" name="Ficha12">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/grupo8/senku/UI/resources/fichaActiva.png"/>
+                  <Image iconType="3" name="/fichaActiva.png"/>
                 </Property>
                 <Property name="borderPainted" type="boolean" value="false"/>
                 <Property name="contentAreaFilled" type="boolean" value="false"/>
@@ -236,7 +236,7 @@
             <Component class="javax.swing.JButton" name="Ficha13">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/grupo8/senku/UI/resources/ficha.png"/>
+                  <Image iconType="3" name="/ficha.png"/>
                 </Property>
                 <Property name="borderPainted" type="boolean" value="false"/>
                 <Property name="contentAreaFilled" type="boolean" value="false"/>
@@ -248,7 +248,7 @@
             <Component class="javax.swing.JButton" name="Ficha7">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/grupo8/senku/UI/resources/ficha.png"/>
+                  <Image iconType="3" name="/ficha.png"/>
                 </Property>
                 <Property name="borderPainted" type="boolean" value="false"/>
                 <Property name="contentAreaFilled" type="boolean" value="false"/>
@@ -260,7 +260,7 @@
             <Component class="javax.swing.JButton" name="Ficha8">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/grupo8/senku/UI/resources/ficha.png"/>
+                  <Image iconType="3" name="/ficha.png"/>
                 </Property>
                 <Property name="borderPainted" type="boolean" value="false"/>
                 <Property name="contentAreaFilled" type="boolean" value="false"/>
@@ -272,7 +272,7 @@
             <Component class="javax.swing.JButton" name="Ficha14">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/grupo8/senku/UI/resources/ficha.png"/>
+                  <Image iconType="3" name="/ficha.png"/>
                 </Property>
                 <Property name="borderPainted" type="boolean" value="false"/>
                 <Property name="contentAreaFilled" type="boolean" value="false"/>
@@ -284,7 +284,7 @@
             <Component class="javax.swing.JButton" name="Ficha15">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/grupo8/senku/UI/resources/ficha.png"/>
+                  <Image iconType="3" name="/ficha.png"/>
                 </Property>
                 <Property name="borderPainted" type="boolean" value="false"/>
                 <Property name="contentAreaFilled" type="boolean" value="false"/>
@@ -296,7 +296,7 @@
             <Component class="javax.swing.JButton" name="Ficha16">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/grupo8/senku/UI/resources/ficha.png"/>
+                  <Image iconType="3" name="/ficha.png"/>
                 </Property>
                 <Property name="borderPainted" type="boolean" value="false"/>
                 <Property name="contentAreaFilled" type="boolean" value="false"/>
@@ -308,7 +308,7 @@
             <Component class="javax.swing.JButton" name="Ficha17">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/grupo8/senku/UI/resources/ficha.png"/>
+                  <Image iconType="3" name="/ficha.png"/>
                 </Property>
                 <Property name="borderPainted" type="boolean" value="false"/>
                 <Property name="contentAreaFilled" type="boolean" value="false"/>
@@ -320,7 +320,7 @@
             <Component class="javax.swing.JButton" name="Ficha18">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/grupo8/senku/UI/resources/ficha.png"/>
+                  <Image iconType="3" name="/ficha.png"/>
                 </Property>
                 <Property name="borderPainted" type="boolean" value="false"/>
                 <Property name="contentAreaFilled" type="boolean" value="false"/>
@@ -332,7 +332,7 @@
             <Component class="javax.swing.JButton" name="Ficha19">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/grupo8/senku/UI/resources/fichaActiva.png"/>
+                  <Image iconType="3" name="/fichaActiva.png"/>
                 </Property>
                 <Property name="borderPainted" type="boolean" value="false"/>
                 <Property name="contentAreaFilled" type="boolean" value="false"/>
@@ -344,7 +344,7 @@
             <Component class="javax.swing.JButton" name="Ficha20">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/grupo8/senku/UI/resources/ficha.png"/>
+                  <Image iconType="3" name="/ficha.png"/>
                 </Property>
                 <Property name="borderPainted" type="boolean" value="false"/>
                 <Property name="contentAreaFilled" type="boolean" value="false"/>
@@ -356,7 +356,7 @@
             <Component class="javax.swing.JButton" name="Ficha21">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/grupo8/senku/UI/resources/ficha.png"/>
+                  <Image iconType="3" name="/ficha.png"/>
                 </Property>
                 <Property name="borderPainted" type="boolean" value="false"/>
                 <Property name="contentAreaFilled" type="boolean" value="false"/>
@@ -368,7 +368,7 @@
             <Component class="javax.swing.JButton" name="Ficha22">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/grupo8/senku/UI/resources/ficha.png"/>
+                  <Image iconType="3" name="/ficha.png"/>
                 </Property>
                 <Property name="borderPainted" type="boolean" value="false"/>
                 <Property name="contentAreaFilled" type="boolean" value="false"/>
@@ -380,7 +380,7 @@
             <Component class="javax.swing.JButton" name="Ficha23">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/grupo8/senku/UI/resources/ficha.png"/>
+                  <Image iconType="3" name="/ficha.png"/>
                 </Property>
                 <Property name="borderPainted" type="boolean" value="false"/>
                 <Property name="contentAreaFilled" type="boolean" value="false"/>
@@ -392,7 +392,7 @@
             <Component class="javax.swing.JButton" name="Ficha24">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/grupo8/senku/UI/resources/ficha.png"/>
+                  <Image iconType="3" name="/ficha.png"/>
                 </Property>
                 <Property name="borderPainted" type="boolean" value="false"/>
                 <Property name="contentAreaFilled" type="boolean" value="false"/>
@@ -404,7 +404,7 @@
             <Component class="javax.swing.JButton" name="Ficha25">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/grupo8/senku/UI/resources/ficha.png"/>
+                  <Image iconType="3" name="/ficha.png"/>
                 </Property>
                 <Property name="borderPainted" type="boolean" value="false"/>
                 <Property name="contentAreaFilled" type="boolean" value="false"/>
@@ -416,7 +416,7 @@
             <Component class="javax.swing.JButton" name="Ficha26">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/grupo8/senku/UI/resources/ficha.png"/>
+                  <Image iconType="3" name="/ficha.png"/>
                 </Property>
                 <Property name="borderPainted" type="boolean" value="false"/>
                 <Property name="contentAreaFilled" type="boolean" value="false"/>
@@ -428,7 +428,7 @@
             <Component class="javax.swing.JButton" name="Ficha27">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/grupo8/senku/UI/resources/ficha.png"/>
+                  <Image iconType="3" name="/ficha.png"/>
                 </Property>
                 <Property name="borderPainted" type="boolean" value="false"/>
                 <Property name="contentAreaFilled" type="boolean" value="false"/>
@@ -440,7 +440,7 @@
             <Component class="javax.swing.JButton" name="Ficha28">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/grupo8/senku/UI/resources/fichaActiva.png"/>
+                  <Image iconType="3" name="/fichaActiva.png"/>
                 </Property>
                 <Property name="borderPainted" type="boolean" value="false"/>
                 <Property name="contentAreaFilled" type="boolean" value="false"/>
@@ -452,7 +452,7 @@
             <Component class="javax.swing.JButton" name="Ficha29">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/grupo8/senku/UI/resources/ficha.png"/>
+                  <Image iconType="3" name="/ficha.png"/>
                 </Property>
                 <Property name="borderPainted" type="boolean" value="false"/>
                 <Property name="contentAreaFilled" type="boolean" value="false"/>
@@ -464,7 +464,7 @@
             <Component class="javax.swing.JButton" name="Ficha30">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/grupo8/senku/UI/resources/ficha.png"/>
+                  <Image iconType="3" name="/ficha.png"/>
                 </Property>
                 <Property name="borderPainted" type="boolean" value="false"/>
                 <Property name="contentAreaFilled" type="boolean" value="false"/>
@@ -476,7 +476,7 @@
             <Component class="javax.swing.JButton" name="Ficha31">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/grupo8/senku/UI/resources/ficha.png"/>
+                  <Image iconType="3" name="/ficha.png"/>
                 </Property>
                 <Property name="borderPainted" type="boolean" value="false"/>
                 <Property name="contentAreaFilled" type="boolean" value="false"/>
@@ -488,7 +488,7 @@
             <Component class="javax.swing.JButton" name="Ficha32">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/grupo8/senku/UI/resources/ficha.png"/>
+                  <Image iconType="3" name="/ficha.png"/>
                 </Property>
                 <Property name="borderPainted" type="boolean" value="false"/>
                 <Property name="contentAreaFilled" type="boolean" value="false"/>
@@ -500,7 +500,7 @@
             <Component class="javax.swing.JButton" name="Ficha33">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/grupo8/senku/UI/resources/ficha.png"/>
+                  <Image iconType="3" name="/ficha.png"/>
                 </Property>
                 <Property name="borderPainted" type="boolean" value="false"/>
                 <Property name="contentAreaFilled" type="boolean" value="false"/>
@@ -512,7 +512,7 @@
             <Component class="javax.swing.JButton" name="Ficha34">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/grupo8/senku/UI/resources/ficha.png"/>
+                  <Image iconType="3" name="/ficha.png"/>
                 </Property>
                 <Property name="borderPainted" type="boolean" value="false"/>
                 <Property name="contentAreaFilled" type="boolean" value="false"/>
@@ -524,7 +524,7 @@
             <Component class="javax.swing.JButton" name="Ficha35">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/grupo8/senku/UI/resources/ficha.png"/>
+                  <Image iconType="3" name="/ficha.png"/>
                 </Property>
                 <Property name="borderPainted" type="boolean" value="false"/>
                 <Property name="contentAreaFilled" type="boolean" value="false"/>
@@ -536,7 +536,7 @@
             <Component class="javax.swing.JButton" name="Ficha36">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/grupo8/senku/UI/resources/ficha.png"/>
+                  <Image iconType="3" name="/ficha.png"/>
                 </Property>
                 <Property name="borderPainted" type="boolean" value="false"/>
                 <Property name="contentAreaFilled" type="boolean" value="false"/>
@@ -548,7 +548,7 @@
             <Component class="javax.swing.JButton" name="Ficha37">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/grupo8/senku/UI/resources/ficha.png"/>
+                  <Image iconType="3" name="/ficha.png"/>
                 </Property>
                 <Property name="borderPainted" type="boolean" value="false"/>
                 <Property name="contentAreaFilled" type="boolean" value="false"/>
@@ -560,7 +560,7 @@
             <Component class="javax.swing.JButton" name="Ficha38">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/grupo8/senku/UI/resources/ficha.png"/>
+                  <Image iconType="3" name="/ficha.png"/>
                 </Property>
                 <Property name="borderPainted" type="boolean" value="false"/>
                 <Property name="contentAreaFilled" type="boolean" value="false"/>
@@ -572,7 +572,7 @@
             <Component class="javax.swing.JButton" name="Ficha39">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/grupo8/senku/UI/resources/ficha.png"/>
+                  <Image iconType="3" name="/ficha.png"/>
                 </Property>
                 <Property name="borderPainted" type="boolean" value="false"/>
                 <Property name="contentAreaFilled" type="boolean" value="false"/>
@@ -584,7 +584,7 @@
             <Component class="javax.swing.JButton" name="Ficha40">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/grupo8/senku/UI/resources/ficha.png"/>
+                  <Image iconType="3" name="/ficha.png"/>
                 </Property>
                 <Property name="borderPainted" type="boolean" value="false"/>
                 <Property name="contentAreaFilled" type="boolean" value="false"/>
@@ -596,7 +596,7 @@
             <Component class="javax.swing.JButton" name="Ficha41">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/grupo8/senku/UI/resources/ficha.png"/>
+                  <Image iconType="3" name="/ficha.png"/>
                 </Property>
                 <Property name="borderPainted" type="boolean" value="false"/>
                 <Property name="contentAreaFilled" type="boolean" value="false"/>
@@ -608,7 +608,7 @@
             <Component class="javax.swing.JButton" name="Ficha42">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/grupo8/senku/UI/resources/ficha.png"/>
+                  <Image iconType="3" name="/ficha.png"/>
                 </Property>
                 <Property name="borderPainted" type="boolean" value="false"/>
                 <Property name="contentAreaFilled" type="boolean" value="false"/>
@@ -620,7 +620,7 @@
             <Component class="javax.swing.JButton" name="Ficha43">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/grupo8/senku/UI/resources/ficha.png"/>
+                  <Image iconType="3" name="/ficha.png"/>
                 </Property>
                 <Property name="borderPainted" type="boolean" value="false"/>
                 <Property name="contentAreaFilled" type="boolean" value="false"/>
@@ -632,7 +632,7 @@
             <Component class="javax.swing.JButton" name="Ficha44">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/grupo8/senku/UI/resources/ficha.png"/>
+                  <Image iconType="3" name="/ficha.png"/>
                 </Property>
                 <Property name="borderPainted" type="boolean" value="false"/>
                 <Property name="contentAreaFilled" type="boolean" value="false"/>
@@ -644,7 +644,7 @@
             <Component class="javax.swing.JButton" name="Ficha45">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/grupo8/senku/UI/resources/ficha.png"/>
+                  <Image iconType="3" name="/ficha.png"/>
                 </Property>
                 <Property name="borderPainted" type="boolean" value="false"/>
                 <Property name="contentAreaFilled" type="boolean" value="false"/>
@@ -656,7 +656,7 @@
             <Component class="javax.swing.JButton" name="Ficha46">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/grupo8/senku/UI/resources/ficha.png"/>
+                  <Image iconType="3" name="/ficha.png"/>
                 </Property>
                 <Property name="borderPainted" type="boolean" value="false"/>
                 <Property name="contentAreaFilled" type="boolean" value="false"/>
@@ -668,7 +668,7 @@
             <Component class="javax.swing.JButton" name="Ficha47">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/grupo8/senku/UI/resources/ficha.png"/>
+                  <Image iconType="3" name="/ficha.png"/>
                 </Property>
                 <Property name="borderPainted" type="boolean" value="false"/>
                 <Property name="contentAreaFilled" type="boolean" value="false"/>
@@ -680,7 +680,7 @@
             <Component class="javax.swing.JButton" name="Ficha48">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/grupo8/senku/UI/resources/ficha.png"/>
+                  <Image iconType="3" name="/ficha.png"/>
                 </Property>
                 <Property name="borderPainted" type="boolean" value="false"/>
                 <Property name="contentAreaFilled" type="boolean" value="false"/>
@@ -692,7 +692,7 @@
             <Component class="javax.swing.JButton" name="Ficha49">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/grupo8/senku/UI/resources/ficha.png"/>
+                  <Image iconType="3" name="/ficha.png"/>
                 </Property>
                 <Property name="borderPainted" type="boolean" value="false"/>
                 <Property name="contentAreaFilled" type="boolean" value="false"/>
