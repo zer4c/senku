@@ -21,34 +21,33 @@ public class ModelFicha {
     }
     
     //Cambia el estado de las fichas
-    public void activar(){
+    public void vactivar(){
         this.activa = true;
         this.eliminada = false;
         this.invisible = false;
     }
-    
-    public void eliminar(){
+    public void veliminar(){
         this.activa = false;
         this.eliminada = true;
         this.invisible = false;
     }
     
-    public void hacerInvisible(){
+    public void vhacerInvisible(){
         this.activa = false;
         this.eliminada = false;
         this.invisible = true;
     }
     
     //Pregunta estado de las fichas 
-    public boolean estaActiva(){
+    public boolean bestaActiva(){
         return activa;
     }
     
-    public boolean estaEliminada(){
+    public boolean bestaEliminada(){
         return eliminada;
     }
     
-    public boolean esInvisible(){
+    public boolean besInvisible(){
         return invisible;
     }
 }

@@ -8,25 +8,29 @@ import java.util.ArrayList;
  *
  * @author INTEL
  */
-public abstract class ModelTablero {
-    protected int filas;
-    protected int columnas;
+public abstract class ModelTablero implements Cloneable{
+    protected int ifilas;
+    protected int icolumnas;
     protected ArrayList<ArrayList<ModelFicha>> fichas; 
     
     
     // para decirle el tamaño de las filas y columas segun el nivel por ahora 7x7
-    public ModelTablero(int filas, int columnas){
-        this.filas = 7;
-        this.columnas = 7;
-        
+    public ModelTablero(int ifilas, int icolumnas){
+        this.ifilas = ifilas;
+        this.icolumnas = icolumnas;
         fichas = new ArrayList<>();
         inicializarTablero(); 
+    } 
+    
+    @Override
+    public Object clone() throws CloneNotSupportedException {
+        return super.clone();
     }
     
     private void inicializarTablero(){
-        for(int i = 0; i < filas; i++){
+        for(int i = 0; i < ifilas; i++){
             ArrayList<ModelFicha> fila = new ArrayList<>();
-            for (int j = 0; i < columnas; j++){
+            for (int j = 0; j < icolumnas; j++){
                 ModelFicha ficha = new ModelFicha();
                 fila.add(ficha); //va a ser invisible pq puse todo invisible como estado inicial creo xd
             }
@@ -34,22 +38,22 @@ public abstract class ModelTablero {
         }
     }
     
-    public ModelFicha getFicha(int fila, int columna){
-    return null;
+    public ModelFicha getFicha(int ifila, int icolumna){
+        if (ifila >= 0 && ifila < ifilas && icolumna >= 0 && icolumna < icolumnas) {
+            return fichas.get(ifila).get(icolumna);
+        }
+        return null;
     }
     
-    public boolean activarFicha(int fila, int columna){
-    return false;
+    public int igetFilas() {
+        return this.ifilas;
     }
     
-    public boolean eliminarFicha(){
-    return false;
+    public int igetColumnas() {
+        return this.icolumnas;
     }
-    
-    public boolean puedeComer(){
-    return false;
-    }
-    public boolean moverFicha(){
-    return false;
-    }
+    public abstract boolean bactivarFicha(int ifila, int icolumna);
+    public abstract boolean beliminarFicha(int ifila, int icolumna);
+    public abstract boolean bpuedeComer(int ifila, int icolumna, String sdireccion);
+    public abstract boolean bmoverFicha(int ifilaOrigen, int icolOrigen, String sdireccion);
 }
