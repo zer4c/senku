@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package grupo8.senku.UI;
+import grupo8.senku.controller.ControllerUI;
 import javax.swing.ImageIcon;
 import java.awt.Image;
 
@@ -11,11 +12,15 @@ import java.awt.Image;
  * @author Azurduy
  */
 public class Seleccionjuego extends javax.swing.JFrame {
-
+    private ControllerUI control;
+    private FondoApp fondo;
     /**
      * Creates new form Seleccionjuego
      */
-    public Seleccionjuego() {
+    public Seleccionjuego(ControllerUI control) {
+        this.control = control;
+        fondo = new FondoApp();
+        this.setContentPane(fondo);
         initComponents();
     }
 
@@ -40,16 +45,25 @@ public class Seleccionjuego extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         seleccionJuego.setBackground(new java.awt.Color(180, 132, 108));
+        seleccionJuego.setOpaque(false);
 
-        contenedorTriangulo.setBackground(new java.awt.Color(125, 90, 80));
+        contenedorTriangulo.setBackground(new java.awt.Color(106, 65, 60));
 
         opcionTriangulo.setBackground(new java.awt.Color(125, 90, 80));
         opcionTriangulo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/triangulo.png"))); // NOI18N
         opcionTriangulo.setBorderPainted(false);
+        opcionTriangulo.setContentAreaFilled(false);
         opcionTriangulo.setRolloverEnabled(false);
         opcionTriangulo.setVerifyInputWhenFocusTarget(false);
+        opcionTriangulo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                opcionTrianguloActionPerformed(evt);
+            }
+        });
 
-        dificultadTriangulo.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        dificultadTriangulo.setBackground(new java.awt.Color(255, 255, 255));
+        dificultadTriangulo.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        dificultadTriangulo.setForeground(new java.awt.Color(255, 255, 255));
         dificultadTriangulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         dificultadTriangulo.setText("DIFICULTAD FACIL");
 
@@ -59,31 +73,39 @@ public class Seleccionjuego extends javax.swing.JFrame {
             contenedorTrianguloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(contenedorTrianguloLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(dificultadTriangulo, javax.swing.GroupLayout.DEFAULT_SIZE, 688, Short.MAX_VALUE)
+                .addComponent(dificultadTriangulo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, contenedorTrianguloLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(contenedorTrianguloLayout.createSequentialGroup()
+                .addGap(34, 34, 34)
                 .addComponent(opcionTriangulo)
-                .addGap(77, 77, 77))
+                .addContainerGap(40, Short.MAX_VALUE))
         );
         contenedorTrianguloLayout.setVerticalGroup(
             contenedorTrianguloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(contenedorTrianguloLayout.createSequentialGroup()
-                .addComponent(opcionTriangulo)
-                .addGap(18, 18, 18)
+                .addComponent(opcionTriangulo, javax.swing.GroupLayout.PREFERRED_SIZE, 326, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(dificultadTriangulo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(12, 12, 12))
+                .addContainerGap())
         );
 
-        contenedorCruz.setBackground(new java.awt.Color(125, 90, 80));
+        contenedorCruz.setBackground(contenedorTriangulo.getBackground());
+        contenedorCruz.setPreferredSize(new java.awt.Dimension(320, 320));
 
         opcionCruz.setBackground(new java.awt.Color(125, 90, 80));
         opcionCruz.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cruz.png"))); // NOI18N
         opcionCruz.setBorderPainted(false);
+        opcionCruz.setContentAreaFilled(false);
         opcionCruz.setRolloverEnabled(false);
         opcionCruz.setVerifyInputWhenFocusTarget(false);
+        opcionCruz.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                opcionCruzActionPerformed(evt);
+            }
+        });
 
-        dificultadCruz.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        dificultadCruz.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        dificultadCruz.setForeground(new java.awt.Color(255, 255, 255));
         dificultadCruz.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         dificultadCruz.setText("DIFICULTAD DIFICIL");
 
@@ -91,27 +113,26 @@ public class Seleccionjuego extends javax.swing.JFrame {
         contenedorCruz.setLayout(contenedorCruzLayout);
         contenedorCruzLayout.setHorizontalGroup(
             contenedorCruzLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(contenedorCruzLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(dificultadCruz, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-            .addGroup(contenedorCruzLayout.createSequentialGroup()
-                .addGap(76, 76, 76)
+            .addComponent(dificultadCruz, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, contenedorCruzLayout.createSequentialGroup()
+                .addContainerGap(31, Short.MAX_VALUE)
                 .addComponent(opcionCruz)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(25, 25, 25))
         );
         contenedorCruzLayout.setVerticalGroup(
             contenedorCruzLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(contenedorCruzLayout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, contenedorCruzLayout.createSequentialGroup()
                 .addComponent(opcionCruz)
-                .addGap(18, 18, 18)
-                .addComponent(dificultadCruz, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(12, 12, 12))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
+                .addComponent(dificultadCruz)
+                .addContainerGap())
         );
 
-        menu.setBackground(new java.awt.Color(180, 132, 108));
+        menu.setBackground(new java.awt.Color(106, 65, 60));
         menu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/casa.png"))); // NOI18N
         menu.setBorderPainted(false);
+        menu.setContentAreaFilled(false);
+        menu.setFocusPainted(false);
         menu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 menuActionPerformed(evt);
@@ -123,49 +144,56 @@ public class Seleccionjuego extends javax.swing.JFrame {
         seleccionJuegoLayout.setHorizontalGroup(
             seleccionJuegoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(seleccionJuegoLayout.createSequentialGroup()
-                .addGap(56, 56, 56)
                 .addGroup(seleccionJuegoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(menu)
                     .addGroup(seleccionJuegoLayout.createSequentialGroup()
+                        .addGap(209, 209, 209)
                         .addComponent(contenedorTriangulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(contenedorCruz, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(473, Short.MAX_VALUE))
+                        .addGap(141, 141, 141)
+                        .addComponent(contenedorCruz, javax.swing.GroupLayout.PREFERRED_SIZE, 382, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(seleccionJuegoLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(menu)))
+                .addContainerGap(253, Short.MAX_VALUE))
         );
         seleccionJuegoLayout.setVerticalGroup(
             seleccionJuegoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(seleccionJuegoLayout.createSequentialGroup()
-                .addGap(19, 19, 19)
+                .addContainerGap()
                 .addComponent(menu)
-                .addGap(41, 41, 41)
-                .addGroup(seleccionJuegoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(contenedorTriangulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(contenedorCruz, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(530, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 122, Short.MAX_VALUE)
+                .addGroup(seleccionJuegoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(contenedorTriangulo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(contenedorCruz, javax.swing.GroupLayout.DEFAULT_SIZE, 373, Short.MAX_VALUE))
+                .addGap(113, 113, 113))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(seleccionJuego, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(157, Short.MAX_VALUE))
+            .addComponent(seleccionJuego, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(seleccionJuego, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 543, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void menuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuActionPerformed
-        // TODO add your handling code here:
+        control.irHome();
     }//GEN-LAST:event_menuActionPerformed
+
+    private void opcionTrianguloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcionTrianguloActionPerformed
+        control.seleccionarFacil();
+    }//GEN-LAST:event_opcionTrianguloActionPerformed
+
+    private void opcionCruzActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcionCruzActionPerformed
+        control.seleccionarDificil();
+    }//GEN-LAST:event_opcionCruzActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
