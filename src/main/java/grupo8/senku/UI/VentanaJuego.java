@@ -101,9 +101,10 @@ public class VentanaJuego extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         ventanaJuego.setBackground(new java.awt.Color(180, 132, 108));
-        ventanaJuego.setPreferredSize(new java.awt.Dimension(1947, 1423));
+        ventanaJuego.setPreferredSize(new java.awt.Dimension(1385, 671));
 
         tablero.setBackground(new java.awt.Color(125, 90, 80));
+        tablero.setPreferredSize(new java.awt.Dimension(400, 400));
         tablero.setLayout(new java.awt.GridLayout(7, 7));
 
         Ficha1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fichaActiva.png"))); // NOI18N
@@ -649,52 +650,46 @@ public class VentanaJuego extends javax.swing.JFrame {
         ventanaJuego.setLayout(ventanaJuegoLayout);
         ventanaJuegoLayout.setHorizontalGroup(
             ventanaJuegoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(ventanaJuegoLayout.createSequentialGroup()
-                .addGap(505, 505, 505)
-                .addComponent(tablero, javax.swing.GroupLayout.PREFERRED_SIZE, 880, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(562, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ventanaJuegoLayout.createSequentialGroup()
                 .addGap(17, 17, 17)
                 .addComponent(pista)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(botonesTablero, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(146, 146, 146))
+                .addComponent(botonesTablero, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(49, 49, 49))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ventanaJuegoLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(392, 392, 392)
+                .addComponent(tablero, javax.swing.GroupLayout.PREFERRED_SIZE, 601, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 184, Short.MAX_VALUE)
                 .addComponent(cronometro, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(111, 111, 111))
+                .addGap(18, 18, 18))
         );
         ventanaJuegoLayout.setVerticalGroup(
             ventanaJuegoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ventanaJuegoLayout.createSequentialGroup()
+                .addGap(17, 17, 17)
+                .addGroup(ventanaJuegoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(pista)
+                    .addComponent(botonesTablero, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(ventanaJuegoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(ventanaJuegoLayout.createSequentialGroup()
-                        .addGap(17, 17, 17)
-                        .addComponent(pista))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(cronometro, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(16, 16, 16))
                     .addGroup(ventanaJuegoLayout.createSequentialGroup()
-                        .addGap(30, 30, 30)
-                        .addComponent(botonesTablero, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(35, 35, 35)
-                .addComponent(tablero, javax.swing.GroupLayout.PREFERRED_SIZE, 628, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 84, Short.MAX_VALUE)
-                .addComponent(cronometro, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(452, 452, 452))
+                        .addGap(42, 42, 42)
+                        .addComponent(tablero, javax.swing.GroupLayout.PREFERRED_SIZE, 450, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(94, Short.MAX_VALUE))))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(ventanaJuego, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(ventanaJuego, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 12, Short.MAX_VALUE)
-                .addComponent(ventanaJuego, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(ventanaJuego, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -977,7 +972,7 @@ public class VentanaJuego extends javax.swing.JFrame {
     
         @Override
         public void paint(Graphics g){
-            imagen = new ImageIcon(getClass().getResource("/tablero.jpeg")).getImage();
+            imagen = new ImageIcon(getClass().getResource("/tablero.jpg")).getImage();
             g.drawImage(imagen, 0, 0, getWidth(), getHeight(), this);
 
             setOpaque(false);
