@@ -16,13 +16,7 @@ public class ModelTableroCruz extends ModelTablero {
     }
 
     private void construirTableroCruz() {
-        // Primero desactivamos todas las fichas
-        for (int i = 0; i < ifilas; i++) {
-            for (int j = 0; j < icolumnas; j++) {
-                fichas.get(i).get(j).vhacerInvisible();
-            }
-        }
-
+        
         // Activamos solo las posiciones que forman una cruz (como el Senku clásico)
         for (int i = 0; i < ifilas; i++) {
             for (int j = 0; j < icolumnas; j++) {
@@ -38,9 +32,6 @@ public class ModelTableroCruz extends ModelTablero {
         fichas.get(3).get(3).veliminar();
     }
 
-    
-    // Los demás métodos (bactivarFicha, beliminarFicha, bpuedeComer, bmoverFicha)
-    // pueden permanecer igual que en tu implementación original
     @Override
     public boolean bactivarFicha(int ifila, int icolumna) {
         boolean bres = false;
@@ -55,7 +46,7 @@ public class ModelTableroCruz extends ModelTablero {
     public boolean beliminarFicha(int ifila, int icolumna) {
         boolean bres = false;
         ModelFicha ficha = getFicha(ifila, icolumna);
-        if (!ficha.besInvisible() && ficha.bestaActiva()) {
+        if (ficha.bestaActiva()) {
             ficha.veliminar();
             bres = true;
         }
@@ -74,18 +65,22 @@ public class ModelTableroCruz extends ModelTablero {
             case "ARRIBA" -> {
                 ifilaMedio -= 1;
                 ifilaDestino -= 2;
+                break;
             }
             case "ABAJO" -> {
                 ifilaMedio += 1;
                 ifilaDestino += 2;
+                break;
             }
             case "IZQUIERDA" -> {
                 icolumnaMedio -= 1;
                 icolumnaDestino -= 2;
+                break;
             }
             case "DERECHA" -> {
                 icolumnaMedio += 1;
                 icolumnaDestino += 2;
+                break;
             }
             default -> {
                 return false;
@@ -101,7 +96,7 @@ public class ModelTableroCruz extends ModelTablero {
         if (!origen.besInvisible() && !medio.besInvisible() && !destino.besInvisible()) {
             boolean origenValido = origen.bestaActiva();
             boolean medioOcupado = medio.bestaActiva();
-            boolean destinoLibre = !destino.bestaActiva();
+            boolean destinoLibre = destino.bestaEliminada();
 
             bpuedeComer = origenValido && medioOcupado && destinoLibre;
         }
@@ -119,18 +114,22 @@ public class ModelTableroCruz extends ModelTablero {
                 case "ARRIBA" -> {
                     ifilaMedio -= 1;
                     ifilaDestino -= 2;
+                    break;
                 }
                 case "ABAJO" -> {
                     ifilaMedio += 1;
                     ifilaDestino += 2;
+                    break;
                 }
                 case "IZQUIERDA" -> {
                     icolMedio -= 1;
                     icolDestino -= 2;
+                    break;
                 }
                 case "DERECHA" -> {
                     icolMedio += 1;
                     icolDestino += 2;
+                    break;
                 }
                 default -> ifilaDestino = -1;
             }

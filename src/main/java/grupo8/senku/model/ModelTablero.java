@@ -32,7 +32,7 @@ public abstract class ModelTablero implements Cloneable{
             ArrayList<ModelFicha> fila = new ArrayList<>();
             for (int j = 0; j < icolumnas; j++){
                 ModelFicha ficha = new ModelFicha();
-                fila.add(ficha); //va a ser invisible pq puse todo invisible como estado inicial creo xd
+                fila.add(ficha);
             }
             fichas.add(fila);
         }

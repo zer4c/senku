@@ -147,6 +147,10 @@ public class Juego {
         return brespuesta;
     }
     
+    public void vreiniciarTiempo(){
+        tiempo = 0;
+    }
+    
     public ModelTablero MTgetTablero(){
         return this.tablero;
     }

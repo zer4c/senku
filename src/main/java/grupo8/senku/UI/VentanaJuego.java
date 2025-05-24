@@ -8,7 +8,6 @@ package grupo8.senku.UI;
 import grupo8.senku.controller.ControllerUI;
 import javax.swing.*;
 import java.awt.*;
-import javax.swing.border.Border;
 
 /**
  *
@@ -29,25 +28,14 @@ public class VentanaJuego extends javax.swing.JFrame {
         initComponents();
     }
     
-    public void vAgregarBotonesTablero(JButton boton, int est){
-        Color CcolorBorde = new Color(0xcca46d);
-        Border Bborde = BorderFactory.createLineBorder(CcolorBorde,3);
-        if(est > 0){
-            boton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fichaActiva.png")));
-            boton.setBorder(Bborde);
-        }else if(est == 0){
-            boton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ficha.png")));
-            boton.setBorder(Bborde);
-        }else{
-            boton.setEnabled(false);           
-            boton.setOpaque(false);            
-            boton.setFocusPainted(false);
-            boton.setBorderPainted(false);
-        }
-        boton.setContentAreaFilled(false);
-        boton.setText("");
-        boton.setPreferredSize(new Dimension(50,50));
-        tablero.add(boton);
+    public void vAgregarBotonesTablero(int ifila,int icol, int est){
+        JButton Jboton = new BotonJuego(ifila, icol, est);
+        Jboton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                comer(evt);
+            }
+        });
+        tablero.add(Jboton);
     }
     
     public void vIniciarBotones(int fil, int col){
@@ -55,9 +43,21 @@ public class VentanaJuego extends javax.swing.JFrame {
     }
     
     public void setCronometro(int itiempo){
-        cronometro.setText(itiempo/60 + " " + ":" + itiempo%60 + " ");
+        cronometro.setText(itiempo/60 + ":" + itiempo%60 + " ");
     }
     
+    public void vsetError(String mensaje){
+        Error.setText(mensaje);
+    }
+    
+    public void vvaciarTablero(){
+        tablero.removeAll();
+    }
+    
+    private void comer(java.awt.event.ActionEvent evt){
+        BotonJuego Jboton = (BotonJuego)evt.getSource();
+        control.vmandarJugada(Jboton.igetfila(), Jboton.igetcol());
+    }
     
 //-------------------------------------------------------------------------------------------------------
     /** This method is called from within the constructor to
@@ -73,6 +73,7 @@ public class VentanaJuego extends javax.swing.JFrame {
         tablero = new javax.swing.JPanel();
         pista = new javax.swing.JButton();
         cronometro = new javax.swing.JLabel();
+        Error = new javax.swing.JLabel();
         botonesTablero = new javax.swing.JToolBar();
         restart = new javax.swing.JButton();
         pausa = new javax.swing.JButton();
@@ -101,6 +102,11 @@ public class VentanaJuego extends javax.swing.JFrame {
         cronometro.setText("Cronometro");
         cronometro.setAlignmentY(0.0F);
         cronometro.setOpaque(true);
+
+        Error.setBackground(cronometro.getBackground());
+        Error.setFont(new java.awt.Font("sansserif", 3, 24)); // NOI18N
+        Error.setForeground(new java.awt.Color(230, 69, 83));
+        Error.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
         botonesTablero.setBackground(cronometro.getBackground());
         botonesTablero.setRollover(true);
@@ -148,32 +154,41 @@ public class VentanaJuego extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ventanaJuegoLayout.createSequentialGroup()
                 .addGap(17, 17, 17)
                 .addComponent(pista)
+                .addGap(431, 431, 431)
+                .addComponent(Error)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(botonesTablero, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(49, 49, 49))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ventanaJuegoLayout.createSequentialGroup()
-                .addGap(392, 392, 392)
+            .addGroup(ventanaJuegoLayout.createSequentialGroup()
+                .addGap(351, 351, 351)
                 .addComponent(tablero, javax.swing.GroupLayout.PREFERRED_SIZE, 601, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 184, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ventanaJuegoLayout.createSequentialGroup()
+                .addGap(910, 1177, Short.MAX_VALUE)
                 .addComponent(cronometro, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18))
         );
         ventanaJuegoLayout.setVerticalGroup(
             ventanaJuegoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ventanaJuegoLayout.createSequentialGroup()
-                .addGap(17, 17, 17)
                 .addGroup(ventanaJuegoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(pista)
-                    .addComponent(botonesTablero, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(ventanaJuegoLayout.createSequentialGroup()
+                        .addGap(17, 17, 17)
+                        .addGroup(ventanaJuegoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(pista)
+                            .addComponent(botonesTablero, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(ventanaJuegoLayout.createSequentialGroup()
+                        .addGap(35, 35, 35)
+                        .addComponent(Error)))
                 .addGroup(ventanaJuegoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(ventanaJuegoLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(cronometro, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(16, 16, 16))
                     .addGroup(ventanaJuegoLayout.createSequentialGroup()
-                        .addGap(42, 42, 42)
+                        .addGap(54, 54, 54)
                         .addComponent(tablero, javax.swing.GroupLayout.PREFERRED_SIZE, 450, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(94, Short.MAX_VALUE))))
+                        .addContainerGap(82, Short.MAX_VALUE))))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -199,7 +214,7 @@ public class VentanaJuego extends javax.swing.JFrame {
     }//GEN-LAST:event_pausaActionPerformed
 
     private void restartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_restartActionPerformed
-        
+        control.vreiniciarTiempo();
     }//GEN-LAST:event_restartActionPerformed
 
     private void pistaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pistaActionPerformed
@@ -207,6 +222,7 @@ public class VentanaJuego extends javax.swing.JFrame {
     }//GEN-LAST:event_pistaActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Error;
     private javax.swing.JToolBar botonesTablero;
     private javax.swing.JLabel cronometro;
     private javax.swing.JButton menu;

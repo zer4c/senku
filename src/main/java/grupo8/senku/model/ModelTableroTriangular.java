@@ -16,14 +16,7 @@ public class ModelTableroTriangular extends ModelTablero {
     }
 
     private void construirTableroTriangular() {
-    // Primero desactivamos todas las fichas
-        for (int fila = 0; fila < ifilas; fila++) {
-            for (int col = 0; col < icolumnas; col++) {
-                fichas.get(fila).get(col).vhacerInvisible();
-            }
-        }
-
-        // Activamos las fichas en forma de triángulo equilátero
+   
         for (int fila = 0; fila < ifilas; fila++) {
             int fichasEnFila = fila + 1;
             int inicio = (icolumnas - 1) / 2 - fila;
@@ -44,14 +37,14 @@ public class ModelTableroTriangular extends ModelTablero {
     @Override
     public boolean bactivarFicha(int ifila, int icolumna) {
         ModelFicha ficha = getFicha(ifila, icolumna);
-        return !ficha.besInvisible() && ficha.bestaActiva();
+        return ficha.bestaActiva();
     }
 
     @Override
     public boolean beliminarFicha(int ifila, int icolumna) {
         ModelFicha ficha = getFicha(ifila, icolumna);
-        if (!ficha.besInvisible() && ficha.bestaActiva()) {
-            ficha.vhacerInvisible();
+        if (ficha.bestaActiva()) {
+            ficha.veliminar();
             return true;
         }
         return false;
@@ -124,8 +117,8 @@ public class ModelTableroTriangular extends ModelTablero {
             ModelFicha destino = getFicha(fd, cd);
 
             if (!origen.besInvisible() && !medio.besInvisible() && !destino.besInvisible()) {
-                origen.vhacerInvisible();
-                medio.vhacerInvisible();
+                origen.veliminar();
+                medio.veliminar();
                 destino.vactivar();
                 movimientoRealizado = true;
             }
