@@ -92,13 +92,14 @@ public class ModelTableroCruz extends ModelTablero {
         ModelFicha destino = getFicha(ifilaDestino, icolumnaDestino);
 
         boolean bpuedeComer = false;
+        if(origen != null && medio != null && destino != null){
+            if (!origen.besInvisible() && !medio.besInvisible() && !destino.besInvisible()) {
+                boolean origenValido = origen.bestaActiva();
+                boolean medioOcupado = medio.bestaActiva();
+                boolean destinoLibre = destino.bestaEliminada();
 
-        if (!origen.besInvisible() && !medio.besInvisible() && !destino.besInvisible()) {
-            boolean origenValido = origen.bestaActiva();
-            boolean medioOcupado = medio.bestaActiva();
-            boolean destinoLibre = destino.bestaEliminada();
-
-            bpuedeComer = origenValido && medioOcupado && destinoLibre;
+                bpuedeComer = origenValido && medioOcupado && destinoLibre;
+            }
         }
         return bpuedeComer;
     }

@@ -111,7 +111,6 @@ public class Juego {
     // Si no queda solo una ficha, verificar si hay movimientos posibles
     if (ifichasActivas != 1) {
         boolean bhayMovimiento = false;
-
         for (int i = 0; i < tablero.igetFilas() && !bhayMovimiento; i++) {
             for (int j = 0; j < tablero.igetColumnas() && !bhayMovimiento; j++) {
                 if (tablero.bfichaActiva(i, j)) {
@@ -121,14 +120,11 @@ public class Juego {
                                          "DERECHA", "ABAJO_IZQUIERDA", "ABAJO_DERECHA"} :
                             new String[]{"ARRIBA", "ABAJO", "IZQUIERDA", "DERECHA"};
 
-                    try{
-                        for (String dir : direcciones) {
-                            if (tablero.bpuedeComer(i, j, dir)) {
-                                bres = 0;
-                                bhayMovimiento = true;
-                            }
+                    for (String dir : direcciones) {
+                        if (tablero.bpuedeComer(i, j, dir)) {
+                            bres = 0;
+                            bhayMovimiento = true;
                         }
-                    }catch(Exception e){
                     }
                 }
             }

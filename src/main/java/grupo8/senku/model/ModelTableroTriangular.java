@@ -54,7 +54,7 @@ public class ModelTableroTriangular extends ModelTablero {
     public boolean bpuedeComer(int ifila, int icolumna, String sdireccion) {
         int df = 0;
         int dc = 0;
-
+        
         switch (sdireccion.toUpperCase()) {
             case "ARRIBA_IZQUIERDA" -> { df = -1; dc = -1; }
             case "ARRIBA_DERECHA"   -> { df = -1; dc = +1; }
@@ -77,13 +77,13 @@ public class ModelTableroTriangular extends ModelTablero {
         ModelFicha origen = getFicha(ifila, icolumna);
         ModelFicha medio = getFicha(fm, cm);
         ModelFicha destino = getFicha(fd, cd);
-
-        if (!origen.besInvisible() && !medio.besInvisible() && !destino.besInvisible()) {
-            if (origen.bestaActiva() && medio.bestaActiva() && !destino.bestaActiva()) {
-                puedeComer = true;
+        if(origen != null && medio != null && destino != null){
+            if (!origen.besInvisible() && !medio.besInvisible() && !destino.besInvisible()) {
+                if (origen.bestaActiva() && medio.bestaActiva() && destino.bestaEliminada()) {
+                    puedeComer = true;
+                }
             }
         }
-
         return puedeComer;
     }
 

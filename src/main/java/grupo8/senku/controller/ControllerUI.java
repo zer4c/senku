@@ -30,10 +30,12 @@ public class ControllerUI implements PropertyChangeListener {
                 new FrameJugar(this),
                 new Seleccionjuego(this),
                 new SeleccionNiveles(this),
-                new VentanaJuego(this));
+                new VentanaJuego(this),
+                new Ganaste(this),
+                new Perdiste(this));
         actualPantalla = histPantallas.get(0);
-        ancho = 720;
-        alto = 1280;
+        ancho = 1280;
+        alto = 720;
         ifilJugada = -100;
         icolJugada = -100;
     }
@@ -89,6 +91,7 @@ public class ControllerUI implements PropertyChangeListener {
         ModelTablero tablero = juego.MTgetTablero();
         VentanaJuego Vjuego = (VentanaJuego) histPantallas.get(4);
         Vjuego.vvaciarTablero();
+        Vjuego.vsetError("");
         Vjuego.vIniciarBotones(tablero.igetFilas(), tablero.igetColumnas());
         for (int i = 0; i < tablero.igetFilas(); i++) {
             for (int j = 0; j < tablero.igetColumnas(); j++) {
@@ -165,12 +168,11 @@ public class ControllerUI implements PropertyChangeListener {
                 VJvent.vactivarBoton(ifilaAct, icolAct, tablero.igetColumnas());
                 VJvent.veliminarBoton((ifilaAct + ifilJugada) / 2, (icolAct + icolJugada) / 2, tablero.igetColumnas());
                 VJvent.veliminarBoton(ifilJugada, icolJugada, tablero.igetColumnas());
+                VJvent.repaint();
                 if(juego.ijuegoTerminado() == 1){
-                    System.out.println("juego ganado");
-                }else if(juego.ijuegoTerminado() == 0){                
-                    VJvent.repaint();
-                }else{
-                    System.out.println("juego perdido");
+                    cambiarPantalla(5);
+                }else if(juego.ijuegoTerminado() == -1){
+                    cambiarPantalla(6);
                 }
             }else{
                 VJvent.vsetError("movimiento invalido");
@@ -217,7 +219,7 @@ public class ControllerUI implements PropertyChangeListener {
     private void cambiarPantalla(int indice) {
         actualPantalla.setVisible(false);
         actualPantalla = histPantallas.get(indice);
-        actualPantalla.setSize(alto, ancho);
+        actualPantalla.setSize(ancho, alto);
         actualPantalla.setLocationRelativeTo(histPantallas.get(0));
         actualPantalla.setVisible(true);
     }
