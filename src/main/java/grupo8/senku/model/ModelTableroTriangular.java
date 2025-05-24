@@ -31,14 +31,14 @@ public class ModelTableroTriangular extends ModelTablero {
                 int col = inicio + i * 2;
                 if (col >= 0 && col < icolumnas) {
                     // Activamos todas las fichas excepto el vértice superior
-                    if (!(fila == 0 && col == 4)) {  // Esta es la corrección clave
+                    if (!(fila == 0 && col == 4)) {
                         fichas.get(fila).get(col).vactivar();
                     }
                 }
             }
         }
     // Aseguramos explícitamente que el vértice esté vacío
-        fichas.get(0).get(4).vhacerInvisible();
+        fichas.get(0).get(4).veliminar();
 }
 
     @Override

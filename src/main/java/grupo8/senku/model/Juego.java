@@ -5,6 +5,8 @@
 package grupo8.senku.model;
 
 import grupo8.senku.controller.ControllerUI;
+import java.beans.PropertyChangeListener;
+import java.beans.PropertyChangeSupport;
 import java.util.*;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -21,27 +23,29 @@ public class Juego {
     private int movimientos;
     private Timer cronometro;
     private final ControllerUI control;
+    private PropertyChangeSupport pcs = new PropertyChangeSupport(this);
     
+    public static String SactTiempo = "tiempo";
+        
     public Juego(ControllerUI control, ModelTablero tablero){
         this.control = control;
         this.tablero = tablero;
         this.histTablero = new Stack<>();
         this.enJuego = true;
         this.movimientos = 0;
-        this.cronometro = new Timer();
+        this.cronometro = null;
         histTablero.push(tablero);
         tiempo = 0;
-        viniciarCronometro();
     }
     
     public final void viniciarCronometro() {
+        cronometro = new Timer();
         TimerTask tarea = new TimerTask() {
             @Override
             public void run() {
-                int minutos = tiempo / 60;
-                int seg = tiempo % 60;
+                int ianteriorTiempo = tiempo;
                 tiempo++;
-                //control.actualizarVista();
+                pcs.firePropertyChange(SactTiempo, ianteriorTiempo, tiempo);
             }
         };
         cronometro.scheduleAtFixedRate(tarea, 0, 1000);
@@ -70,6 +74,14 @@ public class Juego {
             enJuego = true;
             //control.actualizarVista();
         }
+    }
+    
+    public void vañadirObservador(PropertyChangeListener escucha) {
+        pcs.addPropertyChangeListener(escucha);
+    }
+
+    public void veliminarObservador(PropertyChangeListener escucha) {
+        pcs.removePropertyChangeListener(escucha);
     }
     
     
@@ -117,12 +129,22 @@ public class Juego {
         return bres;
     }
     
-    public void detenerCronometro() {
+    public void vdetenerCronometro() {
         if (cronometro != null) {
             cronometro.cancel();
             cronometro.purge(); // Limpia las tareas canceladas
             cronometro = null;
         }
+    }
+    
+    public boolean bestaPausa(){
+        boolean brespuesta;
+        if(cronometro == null){
+            brespuesta = true;
+        }else{
+            brespuesta = false;
+        }
+        return brespuesta;
     }
     
     public ModelTablero MTgetTablero(){

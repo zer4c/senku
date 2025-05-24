@@ -35,6 +35,7 @@ public class ModelTableroCruz extends ModelTablero {
                 }
             }
         }
+        fichas.get(3).get(3).veliminar();
     }
 
     
