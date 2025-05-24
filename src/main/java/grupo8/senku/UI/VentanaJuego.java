@@ -53,6 +53,17 @@ public class VentanaJuego extends javax.swing.JFrame {
     public void vvaciarTablero(){
         tablero.removeAll();
     }
+    public void veliminarBoton(int ifila, int icol, int itamCol){
+        int pos = icol + (ifila*itamCol);
+        int hol = tablero.getComponentCount();
+        BotonJuego JBboton = (BotonJuego)tablero.getComponent(pos);
+        JBboton.vsetEstado(0);
+    }
+    public void vactivarBoton(int ifila, int icol, int itamCol){
+        int pos = (ifila*itamCol) + icol;
+        BotonJuego JBboton = (BotonJuego)tablero.getComponent(pos);
+        JBboton.vsetEstado(1);
+    }
     
     private void comer(java.awt.event.ActionEvent evt){
         BotonJuego Jboton = (BotonJuego)evt.getSource();

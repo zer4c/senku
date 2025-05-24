@@ -126,15 +126,15 @@ public class ControllerUI implements PropertyChangeListener {
             boolean bpudoComer = false;
             if (tablero instanceof ModelTableroCruz) {
                 if (iauxCol == 0) {
-                    if (iauxFil == 2) {
+                    if (iauxFil == -2) {
                         bpudoComer = tablero.bmoverFicha(ifilJugada, icolJugada, "ARRIBA");
-                    } else if (iauxFil == -2) {
+                    } else if (iauxFil == 2) {
                         bpudoComer = tablero.bmoverFicha(ifilJugada, icolJugada, "ABAJO");
                     }
                 } else if (iauxFil == 0) {
-                    if (iauxCol == 2) {
+                    if (iauxCol == -2) {
                         bpudoComer = tablero.bmoverFicha(ifilJugada, icolJugada, "IZQUIERDA");
-                    } else if (iauxCol == -2) {
+                    } else if (iauxCol == 2) {
                         bpudoComer = tablero.bmoverFicha(ifilJugada, icolJugada, "DERECHA");
                     } else {
 
@@ -142,9 +142,9 @@ public class ControllerUI implements PropertyChangeListener {
                 }
             } else {
                 if (iauxFil == 0) {
-                    if (iauxCol == 2) {
+                    if (iauxCol == -4) {
                         bpudoComer = tablero.bmoverFicha(ifilJugada, icolJugada, "IZQUIERDA");
-                    } else if (iauxCol == -2) {
+                    } else if (iauxCol == 4) {
                         bpudoComer = tablero.bmoverFicha(ifilJugada, icolJugada, "DERECHA");
                     }
                 } else if (iauxFil == 2 && iauxCol == 2) {
@@ -162,7 +162,9 @@ public class ControllerUI implements PropertyChangeListener {
             }
             if(bpudoComer){
                 VJvent.vsetError("");
-                vrellenarTablero();
+                VJvent.vactivarBoton(ifilaAct, icolAct, tablero.igetColumnas());
+                VJvent.veliminarBoton((ifilaAct + ifilJugada) / 2, (icolAct + icolJugada) / 2, tablero.igetColumnas());
+                VJvent.veliminarBoton(ifilJugada, icolJugada, tablero.igetColumnas());
                 VJvent.repaint();
             }else{
                 VJvent.vsetError("movimiento invalido");
