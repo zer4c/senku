@@ -28,6 +28,24 @@ public class VentanaJuego extends javax.swing.JFrame {
         initComponents();
     }
     
+    public void vAgregarBotonesTablero(JButton boton, int est){
+        if(est > 0){
+            boton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fichaActiva.png")));
+            boton.setText("");
+        }else{
+            boton.setEnabled(false);           
+            boton.setOpaque(false);            
+            boton.setContentAreaFilled(false); 
+            boton.setBorderPainted(false);     
+            boton.setFocusPainted(false);      
+            boton.setText("");
+        }
+        tablero.add(boton);
+    }
+    
+    public void vIniciarBotones(int fil, int col){
+        tablero.setLayout(new java.awt.GridLayout(fil, col));
+    }
     
     
 //-------------------------------------------------------------------------------------------------------

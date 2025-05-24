@@ -5,8 +5,11 @@
 package grupo8.senku.controller;
 import java.util.List;
 import grupo8.senku.UI.*;
+import grupo8.senku.model.*;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JButton;
 /**
  *
  * @author pablo
@@ -16,6 +19,8 @@ public class ControllerUI {
     private List<javax.swing.JFrame> histPantallas;
     private int ancho;
     private int alto;
+    private Juego juego;
+
     public ControllerUI(){
         histPantallas = List.of(new FrameWelcomeS(this),
                                 new FrameJugar(this),
@@ -52,24 +57,41 @@ public class ControllerUI {
         actualPantalla.setVisible(true);
     }   
     public void seleccionarFacil() {
+        ModelTablero triangulo = new ModelTableroTriangular();
+        juego = new Juego(this, triangulo);
+        
         cambiarPantalla(3);
     }
 
     public void seleccionarDificil() {
+        ModelTablero cruz = new ModelTableroCruz();
+        juego = new Juego(this, cruz);
         cambiarPantalla(3);
     }
 
     public void iniciarJuego() {
+        ModelTablero tablero = juego.MTgetTablero();
+        VentanaJuego Vjuego = (VentanaJuego)histPantallas.get(4);
+        Vjuego.vIniciarBotones(tablero.igetFilas(), tablero.igetColumnas());
+        for(int i = 0; i < tablero.igetColumnas(); i++){
+            for(int j = 0; j < tablero.igetFilas(); j++){
+                if(!tablero.getFicha(j, i).besInvisible()){
+                    Vjuego.vAgregarBotonesTablero(new JButton(), 1);
+                }else{
+                    Vjuego.vAgregarBotonesTablero(new JButton(), 0);                    
+                }
+            }
+        }
         cambiarPantalla(4);
     }
-
+   
+    //pruebas unitarias diagramas de clases,la evolucion.
     public void irHome() {
         cambiarPantalla(1);
     }
     public void jugar(){
         cambiarPantalla(2);
-    }
-    
+    }  
     private void cambiarPantalla(int indice) {
         actualPantalla.setVisible(false);
         actualPantalla = histPantallas.get(indice);

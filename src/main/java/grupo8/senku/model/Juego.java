@@ -41,7 +41,7 @@ public class Juego {
                 int minutos = tiempo / 60;
                 int seg = tiempo % 60;
                 tiempo++;
-                control.actualizarVista();
+                //control.actualizarVista();
             }
         };
         cronometro.scheduleAtFixedRate(tarea, 0, 1000);
@@ -53,7 +53,7 @@ public class Juego {
             histTablero.pop(); 
             tablero = histTablero.peek();
             movimientos--;
-            control.actualizarVista();
+            //control.actualizarVista();
             bres = true;
         }
         return bres;
@@ -68,7 +68,7 @@ public class Juego {
             tiempo = 0;
             movimientos = 0;
             enJuego = true;
-            control.actualizarVista();
+            //control.actualizarVista();
         }
     }
     
@@ -118,15 +118,25 @@ public class Juego {
     }
     
     public void detenerCronometro() {
-    if (cronometro != null) {
-        cronometro.cancel();
-        cronometro.purge(); // Limpia las tareas canceladas
-        cronometro = null;
+        if (cronometro != null) {
+            cronometro.cancel();
+            cronometro.purge(); // Limpia las tareas canceladas
+            cronometro = null;
+        }
     }
-}
+    
+    public ModelTablero MTgetTablero(){
+        return this.tablero;
+    }
 
-    public int getTiempo() {
+    public int igetTiempo() {
         return tiempo;
     }
     
+    public int igetIfilasTablero(){
+        return tablero.igetFilas();
+    }
+    public int igetIcolumnasTablero(){
+        return tablero.igetColumnas();
+    }
 }
