@@ -25,6 +25,7 @@ public class ControllerUI implements PropertyChangeListener {
     private int ifilJugada;
     private int icolJugada;
     private final ReproductorSonido RS;
+    private boolean hayEfectos;
     
     public ControllerUI() {
         histPantallas = List.of(new FrameWelcomeS(this),
@@ -40,7 +41,7 @@ public class ControllerUI implements PropertyChangeListener {
         alto = 720;
         ifilJugada = -100;
         icolJugada = -100;
-        
+        hayEfectos = true;
     }
 
     public void iniciarApp() {
@@ -48,6 +49,7 @@ public class ControllerUI implements PropertyChangeListener {
         actualPantalla.setLocationRelativeTo(null);
         try {
             Thread.sleep(2000);
+            if(hayEfectos)RS.vreproducirAudioFondo();
             cambiarPantalla(1);
         } catch (InterruptedException ex) {
             Logger.getLogger(ControllerUI.class.getName()).log(Level.SEVERE, null, ex);
@@ -55,6 +57,7 @@ public class ControllerUI implements PropertyChangeListener {
     }
 
     public void regresarPantalla() {
+        if(hayEfectos)RS.vreproducirBotonMenu();
         actualPantalla.setVisible(false);
         int contPant = 0;
         boolean Encontrado = false;
@@ -122,6 +125,7 @@ public class ControllerUI implements PropertyChangeListener {
 
     public void vmandarJugada(int ifilaAct, int icolAct) {
         if (ifilJugada < 0) {
+            if(hayEfectos)RS.vreproducirBotonMenu();
             ifilJugada = ifilaAct;
             icolJugada = icolAct;
         } else {
@@ -187,6 +191,7 @@ public class ControllerUI implements PropertyChangeListener {
     }
 
     public void vusarCronometro() {
+        if(hayEfectos)RS.vreproducirBotonMenu();
         if (juego.bestaPausa()) {
             juego.viniciarCronometro();
         } else {
@@ -195,6 +200,7 @@ public class ControllerUI implements PropertyChangeListener {
     }
 
     public void vreiniciar() {
+        if(hayEfectos)RS.vreproducirBotonMenu();
         juego.vdetenerCronometro();
         juego.veliminarObservador(this);
         if(juego.MTgetTablero() instanceof ModelTableroCruz){
@@ -209,7 +215,6 @@ public class ControllerUI implements PropertyChangeListener {
         juego.vañadirObservador(this);
     }
 
-    // pruebas unitarias diagramas de clases,la evolucion.
     public void irHome() {
         juego.vdetenerCronometro();
         juego.vañadirObservador(this);
@@ -219,8 +224,27 @@ public class ControllerUI implements PropertyChangeListener {
     public void jugar() {
         cambiarPantalla(2);
     }
+    
+    public void vcontrolarMusica(){
+        if(hayEfectos)RS.vreproducirBotonMenu();
+        if(RS.bestaSonando()){
+            RS.vdetenerAudioFondo();
+        }else{
+            if(hayEfectos)RS.vreproducirAudioFondo();
+        }
+    }
+    
+    public void vcontrolarEfectoSonido(){
+        if(hayEfectos)RS.vreproducirBotonMenu();
+        if(hayEfectos){
+            hayEfectos = false;
+        }else{
+            hayEfectos = true;
+        }
+    }
 
     private void cambiarPantalla(int indice) {
+        if(hayEfectos)RS.vreproducirBotonMenu();
         actualPantalla.setVisible(false);
         actualPantalla = histPantallas.get(indice);
         actualPantalla.setSize(ancho, alto);

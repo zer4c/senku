@@ -39,6 +39,8 @@ public class FrameJugar extends javax.swing.JFrame {
     private void initComponents() {
 
         jButton1 = new javax.swing.JButton();
+        Efectos = new javax.swing.JToggleButton();
+        Musica = new javax.swing.JToggleButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -50,6 +52,27 @@ public class FrameJugar extends javax.swing.JFrame {
             }
         });
 
+        Efectos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/audio.png"))); // NOI18N
+        Efectos.setSelected(true);
+        Efectos.setContentAreaFilled(false);
+        Efectos.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        Efectos.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        Efectos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EfectosActionPerformed(evt);
+            }
+        });
+
+        Musica.setIcon(new javax.swing.ImageIcon(getClass().getResource("/musica.png"))); // NOI18N
+        Musica.setContentAreaFilled(false);
+        Musica.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        Musica.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        Musica.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MusicaActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -58,13 +81,23 @@ public class FrameJugar extends javax.swing.JFrame {
                 .addGap(0, 465, Short.MAX_VALUE)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 465, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(35, 35, 35)
+                .addComponent(Efectos)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(Musica)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(0, 290, Short.MAX_VALUE)
+                .addGap(26, 26, 26)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(Efectos, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Musica, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(243, 243, 243)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 290, Short.MAX_VALUE))
+                .addGap(0, 255, Short.MAX_VALUE))
         );
 
         pack();
@@ -73,6 +106,14 @@ public class FrameJugar extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         control.jugar();
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void EfectosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EfectosActionPerformed
+        control.vcontrolarEfectoSonido();
+    }//GEN-LAST:event_EfectosActionPerformed
+
+    private void MusicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MusicaActionPerformed
+        control.vcontrolarMusica();
+    }//GEN-LAST:event_MusicaActionPerformed
    
     private void personalizarBoton() {
         jButton1.setContentAreaFilled(false);
@@ -95,6 +136,8 @@ public class FrameJugar extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JToggleButton Efectos;
+    private javax.swing.JToggleButton Musica;
     private javax.swing.JButton jButton1;
     // End of variables declaration//GEN-END:variables
 }

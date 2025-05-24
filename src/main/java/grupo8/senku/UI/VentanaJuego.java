@@ -82,13 +82,14 @@ public class VentanaJuego extends javax.swing.JFrame {
 
         ventanaJuego = new FondoPanel();
         tablero = new javax.swing.JPanel();
-        pista = new javax.swing.JButton();
+        Musica = new javax.swing.JButton();
         cronometro = new javax.swing.JLabel();
         Error = new javax.swing.JLabel();
         botonesTablero = new javax.swing.JToolBar();
         restart = new javax.swing.JButton();
         pausa = new javax.swing.JButton();
         menu = new javax.swing.JButton();
+        Efectos = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -99,11 +100,11 @@ public class VentanaJuego extends javax.swing.JFrame {
         tablero.setPreferredSize(new java.awt.Dimension(400, 400));
         tablero.setLayout(new java.awt.GridLayout(7, 7));
 
-        pista.setBackground(new java.awt.Color(180, 132, 108));
-        pista.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pista.png"))); // NOI18N
-        pista.addActionListener(new java.awt.event.ActionListener() {
+        Musica.setBackground(new java.awt.Color(180, 132, 108));
+        Musica.setIcon(new javax.swing.ImageIcon(getClass().getResource("/musica.png"))); // NOI18N
+        Musica.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                pistaActionPerformed(evt);
+                MusicaActionPerformed(evt);
             }
         });
 
@@ -158,14 +159,24 @@ public class VentanaJuego extends javax.swing.JFrame {
         });
         botonesTablero.add(menu);
 
+        Efectos.setBackground(new java.awt.Color(180, 132, 108));
+        Efectos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/audio.png"))); // NOI18N
+        Efectos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EfectosActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout ventanaJuegoLayout = new javax.swing.GroupLayout(ventanaJuego);
         ventanaJuego.setLayout(ventanaJuegoLayout);
         ventanaJuegoLayout.setHorizontalGroup(
             ventanaJuegoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ventanaJuegoLayout.createSequentialGroup()
-                .addGap(17, 17, 17)
-                .addComponent(pista)
-                .addGap(431, 431, 431)
+                .addGap(22, 22, 22)
+                .addComponent(Efectos)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(Musica)
+                .addGap(364, 364, 364)
                 .addComponent(Error)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(botonesTablero, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -186,8 +197,9 @@ public class VentanaJuego extends javax.swing.JFrame {
                     .addGroup(ventanaJuegoLayout.createSequentialGroup()
                         .addGap(17, 17, 17)
                         .addGroup(ventanaJuegoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(pista)
-                            .addComponent(botonesTablero, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(Musica)
+                            .addComponent(botonesTablero, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Efectos)))
                     .addGroup(ventanaJuegoLayout.createSequentialGroup()
                         .addGap(35, 35, 35)
                         .addComponent(Error)))
@@ -228,17 +240,22 @@ public class VentanaJuego extends javax.swing.JFrame {
         control.vreiniciar();
     }//GEN-LAST:event_restartActionPerformed
 
-    private void pistaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pistaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_pistaActionPerformed
+    private void MusicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MusicaActionPerformed
+        control.vcontrolarMusica();
+    }//GEN-LAST:event_MusicaActionPerformed
+
+    private void EfectosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EfectosActionPerformed
+        control.vcontrolarEfectoSonido();
+    }//GEN-LAST:event_EfectosActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Efectos;
     private javax.swing.JLabel Error;
+    private javax.swing.JButton Musica;
     private javax.swing.JToolBar botonesTablero;
     private javax.swing.JLabel cronometro;
     private javax.swing.JButton menu;
     private javax.swing.JButton pausa;
-    private javax.swing.JButton pista;
     private javax.swing.JButton restart;
     private javax.swing.JPanel tablero;
     private javax.swing.JPanel ventanaJuego;

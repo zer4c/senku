@@ -40,7 +40,11 @@ public class ReproductorSonido {
             Cfondo.stop();
         }
     }
-
+    
+    public boolean bestaSonando(){
+        return Cfondo.isRunning();
+    }
+    
     private void vreproducirSonido(Clip clip) {
         if (clip != null) {
             clip.setFramePosition(0);
@@ -56,7 +60,6 @@ public class ReproductorSonido {
             clip.open(ais);
             return clip;
         } catch (Exception e) {
-            System.err.println("Error al cargar el sonido: " + Sruta);
             e.printStackTrace();
             return null;
         }
