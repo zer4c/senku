@@ -24,7 +24,8 @@ public class ControllerUI implements PropertyChangeListener {
     private Juego juego;
     private int ifilJugada;
     private int icolJugada;
-
+    private final ReproductorSonido RS;
+    
     public ControllerUI() {
         histPantallas = List.of(new FrameWelcomeS(this),
                 new FrameJugar(this),
@@ -34,10 +35,12 @@ public class ControllerUI implements PropertyChangeListener {
                 new Ganaste(this),
                 new Perdiste(this));
         actualPantalla = histPantallas.get(0);
+        RS = new ReproductorSonido();
         ancho = 1280;
         alto = 720;
         ifilJugada = -100;
         icolJugada = -100;
+        
     }
 
     public void iniciarApp() {
@@ -68,8 +71,8 @@ public class ControllerUI implements PropertyChangeListener {
     }
 
     public void seleccionarFacil() {
-        ModelTablero triangulo = new ModelTableroTriangular();
-        juego = new Juego(this, triangulo);
+        ModelTablero MTtriangulo = new ModelTableroTriangular();
+        juego = new Juego(this, MTtriangulo);
 
         cambiarPantalla(3);
     }
@@ -88,15 +91,15 @@ public class ControllerUI implements PropertyChangeListener {
     }
     
     private void vrellenarTablero(){
-        ModelTablero tablero = juego.MTgetTablero();
+        ModelTablero MTtablero = juego.MTgetTablero();
         VentanaJuego Vjuego = (VentanaJuego) histPantallas.get(4);
         Vjuego.vvaciarTablero();
         Vjuego.vsetError("");
-        Vjuego.vIniciarBotones(tablero.igetFilas(), tablero.igetColumnas());
-        for (int i = 0; i < tablero.igetFilas(); i++) {
-            for (int j = 0; j < tablero.igetColumnas(); j++) {
-                if (!tablero.getFicha(i, j).besInvisible()) {
-                    if (tablero.getFicha(i, j).bestaEliminada()) {
+        Vjuego.vIniciarBotones(MTtablero.igetFilas(), MTtablero.igetColumnas());
+        for (int i = 0; i < MTtablero.igetFilas(); i++) {
+            for (int j = 0; j < MTtablero.igetColumnas(); j++) {
+                if (!MTtablero.getFicha(i, j).besInvisible()) {
+                    if (MTtablero.getFicha(i, j).bestaEliminada()) {
                         Vjuego.vAgregarBotonesTablero(i, j, 0);
                     } else {
                         Vjuego.vAgregarBotonesTablero(i, j, 1);
@@ -168,6 +171,7 @@ public class ControllerUI implements PropertyChangeListener {
                 VJvent.vactivarBoton(ifilaAct, icolAct, tablero.igetColumnas());
                 VJvent.veliminarBoton((ifilaAct + ifilJugada) / 2, (icolAct + icolJugada) / 2, tablero.igetColumnas());
                 VJvent.veliminarBoton(ifilJugada, icolJugada, tablero.igetColumnas());
+                RS.vreproducirComido();
                 VJvent.repaint();
                 if(juego.ijuegoTerminado() == 1){
                     cambiarPantalla(5);
