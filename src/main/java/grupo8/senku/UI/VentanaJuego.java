@@ -225,7 +225,7 @@ public class VentanaJuego extends javax.swing.JFrame {
     }//GEN-LAST:event_pausaActionPerformed
 
     private void restartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_restartActionPerformed
-        control.vreiniciarTiempo();
+        control.vreiniciar();
     }//GEN-LAST:event_restartActionPerformed
 
     private void pistaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pistaActionPerformed

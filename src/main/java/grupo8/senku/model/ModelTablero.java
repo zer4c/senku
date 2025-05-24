@@ -52,7 +52,7 @@ public abstract class ModelTablero implements Cloneable{
     public int igetColumnas() {
         return this.icolumnas;
     }
-    public abstract boolean bactivarFicha(int ifila, int icolumna);
+    public abstract boolean bfichaActiva(int ifila, int icolumna);
     public abstract boolean beliminarFicha(int ifila, int icolumna);
     public abstract boolean bpuedeComer(int ifila, int icolumna, String sdireccion);
     public abstract boolean bmoverFicha(int ifilaOrigen, int icolOrigen, String sdireccion);

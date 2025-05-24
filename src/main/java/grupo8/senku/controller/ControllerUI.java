@@ -165,7 +165,13 @@ public class ControllerUI implements PropertyChangeListener {
                 VJvent.vactivarBoton(ifilaAct, icolAct, tablero.igetColumnas());
                 VJvent.veliminarBoton((ifilaAct + ifilJugada) / 2, (icolAct + icolJugada) / 2, tablero.igetColumnas());
                 VJvent.veliminarBoton(ifilJugada, icolJugada, tablero.igetColumnas());
-                VJvent.repaint();
+                if(juego.ijuegoTerminado() == 1){
+                    System.out.println("juego ganado");
+                }else if(juego.ijuegoTerminado() == 0){                
+                    VJvent.repaint();
+                }else{
+                    System.out.println("juego perdido");
+                }
             }else{
                 VJvent.vsetError("movimiento invalido");
             }
@@ -182,8 +188,15 @@ public class ControllerUI implements PropertyChangeListener {
         }
     }
 
-    public void vreiniciarTiempo() {
-        juego.vreiniciarTiempo();
+    public void vreiniciar() {
+        juego.vdetenerCronometro();
+        juego.veliminarObservador(this);
+        if(juego.MTgetTablero() instanceof ModelTableroCruz){
+            juego = new Juego(this, new ModelTableroCruz());
+        }else{
+            juego = new Juego(this, new ModelTableroTriangular());
+        }
+        iniciarJuego();
     }
 
     private void vsetCronometro() {
@@ -192,6 +205,8 @@ public class ControllerUI implements PropertyChangeListener {
 
     // pruebas unitarias diagramas de clases,la evolucion.
     public void irHome() {
+        juego.vdetenerCronometro();
+        juego.vañadirObservador(this);
         cambiarPantalla(1);
     }
 

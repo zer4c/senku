@@ -35,7 +35,7 @@ public class ModelTableroTriangular extends ModelTablero {
 }
 
     @Override
-    public boolean bactivarFicha(int ifila, int icolumna) {
+    public boolean bfichaActiva(int ifila, int icolumna) {
         ModelFicha ficha = getFicha(ifila, icolumna);
         return ficha.bestaActiva();
     }

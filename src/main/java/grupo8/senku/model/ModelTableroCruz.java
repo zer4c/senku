@@ -33,10 +33,10 @@ public class ModelTableroCruz extends ModelTablero {
     }
 
     @Override
-    public boolean bactivarFicha(int ifila, int icolumna) {
+    public boolean bfichaActiva(int ifila, int icolumna) {
         boolean bres = false;
         ModelFicha ficha = getFicha(ifila, icolumna);
-        if (!ficha.besInvisible() && ficha.bestaActiva()) {
+        if (ficha.bestaActiva()) {
             bres = true;
         }
         return bres;

@@ -93,41 +93,53 @@ public class Juego {
         }
     }
     
-    public boolean bjuegoTerminado() {
-        boolean bres = true;
-        int ifichasActivas = 0;
-        //Verificar  si hay mas  de  una  ficha
-        for (int i = 0; i < tablero.igetFilas() && ifichasActivas>1; i++) {
-            for (int j = 0; j < tablero.igetColumnas() && ifichasActivas>1 ; j++) {
-                if (tablero.bactivarFicha(i, j)) {
-                    ifichasActivas++;
-                }
-            }
-        } 
-        // Verificar si hay movimientos posibles}
-        if(ifichasActivas != 1){
-            for (int i = 0; i < tablero.igetFilas(); i++) {
-                for (int j = 0; j < tablero.igetColumnas(); j++) {
-                    if (tablero.bactivarFicha(i, j)) {
-                        // Verificar todas las direcciones posibles
-                        String[] direcciones = tablero instanceof ModelTableroTriangular ? 
-                                new String[]{"ARRIBA_IZQUIERDA", "ARRIBA_DERECHA", "IZQUIERDA", 
-                                            "DERECHA", "ABAJO_IZQUIERDA", "ABAJO_DERECHA"} :
-                                new String[]{"ARRIBA", "ABAJO", "IZQUIERDA", "DERECHA"};
+    public int ijuegoTerminado() {
+    int bres = 1;
+    int ifichasActivas = 0;
 
+    // Contar fichas activas (salir si ya hay más de una)
+    for (int i = 0; i < tablero.igetFilas(); i++) {
+        for (int j = 0; j < tablero.igetColumnas(); j++) {
+            if (tablero.bfichaActiva(i, j)) {
+                ifichasActivas++;
+            }
+            if (ifichasActivas > 1) break;
+        }
+        if (ifichasActivas > 1) break;
+    }
+
+    // Si no queda solo una ficha, verificar si hay movimientos posibles
+    if (ifichasActivas != 1) {
+        boolean bhayMovimiento = false;
+
+        for (int i = 0; i < tablero.igetFilas() && !bhayMovimiento; i++) {
+            for (int j = 0; j < tablero.igetColumnas() && !bhayMovimiento; j++) {
+                if (tablero.bfichaActiva(i, j)) {
+
+                    String[] direcciones = tablero instanceof ModelTableroTriangular ?
+                            new String[]{"ARRIBA_IZQUIERDA", "ARRIBA_DERECHA", "IZQUIERDA",
+                                         "DERECHA", "ABAJO_IZQUIERDA", "ABAJO_DERECHA"} :
+                            new String[]{"ARRIBA", "ABAJO", "IZQUIERDA", "DERECHA"};
+
+                    try{
                         for (String dir : direcciones) {
                             if (tablero.bpuedeComer(i, j, dir)) {
-                                bres= false;
-                                break;
+                                bres = 0;
+                                bhayMovimiento = true;
                             }
                         }
+                    }catch(Exception e){
                     }
                 }
             }
         }
-        
-        return bres;
+
+        if (!bhayMovimiento) {
+            bres = -1;
+        }
     }
+    return bres;
+}
     
     public void vdetenerCronometro() {
         if (cronometro != null) {
