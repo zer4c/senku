@@ -18,56 +18,53 @@ import java.awt.*;
 
 //Subclase por defecto ---------------------------------------------------------
 public class VentanaJuego extends javax.swing.JFrame {
-    private FondoPanel fondo = new FondoPanel();
-    private ControllerUI control;
+    private final FondoPanel FPfondo = new FondoPanel();
+    private final ControllerUI CUIcontrol;
     /** Creates new form Tablero
-     * @param control */
-    public VentanaJuego(ControllerUI control) {
-        this.control = control;
-        this.setContentPane(fondo);
+     * @param CUIcontrol */
+    public VentanaJuego(ControllerUI CUIcontrol) {
+        this.CUIcontrol = CUIcontrol;
+        this.setContentPane(FPfondo);
         initComponents();
     }
     
     public void vAgregarBotonesTablero(int ifila,int icol, int est){
-        JButton Jboton = new BotonJuego(ifila, icol, est);
-        Jboton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                comer(evt);
-            }
+        JButton JBboton = new BotonJuego(ifila, icol, est);
+        JBboton.addActionListener((java.awt.event.ActionEvent evt) -> {
+            vcomer(evt);
         });
-        tablero.add(Jboton);
+        tablero.add(JBboton);
     }
     
-    public void vIniciarBotones(int fil, int col){
-        tablero.setLayout(new java.awt.GridLayout(fil, col));
+    public void vIniciarBotones(int ifil, int icol){
+        tablero.setLayout(new java.awt.GridLayout(ifil, icol));
     }
     
     public void setCronometro(int itiempo){
         cronometro.setText(itiempo/60 + ":" + itiempo%60 + " ");
     }
     
-    public void vsetError(String mensaje){
-        Error.setText(mensaje);
+    public void vsetError(String Smensaje){
+        Error.setText(Smensaje);
     }
     
     public void vvaciarTablero(){
         tablero.removeAll();
     }
     public void veliminarBoton(int ifila, int icol, int itamCol){
-        int pos = icol + (ifila*itamCol);
-        int hol = tablero.getComponentCount();
-        BotonJuego JBboton = (BotonJuego)tablero.getComponent(pos);
+        int ipos = icol + (ifila*itamCol);
+        BotonJuego JBboton = (BotonJuego)tablero.getComponent(ipos);
         JBboton.vsetEstado(0);
     }
     public void vactivarBoton(int ifila, int icol, int itamCol){
-        int pos = (ifila*itamCol) + icol;
-        BotonJuego JBboton = (BotonJuego)tablero.getComponent(pos);
+        int ipos = (ifila*itamCol) + icol;
+        BotonJuego JBboton = (BotonJuego)tablero.getComponent(ipos);
         JBboton.vsetEstado(1);
     }
     
-    private void comer(java.awt.event.ActionEvent evt){
+    private void vcomer(java.awt.event.ActionEvent evt){
         BotonJuego Jboton = (BotonJuego)evt.getSource();
-        control.vmandarJugada(Jboton.igetfila(), Jboton.igetcol());
+        CUIcontrol.vmandarJugada(Jboton.igetfila(), Jboton.igetcol());
     }
     
 //-------------------------------------------------------------------------------------------------------
@@ -229,23 +226,23 @@ public class VentanaJuego extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void menuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuActionPerformed
-        control.irHome();
+        CUIcontrol.virHome();
     }//GEN-LAST:event_menuActionPerformed
 
     private void pausaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pausaActionPerformed
-        control.vusarCronometro();
+        CUIcontrol.vusarCronometro();
     }//GEN-LAST:event_pausaActionPerformed
 
     private void restartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_restartActionPerformed
-        control.vreiniciar();
+        CUIcontrol.vreiniciar();
     }//GEN-LAST:event_restartActionPerformed
 
     private void MusicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MusicaActionPerformed
-        control.vcontrolarMusica();
+        CUIcontrol.vcontrolarMusica();
     }//GEN-LAST:event_MusicaActionPerformed
 
     private void EfectosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EfectosActionPerformed
-        control.vcontrolarEfectoSonido();
+        CUIcontrol.vcontrolarEfectoSonido();
     }//GEN-LAST:event_EfectosActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

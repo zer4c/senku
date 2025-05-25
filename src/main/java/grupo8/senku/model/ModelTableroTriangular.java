@@ -17,34 +17,34 @@ public class ModelTableroTriangular extends ModelTablero {
 
     private void construirTableroTriangular() {
    
-        for (int fila = 0; fila < ifilas; fila++) {
-            int fichasEnFila = fila + 1;
-            int inicio = (icolumnas - 1) / 2 - fila;
-            for (int i = 0; i < fichasEnFila; i++) {
-                int col = inicio + i * 2;
-                if (col >= 0 && col < icolumnas) {
-                    // Activamos todas las fichas excepto el vértice superior
-                    if (!(fila == 0 && col == 4)) {
-                        fichas.get(fila).get(col).vactivar();
+        for (int ifila = 0; ifila < ifilas; ifila++) {
+            int ifichasEnFila = ifila + 1;
+            int iinicio = (icolumnas - 1) / 2 - ifila;
+            for (int i = 0; i < ifichasEnFila; i++) {
+                int icol = iinicio + i * 2;
+                if (icol >= 0 && icol < icolumnas) {
+                    // Activamos tcolodas las ALfichas excepto el vértice superior
+                    if (!(ifila == 0 && icol == 4)) {
+                        ALfichas.get(ifila).get(icol).vactivar();
                     }
                 }
             }
         }
     // Aseguramos explícitamente que el vértice esté vacío
-        fichas.get(0).get(4).veliminar();
+        ALfichas.get(0).get(4).veliminar();
 }
 
     @Override
     public boolean bfichaActiva(int ifila, int icolumna) {
-        ModelFicha ficha = getFicha(ifila, icolumna);
-        return ficha.bestaActiva();
+        ModelFicha MFficha = MFgetFicha(ifila, icolumna);
+        return MFficha.bestaActiva();
     }
 
     @Override
     public boolean beliminarFicha(int ifila, int icolumna) {
-        ModelFicha ficha = getFicha(ifila, icolumna);
-        if (ficha.bestaActiva()) {
-            ficha.veliminar();
+        ModelFicha MFficha = MFgetFicha(ifila, icolumna);
+        if (MFficha.bestaActiva()) {
+            MFficha.veliminar();
             return true;
         }
         return false;
@@ -52,78 +52,78 @@ public class ModelTableroTriangular extends ModelTablero {
 
     @Override
     public boolean bpuedeComer(int ifila, int icolumna, String sdireccion) {
-        int df = 0;
-        int dc = 0;
+        int idf = 0;
+        int idc = 0;
         
         switch (sdireccion.toUpperCase()) {
-            case "ARRIBA_IZQUIERDA" -> { df = -1; dc = -1; }
-            case "ARRIBA_DERECHA"   -> { df = -1; dc = +1; }
-            case "IZQUIERDA"        -> { df = 0; dc = -2; }
-            case "DERECHA"          -> { df = 0; dc = +2; }
-            case "ABAJO_IZQUIERDA"  -> { df = +1; dc = -1; }
-            case "ABAJO_DERECHA"    -> { df = +1; dc = +1; }
+            case "ARRIBA_IZQUIERDA" -> { idf = -1; idc = -1; }
+            case "ARRIBA_DERECHA"   -> { idf = -1; idc = +1; }
+            case "IZQUIERDA"        -> { idf = 0; idc = -2; }
+            case "DERECHA"          -> { idf = 0; idc = +2; }
+            case "ABAJO_IZQUIERDA"  -> { idf = +1; idc = -1; }
+            case "ABAJO_DERECHA"    -> { idf = +1; idc = +1; }
             default -> {
                 return false;
             }
         }
 
-        int fm = ifila + df;
-        int cm = icolumna + dc;
-        int fd = ifila + 2 * df;
-        int cd = icolumna + 2 * dc;
+        int ifm = ifila + idf;
+        int icm = icolumna + idc;
+        int ifd = ifila + 2 * idf;
+        int icd = icolumna + 2 * idc;
 
-        boolean puedeComer = false;
+        boolean bpuedeComer = false;
 
-        ModelFicha origen = getFicha(ifila, icolumna);
-        ModelFicha medio = getFicha(fm, cm);
-        ModelFicha destino = getFicha(fd, cd);
-        if(origen != null && medio != null && destino != null){
-            if (!origen.besInvisible() && !medio.besInvisible() && !destino.besInvisible()) {
-                if (origen.bestaActiva() && medio.bestaActiva() && destino.bestaEliminada()) {
-                    puedeComer = true;
+        ModelFicha MForigen = MFgetFicha(ifila, icolumna);
+        ModelFicha MFmedio = MFgetFicha(ifm, icm);
+        ModelFicha MFdestino = MFgetFicha(ifd, icd);
+        if(MForigen != null && MFmedio != null && MFdestino != null){
+            if (!MForigen.besInvisible() && !MFmedio.besInvisible() && !MFdestino.besInvisible()) {
+                if (MForigen.bestaActiva() && MFmedio.bestaActiva() && MFdestino.bestaEliminada()) {
+                    bpuedeComer = true;
                 }
             }
         }
-        return puedeComer;
+        return bpuedeComer;
     }
 
     @Override
     public boolean bmoverFicha(int ifila, int icolumna, String sdireccion) {
-        boolean movimientoRealizado = false;
+        boolean bmovimientoRealizado = false;
 
         if (bpuedeComer(ifila, icolumna, sdireccion)) {
-            int df = 0;
-            int dc = 0;
+            int idf = 0;
+            int idc = 0;
 
             switch (sdireccion.toUpperCase()) {
-                case "ARRIBA_IZQUIERDA" -> { df = -1; dc = -1; }
-                case "ARRIBA_DERECHA"   -> { df = -1; dc = +1; }
-                case "IZQUIERDA"        -> { df = 0; dc = -2; }
-                case "DERECHA"          -> { df = 0; dc = +2; }
-                case "ABAJO_IZQUIERDA"  -> { df = +1; dc = -1; }
-                case "ABAJO_DERECHA"    -> { df = +1; dc = +1; }
+                case "ARRIBA_IZQUIERDA" -> { idf = -1; idc = -1; }
+                case "ARRIBA_DERECHA"   -> { idf = -1; idc = +1; }
+                case "IZQUIERDA"        -> { idf = 0; idc = -2; }
+                case "DERECHA"          -> { idf = 0; idc = +2; }
+                case "ABAJO_IZQUIERDA"  -> { idf = +1; idc = -1; }
+                case "ABAJO_DERECHA"    -> { idf = +1; idc = +1; }
                 default -> {
                     return false;
                 }
             }
 
-            int fm = ifila + df;
-            int cm = icolumna + dc;
-            int fd = ifila + 2 * df;
-            int cd = icolumna + 2 * dc;
+            int ifm = ifila + idf;
+            int icm = icolumna + idc;
+            int ifd = ifila + 2 * idf;
+            int icd = icolumna + 2 * idc;
 
-            ModelFicha origen = getFicha(ifila, icolumna);
-            ModelFicha medio = getFicha(fm, cm);
-            ModelFicha destino = getFicha(fd, cd);
+            ModelFicha MForigen = MFgetFicha(ifila, icolumna);
+            ModelFicha MFmedio = MFgetFicha(ifm, icm);
+            ModelFicha MFdestino = MFgetFicha(ifd, icd);
 
-            if (!origen.besInvisible() && !medio.besInvisible() && !destino.besInvisible()) {
-                origen.veliminar();
-                medio.veliminar();
-                destino.vactivar();
-                movimientoRealizado = true;
+            if (!MForigen.besInvisible() && !MFmedio.besInvisible() && !MFdestino.besInvisible()) {
+                MForigen.veliminar();
+                MFmedio.veliminar();
+                MFdestino.vactivar();
+                bmovimientoRealizado = true;
             }
         }
 
-        return movimientoRealizado;
+        return bmovimientoRealizado;
     }
 }

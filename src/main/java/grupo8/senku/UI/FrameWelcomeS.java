@@ -10,16 +10,14 @@ import grupo8.senku.controller.ControllerUI;
  * @author brenda
  */
 public class FrameWelcomeS extends javax.swing.JFrame {
-    private ControllerUI control; 
     /**
      * Creates new form FrameWelcomeS
      */
-    private int WIDTH = 1280;
-    private int HEIGHT = 720;
-    public FrameWelcomeS(ControllerUI control) {
-        this.control = control;
+    private final int iWIDTH = 1280;
+    private final int iHEIGHT = 720;
+    public FrameWelcomeS() {
         initComponents();
-        setSize(WIDTH, HEIGHT);
+        setSize(iWIDTH, iHEIGHT);
     }
 
     /**

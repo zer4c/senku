@@ -11,6 +11,6 @@ import grupo8.senku.controller.ControllerUI;
 public class Senku {
     public static void main(String[] args){
         ControllerUI control = new ControllerUI();
-        control.iniciarApp();        
+        control.viniciarApp();        
     }
 }

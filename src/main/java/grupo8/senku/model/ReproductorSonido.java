@@ -9,9 +9,9 @@ import java.io.InputStream;
 
 public class ReproductorSonido {
 
-    private Clip Cfondo;
-    private Clip Cmenu;
-    private Clip Ccomido;
+    private final Clip Cfondo;
+    private final Clip Cmenu;
+    private final Clip Ccomido;
 
     public ReproductorSonido() {
         Cfondo = CcargarSonido("/audioFondo.wav");

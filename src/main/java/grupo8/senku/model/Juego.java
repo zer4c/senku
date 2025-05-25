@@ -4,10 +4,8 @@
  */
 package grupo8.senku.model;
 
-import grupo8.senku.controller.ControllerUI;
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
-import java.util.*;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -16,138 +14,97 @@ import java.util.TimerTask;
  * @author pablo
  */
 public class Juego {
-    private ModelTablero tablero;
-    private final Stack<ModelTablero> histTablero;
-    private int tiempo;
-    private boolean enJuego;
-    private int movimientos;
-    private Timer cronometro;
-    private final ControllerUI control;
-    private PropertyChangeSupport pcs = new PropertyChangeSupport(this);
+    private final ModelTablero MTtablero;
+    private int itiempo;
+    private Timer Tcronometro;
+    private final PropertyChangeSupport PCS = new PropertyChangeSupport(this);
     
     public static String SactTiempo = "tiempo";
-        
-    public Juego(ControllerUI control, ModelTablero tablero){
-        this.control = control;
-        this.tablero = tablero;
-        this.histTablero = new Stack<>();
-        this.enJuego = true;
-        this.movimientos = 0;
-        this.cronometro = null;
-        histTablero.push(tablero);
-        tiempo = 0;
+           /**
+     *
+     * @param MTtablero
+     */
+
+    public Juego(ModelTablero MTtablero){
+        this.MTtablero = MTtablero;
+        this.Tcronometro = null;
+        itiempo = 0;
     }
     
     public final void viniciarCronometro() {
-        cronometro = new Timer();
-        TimerTask tarea = new TimerTask() {
+        Tcronometro = new Timer();
+        TimerTask TTtarea = new TimerTask() {
             @Override
             public void run() {
-                int ianteriorTiempo = tiempo;
-                tiempo++;
-                pcs.firePropertyChange(SactTiempo, ianteriorTiempo, tiempo);
+                int ianteriorTiempo = itiempo;
+                itiempo++;
+                PCS.firePropertyChange(SactTiempo, ianteriorTiempo, itiempo);
             }
         };
-        cronometro.scheduleAtFixedRate(tarea, 0, 1000);
+        Tcronometro.scheduleAtFixedRate(TTtarea, 0, 1000);
     }
     
-    public boolean deshacerMovimiento() {
-        boolean bres = false;
-        if (histTablero.size() > 1) { 
-            histTablero.pop(); 
-            tablero = histTablero.peek();
-            movimientos--;
-            //control.actualizarVista();
-            bres = true;
-        }
-        return bres;
-    }  
-     
-     
-    public void vreiniciar() {
-        if (!histTablero.isEmpty()) {
-            tablero = histTablero.firstElement();
-            histTablero.clear();
-            histTablero.push(tablero);
-            tiempo = 0;
-            movimientos = 0;
-            enJuego = true;
-            //control.actualizarVista();
-        }
-    }
-    
-    public void vañadirObservador(PropertyChangeListener escucha) {
-        pcs.addPropertyChangeListener(escucha);
+    public void vañadirObservador(PropertyChangeListener PCLescucha) {
+        PCS.addPropertyChangeListener(PCLescucha);
     }
 
-    public void veliminarObservador(PropertyChangeListener escucha) {
-        pcs.removePropertyChangeListener(escucha);
+    public void veliminarObservador(PropertyChangeListener PCLescucha) {
+        PCS.removePropertyChangeListener(PCLescucha);
     }
-    
-    
-    private void vguardarEstado() {
-        try {
-            histTablero.push((ModelTablero) tablero.clone());
-        } catch (CloneNotSupportedException e) {
-            System.err.println("Error al clonar el tablero: " + e.getMessage());
-        }
-    }
-    
+
     public int ijuegoTerminado() {
-    int bres = 1;
-    int ifichasActivas = 0;
+        int ires = 1;
+        int ifichasActivas = 0;
 
-    // Contar fichas activas (salir si ya hay más de una)
-    for (int i = 0; i < tablero.igetFilas(); i++) {
-        for (int j = 0; j < tablero.igetColumnas(); j++) {
-            if (tablero.bfichaActiva(i, j)) {
-                ifichasActivas++;
+        for (int i = 0; i < MTtablero.igetFilas(); i++) {
+            for (int j = 0; j < MTtablero.igetColumnas(); j++) {
+                if (MTtablero.bfichaActiva(i, j)) {
+                    ifichasActivas++;
+                }
+                if (ifichasActivas > 1) break;
             }
             if (ifichasActivas > 1) break;
         }
-        if (ifichasActivas > 1) break;
-    }
 
-    // Si no queda solo una ficha, verificar si hay movimientos posibles
-    if (ifichasActivas != 1) {
-        boolean bhayMovimiento = false;
-        for (int i = 0; i < tablero.igetFilas() && !bhayMovimiento; i++) {
-            for (int j = 0; j < tablero.igetColumnas() && !bhayMovimiento; j++) {
-                if (tablero.bfichaActiva(i, j)) {
+        if (ifichasActivas != 1) {
+            boolean bhayMovimiento = false;
+            for (int i = 0; i < MTtablero.igetFilas() && !bhayMovimiento; i++) {
+                for (int j = 0; j < MTtablero.igetColumnas() && !bhayMovimiento; j++) {
+                    if (MTtablero.bfichaActiva(i, j)) {
 
-                    String[] direcciones = tablero instanceof ModelTableroTriangular ?
-                            new String[]{"ARRIBA_IZQUIERDA", "ARRIBA_DERECHA", "IZQUIERDA",
-                                         "DERECHA", "ABAJO_IZQUIERDA", "ABAJO_DERECHA"} :
-                            new String[]{"ARRIBA", "ABAJO", "IZQUIERDA", "DERECHA"};
+                        String[] Sdirecciones = MTtablero instanceof ModelTableroTriangular ?
+                                new String[]{"ARRIBA_IZQUIERDA", "ARRIBA_DERECHA", "IZQUIERDA",
+                                             "DERECHA", "ABAJO_IZQUIERDA", "ABAJO_DERECHA"} :
+                                new String[]{"ARRIBA", "ABAJO", "IZQUIERDA", "DERECHA"};
 
-                    for (String dir : direcciones) {
-                        if (tablero.bpuedeComer(i, j, dir)) {
-                            bres = 0;
-                            bhayMovimiento = true;
+                        for (String Sdir : Sdirecciones) {
+                            if (MTtablero.bpuedeComer(i, j, Sdir)) {
+                                ires = 0;
+                                bhayMovimiento = true;
+                            }
                         }
                     }
                 }
             }
-        }
 
-        if (!bhayMovimiento) {
-            bres = -1;
+            if (!bhayMovimiento) {
+                ires = -1;
+            }
         }
+        return ires;
     }
-    return bres;
-}
     
     public void vdetenerCronometro() {
-        if (cronometro != null) {
-            cronometro.cancel();
-            cronometro.purge(); // Limpia las tareas canceladas
-            cronometro = null;
+        if (Tcronometro != null) {
+            Tcronometro.cancel();
+            Tcronometro.purge(); 
+            Tcronometro = null;
         }
     }
     
     public boolean bestaPausa(){
         boolean brespuesta;
-        if(cronometro == null){
+        if(Tcronometro == null){
             brespuesta = true;
         }else{
             brespuesta = false;
@@ -156,21 +113,21 @@ public class Juego {
     }
     
     public void vreiniciarTiempo(){
-        tiempo = 0;
+        itiempo = 0;
     }
     
     public ModelTablero MTgetTablero(){
-        return this.tablero;
+        return this.MTtablero;
     }
 
     public int igetTiempo() {
-        return tiempo;
+        return itiempo;
     }
     
     public int igetIfilasTablero(){
-        return tablero.igetFilas();
+        return MTtablero.igetFilas();
     }
     public int igetIcolumnasTablero(){
-        return tablero.igetColumnas();
+        return MTtablero.igetColumnas();
     }
 }

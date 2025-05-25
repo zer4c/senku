@@ -11,98 +11,99 @@ import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JFrame;
 
 /**
  *
  * @author pablo
  */
 public class ControllerUI implements PropertyChangeListener {
-    private javax.swing.JFrame actualPantalla;
-    private final List<javax.swing.JFrame> histPantallas;
-    private final int ancho;
-    private final int alto;
-    private Juego juego;
+    private javax.swing.JFrame JFpantallaActuals;
+    private final List<javax.swing.JFrame> LhistPantallas;
+    private final int iancho;
+    private final int ialto;
+    private Juego Jjuego;
     private int ifilJugada;
     private int icolJugada;
     private final ReproductorSonido RS;
-    private boolean hayEfectos;
+    private boolean bhayEfectos;
     
     public ControllerUI() {
-        histPantallas = List.of(new FrameWelcomeS(this),
+        LhistPantallas = List.of(new FrameWelcomeS(),
                 new FrameJugar(this),
                 new Seleccionjuego(this),
                 new SeleccionNiveles(this),
                 new VentanaJuego(this),
                 new Ganaste(this),
                 new Perdiste(this));
-        actualPantalla = histPantallas.get(0);
+        JFpantallaActuals = LhistPantallas.get(0);
         RS = new ReproductorSonido();
-        ancho = 1280;
-        alto = 720;
+        iancho = 1280;
+        ialto = 720;
         ifilJugada = -100;
         icolJugada = -100;
-        hayEfectos = true;
+        bhayEfectos = true;
     }
 
-    public void iniciarApp() {
-        actualPantalla.setVisible(true);
-        actualPantalla.setLocationRelativeTo(null);
+    public void viniciarApp() {
+        JFpantallaActuals.setVisible(true);
+        JFpantallaActuals.setLocationRelativeTo(null);
         try {
             Thread.sleep(2000);
-            if(hayEfectos)RS.vreproducirAudioFondo();
-            cambiarPantalla(1);
+            RS.vreproducirAudioFondo();
+            vcambiarPantalla(1);
         } catch (InterruptedException ex) {
             Logger.getLogger(ControllerUI.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
-    public void regresarPantalla() {
-        if(hayEfectos)RS.vreproducirBotonMenu();
-        actualPantalla.setVisible(false);
-        int contPant = 0;
-        boolean Encontrado = false;
-        while (false == Encontrado) {
-            if (actualPantalla.equals(histPantallas.get(contPant))) {
-                Encontrado = true;
-                contPant--;
+    public void vregresarPantalla() {
+        if(bhayEfectos)RS.vreproducirBotonMenu();
+        JFpantallaActuals.setVisible(false);
+        int icontPant = 0;
+        boolean bEncontrado = false;
+        while (false == bEncontrado) {
+            if (JFpantallaActuals.equals(LhistPantallas.get(icontPant))) {
+                bEncontrado = true;
+                icontPant--;
             } else {
-                contPant++;
+                icontPant++;
             }
         }
-        actualPantalla = histPantallas.get(contPant);
-        actualPantalla.setVisible(true);
+        JFpantallaActuals = LhistPantallas.get(icontPant);
+        JFpantallaActuals.setVisible(true);
     }
 
-    public void seleccionarFacil() {
+    public void vseleccionarFacil() {
         ModelTablero MTtriangulo = new ModelTableroTriangular();
-        juego = new Juego(this, MTtriangulo);
+        Jjuego = new Juego(MTtriangulo);
 
-        cambiarPantalla(3);
+        vcambiarPantalla(3);
     }
 
-    public void seleccionarDificil() {
-        ModelTablero cruz = new ModelTableroCruz();
-        juego = new Juego(this, cruz);
-        cambiarPantalla(3);
+    public void vseleccionarDificil() {
+        ModelTablero MTcruz = new ModelTableroCruz();
+        Jjuego = new Juego( MTcruz);
+        vcambiarPantalla(3);
     }
 
-    public void iniciarJuego() {
+    public void viniciarJuego() {
         vrellenarTablero();
         vsetCronometro();
         vusarCronometro();
-        cambiarPantalla(4);
+        vcambiarPantalla(4);
     }
     
     private void vrellenarTablero(){
-        ModelTablero MTtablero = juego.MTgetTablero();
-        VentanaJuego Vjuego = (VentanaJuego) histPantallas.get(4);
+        ModelTablero MTtablero = Jjuego.MTgetTablero();
+        VentanaJuego Vjuego = (VentanaJuego) LhistPantallas.get(4);
         Vjuego.vvaciarTablero();
         Vjuego.vsetError("");
         Vjuego.vIniciarBotones(MTtablero.igetFilas(), MTtablero.igetColumnas());
         for (int i = 0; i < MTtablero.igetFilas(); i++) {
             for (int j = 0; j < MTtablero.igetColumnas(); j++) {
-                if (!MTtablero.getFicha(i, j).besInvisible()) {
-                    if (MTtablero.getFicha(i, j).bestaEliminada()) {
+                if (!MTtablero.MFgetFicha(i, j).besInvisible()) {
+                    if (MTtablero.MFgetFicha(i, j).bestaEliminada()) {
                         Vjuego.vAgregarBotonesTablero(i, j, 0);
                     } else {
                         Vjuego.vAgregarBotonesTablero(i, j, 1);
@@ -118,21 +119,21 @@ public class ControllerUI implements PropertyChangeListener {
     public void propertyChange(PropertyChangeEvent evt) {
         if (Juego.SactTiempo.equals(evt.getPropertyName())) {
             int itiempo = (int) evt.getNewValue();
-            VentanaJuego Vjuego = (VentanaJuego) histPantallas.get(4);
+            VentanaJuego Vjuego = (VentanaJuego) LhistPantallas.get(4);
             Vjuego.setCronometro(itiempo);
         }
     }
 
     public void vmandarJugada(int ifilaAct, int icolAct) {
         if (ifilJugada < 0) {
-            if(hayEfectos)RS.vreproducirBotonMenu();
+            if(bhayEfectos)RS.vreproducirBotonMenu();
             ifilJugada = ifilaAct;
             icolJugada = icolAct;
         } else {
             int iauxFil = ifilaAct - ifilJugada;
             int iauxCol = icolAct - icolJugada;
-            ModelTablero tablero = juego.MTgetTablero();
-            VentanaJuego VJvent = (VentanaJuego) histPantallas.get(4);
+            ModelTablero tablero = Jjuego.MTgetTablero();
+            VentanaJuego VJvent = (VentanaJuego) LhistPantallas.get(4);
             boolean bpudoComer = false;
             if (tablero instanceof ModelTableroCruz) {
                 if (iauxCol == 0) {
@@ -177,10 +178,10 @@ public class ControllerUI implements PropertyChangeListener {
                 VJvent.veliminarBoton(ifilJugada, icolJugada, tablero.igetColumnas());
                 RS.vreproducirComido();
                 VJvent.repaint();
-                if(juego.ijuegoTerminado() == 1){
-                    cambiarPantalla(5);
-                }else if(juego.ijuegoTerminado() == -1){
-                    cambiarPantalla(6);
+                if(Jjuego.ijuegoTerminado() == 1){
+                    vcambiarPantalla(5);
+                }else if(Jjuego.ijuegoTerminado() == -1){
+                    vcambiarPantalla(6);
                 }
             }else{
                 VJvent.vsetError("movimiento invalido");
@@ -191,64 +192,72 @@ public class ControllerUI implements PropertyChangeListener {
     }
 
     public void vusarCronometro() {
-        if(hayEfectos)RS.vreproducirBotonMenu();
-        if (juego.bestaPausa()) {
-            juego.viniciarCronometro();
+        if(bhayEfectos)RS.vreproducirBotonMenu();
+        if (Jjuego.bestaPausa()) {
+            Jjuego.viniciarCronometro();
         } else {
-            juego.vdetenerCronometro();
+            Jjuego.vdetenerCronometro();
         }
     }
 
     public void vreiniciar() {
-        if(hayEfectos)RS.vreproducirBotonMenu();
-        juego.vdetenerCronometro();
-        juego.veliminarObservador(this);
-        if(juego.MTgetTablero() instanceof ModelTableroCruz){
-            juego = new Juego(this, new ModelTableroCruz());
+        if(bhayEfectos)RS.vreproducirBotonMenu();
+        Jjuego.vdetenerCronometro();
+        Jjuego.veliminarObservador(this);
+        if(Jjuego.MTgetTablero() instanceof ModelTableroCruz){
+            Jjuego = new Juego( new ModelTableroCruz());
         }else{
-            juego = new Juego(this, new ModelTableroTriangular());
+            Jjuego = new Juego(new ModelTableroTriangular());
         }
-        iniciarJuego();
+        viniciarJuego();
     }
 
     private void vsetCronometro() {
-        juego.vañadirObservador(this);
+        Jjuego.vañadirObservador(this);
     }
 
-    public void irHome() {
-        juego.vdetenerCronometro();
-        juego.vañadirObservador(this);
-        cambiarPantalla(1);
+    public void virHome() {
+        Jjuego.vdetenerCronometro();
+        Jjuego.vañadirObservador(this);
+        vcambiarPantalla(1);
     }
 
-    public void jugar() {
-        cambiarPantalla(2);
+    public void vjugar() {
+        vcambiarPantalla(2);
     }
     
     public void vcontrolarMusica(){
-        if(hayEfectos)RS.vreproducirBotonMenu();
+        if(bhayEfectos)RS.vreproducirBotonMenu();
         if(RS.bestaSonando()){
             RS.vdetenerAudioFondo();
         }else{
-            if(hayEfectos)RS.vreproducirAudioFondo();
+            RS.vreproducirAudioFondo();
         }
     }
     
     public void vcontrolarEfectoSonido(){
-        if(hayEfectos)RS.vreproducirBotonMenu();
-        if(hayEfectos){
-            hayEfectos = false;
-        }else{
-            hayEfectos = true;
+        if(bhayEfectos)RS.vreproducirBotonMenu();
+        bhayEfectos = !bhayEfectos;
+    }
+    
+    public void vSalirJuego(){
+        if(bhayEfectos)RS.vreproducirBotonMenu();
+        try{
+            for(JFrame JFpantalla : LhistPantallas){
+                JFpantalla.dispose();
+            }
+            System.exit(0);
+        }catch(Exception e){
+            System.exit(0);
         }
     }
 
-    private void cambiarPantalla(int indice) {
-        if(hayEfectos)RS.vreproducirBotonMenu();
-        actualPantalla.setVisible(false);
-        actualPantalla = histPantallas.get(indice);
-        actualPantalla.setSize(ancho, alto);
-        actualPantalla.setLocationRelativeTo(histPantallas.get(0));
-        actualPantalla.setVisible(true);
+    private void vcambiarPantalla(int indice) {
+        if(bhayEfectos)RS.vreproducirBotonMenu();
+        JFpantallaActuals.setVisible(false);
+        JFpantallaActuals = LhistPantallas.get(indice);
+        JFpantallaActuals.setSize(iancho, ialto);
+        JFpantallaActuals.setLocationRelativeTo(LhistPantallas.get(0));
+        JFpantallaActuals.setVisible(true);
     }
 }

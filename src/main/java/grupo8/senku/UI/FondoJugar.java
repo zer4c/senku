@@ -12,12 +12,12 @@ import javax.swing.JPanel;
  * @author brenda
  */
 public class FondoJugar extends JPanel {
-    private Image imagen;
+    private Image Iimage;
     @Override
     public void paint(Graphics g) {
         super.paintComponent(g);
-        imagen = new ImageIcon(getClass().getResource("/img/borr.jpg")).getImage();
-        g.drawImage(imagen, 0, 0, getWidth(), getHeight(), this);
+        Iimage = new ImageIcon(getClass().getResource("/img/borr.jpg")).getImage();
+        g.drawImage(Iimage, 0, 0, getWidth(), getHeight(), this);
         setOpaque(false);
         super.paint(g);
     }

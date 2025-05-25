@@ -11,15 +11,16 @@ import grupo8.senku.controller.ControllerUI;
  * @author Azurduy
  */
 public class SeleccionNiveles extends javax.swing.JFrame {
-    private ControllerUI control;
-    private FondoApp fondo;
+    private final ControllerUI CUIcontrol;
+    private final FondoApp FAfondo;
     /**
      * Creates new form SeleccionNiveles
+     * @param CUIcontrol
      */
-    public SeleccionNiveles(ControllerUI control) {
-        this.control = control;
-        fondo = new FondoApp();
-        this.setContentPane(fondo);
+    public SeleccionNiveles(ControllerUI CUIcontrol) {
+        this.CUIcontrol = CUIcontrol;
+        FAfondo = new FondoApp();
+        this.setContentPane(FAfondo);
         initComponents();
     }
 
@@ -124,15 +125,15 @@ public class SeleccionNiveles extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void nivelUnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nivelUnoActionPerformed
-        control.iniciarJuego();
+        CUIcontrol.viniciarJuego();
     }//GEN-LAST:event_nivelUnoActionPerformed
 
     private void menuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuActionPerformed
-        control.irHome();
+        CUIcontrol.virHome();
     }//GEN-LAST:event_menuActionPerformed
 
     private void atrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_atrasActionPerformed
-        control.regresarPantalla();
+        CUIcontrol.vregresarPantalla();
     }//GEN-LAST:event_atrasActionPerformed
 
 

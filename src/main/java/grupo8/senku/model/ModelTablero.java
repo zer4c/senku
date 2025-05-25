@@ -11,15 +11,15 @@ import java.util.ArrayList;
 public abstract class ModelTablero implements Cloneable{
     protected int ifilas;
     protected int icolumnas;
-    protected ArrayList<ArrayList<ModelFicha>> fichas; 
+    protected ArrayList<ArrayList<ModelFicha>> ALfichas; 
     
     
     // para decirle el tamaño de las filas y columas segun el nivel por ahora 7x7
     public ModelTablero(int ifilas, int icolumnas){
         this.ifilas = ifilas;
         this.icolumnas = icolumnas;
-        fichas = new ArrayList<>();
-        inicializarTablero(); 
+        ALfichas = new ArrayList<>();
+        vinicializarTablero(); 
     } 
     
     @Override
@@ -27,20 +27,20 @@ public abstract class ModelTablero implements Cloneable{
         return super.clone();
     }
     
-    private void inicializarTablero(){
+    private void vinicializarTablero(){
         for(int i = 0; i < ifilas; i++){
-            ArrayList<ModelFicha> fila = new ArrayList<>();
+            ArrayList<ModelFicha> ALfila = new ArrayList<>();
             for (int j = 0; j < icolumnas; j++){
-                ModelFicha ficha = new ModelFicha();
-                fila.add(ficha);
+                ModelFicha MFficha = new ModelFicha();
+                ALfila.add(MFficha);
             }
-            fichas.add(fila);
+            ALfichas.add(ALfila);
         }
     }
     
-    public ModelFicha getFicha(int ifila, int icolumna){
+    public ModelFicha MFgetFicha(int ifila, int icolumna){
         if (ifila >= 0 && ifila < ifilas && icolumna >= 0 && icolumna < icolumnas) {
-            return fichas.get(ifila).get(icolumna);
+            return ALfichas.get(ifila).get(icolumna);
         }
         return null;
     }

@@ -16,17 +16,18 @@ import javax.swing.JComponent;
  * @author brenda
  */
 public class FrameJugar extends javax.swing.JFrame {
-    private ControllerUI control;
-    private FondoJugar fondo;
+    private final ControllerUI CUIcontrol;
+    private final FondoJugar FJfondo;
     /**
      * Creates new form FrameJugar2
+     * @param control
      */
     public FrameJugar(ControllerUI control) {
-        this.control = control;
-        fondo = new FondoJugar();
-        this.setContentPane(fondo);
+        this.CUIcontrol = control;
+        FJfondo = new FondoJugar();
+        this.setContentPane(FJfondo);
         initComponents();
-        personalizarBoton();
+        vpersonalizarBoton();
     }
 
     /**
@@ -41,6 +42,7 @@ public class FrameJugar extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         Efectos = new javax.swing.JToggleButton();
         Musica = new javax.swing.JToggleButton();
+        exit = new javax.swing.JToggleButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -54,6 +56,7 @@ public class FrameJugar extends javax.swing.JFrame {
 
         Efectos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/audio.png"))); // NOI18N
         Efectos.setSelected(true);
+        Efectos.setBorderPainted(false);
         Efectos.setContentAreaFilled(false);
         Efectos.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         Efectos.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
@@ -64,12 +67,24 @@ public class FrameJugar extends javax.swing.JFrame {
         });
 
         Musica.setIcon(new javax.swing.ImageIcon(getClass().getResource("/musica.png"))); // NOI18N
+        Musica.setBorderPainted(false);
         Musica.setContentAreaFilled(false);
         Musica.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         Musica.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         Musica.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 MusicaActionPerformed(evt);
+            }
+        });
+
+        exit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/exit.png"))); // NOI18N
+        exit.setBorderPainted(false);
+        exit.setContentAreaFilled(false);
+        exit.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        exit.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        exit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                exitActionPerformed(evt);
             }
         });
 
@@ -81,10 +96,12 @@ public class FrameJugar extends javax.swing.JFrame {
                 .addGap(0, 465, Short.MAX_VALUE)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 465, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(35, 35, 35)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(32, 32, 32)
+                .addComponent(exit)
+                .addGap(18, 18, 18)
                 .addComponent(Efectos)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(Musica)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -94,7 +111,8 @@ public class FrameJugar extends javax.swing.JFrame {
                 .addGap(26, 26, 26)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(Efectos, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Musica, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Musica, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(exit, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(243, 243, 243)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 255, Short.MAX_VALUE))
@@ -104,18 +122,22 @@ public class FrameJugar extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        control.jugar();
+        CUIcontrol.vjugar();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void EfectosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EfectosActionPerformed
-        control.vcontrolarEfectoSonido();
+        CUIcontrol.vcontrolarEfectoSonido();
     }//GEN-LAST:event_EfectosActionPerformed
 
     private void MusicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MusicaActionPerformed
-        control.vcontrolarMusica();
+        CUIcontrol.vcontrolarMusica();
     }//GEN-LAST:event_MusicaActionPerformed
+
+    private void exitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitActionPerformed
+        CUIcontrol.vSalirJuego();
+    }//GEN-LAST:event_exitActionPerformed
    
-    private void personalizarBoton() {
+    private void vpersonalizarBoton() {
         jButton1.setContentAreaFilled(false);
         jButton1.setFocusPainted(false);
         jButton1.setBorderPainted(false);
@@ -138,6 +160,7 @@ public class FrameJugar extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JToggleButton Efectos;
     private javax.swing.JToggleButton Musica;
+    private javax.swing.JToggleButton exit;
     private javax.swing.JButton jButton1;
     // End of variables declaration//GEN-END:variables
 }

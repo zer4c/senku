@@ -11,12 +11,13 @@ import grupo8.senku.controller.ControllerUI;
  * @author pablo
  */
 public class Ganaste extends javax.swing.JFrame {
-    private ControllerUI control;
+    private final ControllerUI CUIcontrol;
     /**
      * Creates new form Ganaste
+     * @param CUIcontrol
      */
-    public Ganaste(ControllerUI control) {
-        this.control = control;
+    public Ganaste(ControllerUI CUIcontrol) {
+        this.CUIcontrol = CUIcontrol;
         this.setContentPane(new FondoGanaste());
         initComponents();
     }
@@ -63,7 +64,7 @@ public class Ganaste extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        control.irHome();
+        CUIcontrol.virHome();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

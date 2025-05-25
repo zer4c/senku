@@ -4,23 +4,21 @@
  */
 package grupo8.senku.UI;
 import grupo8.senku.controller.ControllerUI;
-import javax.swing.ImageIcon;
-import java.awt.Image;
-
 /**
  *
  * @author Azurduy
  */
 public class Seleccionjuego extends javax.swing.JFrame {
-    private ControllerUI control;
-    private FondoApp fondo;
+    private final ControllerUI CUIcontrol;
+    private final FondoApp FAfondo;
     /**
      * Creates new form Seleccionjuego
+     * @param CUIcontrol
      */
-    public Seleccionjuego(ControllerUI control) {
-        this.control = control;
-        fondo = new FondoApp();
-        this.setContentPane(fondo);
+    public Seleccionjuego(ControllerUI CUIcontrol) {
+        this.CUIcontrol = CUIcontrol;
+        FAfondo = new FondoApp();
+        this.setContentPane(FAfondo);
         initComponents();
     }
 
@@ -184,15 +182,15 @@ public class Seleccionjuego extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void menuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuActionPerformed
-        control.irHome();
+        CUIcontrol.virHome();
     }//GEN-LAST:event_menuActionPerformed
 
     private void opcionTrianguloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcionTrianguloActionPerformed
-        control.seleccionarFacil();
+        CUIcontrol.vseleccionarFacil();
     }//GEN-LAST:event_opcionTrianguloActionPerformed
 
     private void opcionCruzActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcionCruzActionPerformed
-        control.seleccionarDificil();
+        CUIcontrol.vseleccionarDificil();
     }//GEN-LAST:event_opcionCruzActionPerformed
 
 
