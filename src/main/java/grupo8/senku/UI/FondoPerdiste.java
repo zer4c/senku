@@ -18,7 +18,7 @@ public class FondoPerdiste extends JPanel{
     @Override
     public void paint(Graphics g) {
         super.paintComponent(g);
-        Iimage = new ImageIcon(getClass().getResource("/perdiste.png")).getImage();
+        Iimage = new ImageIcon(getClass().getResource("/perdiste.jpeg")).getImage();
         g.drawImage(Iimage, 0, 0, getWidth(), getHeight(), this);
         setOpaque(false);
         super.paint(g);

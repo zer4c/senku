@@ -18,7 +18,7 @@ public class FondoGanaste extends JPanel{
     @Override
     public void paint(Graphics g) {
         super.paintComponent(g);
-        Iimage = new ImageIcon(getClass().getResource("/ganaste.jpg")).getImage();
+        Iimage = new ImageIcon(getClass().getResource("/ganaste.jpeg")).getImage();
         g.drawImage(Iimage, 0, 0, getWidth(), getHeight(), this);
         setOpaque(false);
         super.paint(g);
