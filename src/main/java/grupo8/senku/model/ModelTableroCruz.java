@@ -12,39 +12,29 @@ public class ModelTableroCruz extends ModelTablero {
 
     public ModelTableroCruz() {
         super(7, 7);
-        construirTableroCruz();
+        vconstruirTablero();
     }
 
-    private void construirTableroCruz() {
-        // Primero desactivamos todas las fichas
+    private void vconstruirTablero() {
+        
         for (int i = 0; i < ifilas; i++) {
             for (int j = 0; j < icolumnas; j++) {
-                fichas.get(i).get(j).vhacerInvisible();
-            }
-        }
+                boolean benZonaCentral = (i >= 2 && i <= 4) || (j >= 2 && j <= 4);
+                boolean bnoCentro = !(i == 3 && j == 3); 
 
-        // Activamos solo las posiciones que forman una cruz (como el Senku clásico)
-        for (int i = 0; i < ifilas; i++) {
-            for (int j = 0; j < icolumnas; j++) {
-                // Activa si está en la cruz
-                boolean enZonaCentral = (i >= 2 && i <= 4) || (j >= 2 && j <= 4);
-                boolean noCentro = !(i == 3 && j == 3); // Centro vacío
-
-                if (enZonaCentral && noCentro) {
-                    fichas.get(i).get(j).vactivar();
+                if (benZonaCentral && bnoCentro) {
+                    ALfichas.get(i).get(j).vactivar();
                 }
             }
         }
+        ALfichas.get(3).get(3).veliminar();
     }
 
-    
-    // Los demás métodos (bactivarFicha, beliminarFicha, bpuedeComer, bmoverFicha)
-    // pueden permanecer igual que en tu implementación original
     @Override
-    public boolean bactivarFicha(int ifila, int icolumna) {
+    public boolean bfichaActiva(int ifila, int icolumna) {
         boolean bres = false;
-        ModelFicha ficha = getFicha(ifila, icolumna);
-        if (!ficha.besInvisible() && ficha.bestaActiva()) {
+        ModelFicha MFficha = MFgetFicha(ifila, icolumna);
+        if (MFficha.bestaActiva()) {
             bres = true;
         }
         return bres;
@@ -53,9 +43,9 @@ public class ModelTableroCruz extends ModelTablero {
     @Override
     public boolean beliminarFicha(int ifila, int icolumna) {
         boolean bres = false;
-        ModelFicha ficha = getFicha(ifila, icolumna);
-        if (!ficha.besInvisible() && ficha.bestaActiva()) {
-            ficha.veliminar();
+        ModelFicha MFficha = MFgetFicha(ifila, icolumna);
+        if (MFficha.bestaActiva()) {
+            MFficha.veliminar();
             bres = true;
         }
         return bres;
@@ -73,36 +63,41 @@ public class ModelTableroCruz extends ModelTablero {
             case "ARRIBA" -> {
                 ifilaMedio -= 1;
                 ifilaDestino -= 2;
+                break;
             }
             case "ABAJO" -> {
                 ifilaMedio += 1;
                 ifilaDestino += 2;
+                break;
             }
             case "IZQUIERDA" -> {
                 icolumnaMedio -= 1;
                 icolumnaDestino -= 2;
+                break;
             }
             case "DERECHA" -> {
                 icolumnaMedio += 1;
                 icolumnaDestino += 2;
+                break;
             }
             default -> {
                 return false;
             }
         }
 
-        ModelFicha origen = getFicha(ifila, icolumna);
-        ModelFicha medio = getFicha(ifilaMedio, icolumnaMedio);
-        ModelFicha destino = getFicha(ifilaDestino, icolumnaDestino);
+        ModelFicha MForigen = MFgetFicha(ifila, icolumna);
+        ModelFicha MFmedio = MFgetFicha(ifilaMedio, icolumnaMedio);
+        ModelFicha MFdestino = MFgetFicha(ifilaDestino, icolumnaDestino);
 
         boolean bpuedeComer = false;
+        if(MForigen != null && MFmedio != null && MFdestino != null){
+            if (!MForigen.besInvisible() && !MFmedio.besInvisible() && !MFdestino.besInvisible()) {
+                boolean borigenValido = MForigen.bestaActiva();
+                boolean bmedioOcupado = MFmedio.bestaActiva();
+                boolean bdestinoLibre = MFdestino.bestaEliminada();
 
-        if (!origen.besInvisible() && !medio.besInvisible() && !destino.besInvisible()) {
-            boolean origenValido = origen.bestaActiva();
-            boolean medioOcupado = medio.bestaActiva();
-            boolean destinoLibre = !destino.bestaActiva();
-
-            bpuedeComer = origenValido && medioOcupado && destinoLibre;
+                bpuedeComer = borigenValido && bmedioOcupado && bdestinoLibre;
+            }
         }
         return bpuedeComer;
     }
@@ -118,30 +113,34 @@ public class ModelTableroCruz extends ModelTablero {
                 case "ARRIBA" -> {
                     ifilaMedio -= 1;
                     ifilaDestino -= 2;
+                    break;
                 }
                 case "ABAJO" -> {
                     ifilaMedio += 1;
                     ifilaDestino += 2;
+                    break;
                 }
                 case "IZQUIERDA" -> {
                     icolMedio -= 1;
                     icolDestino -= 2;
+                    break;
                 }
                 case "DERECHA" -> {
                     icolMedio += 1;
                     icolDestino += 2;
+                    break;
                 }
                 default -> ifilaDestino = -1;
             }
 
-            ModelFicha origen = getFicha(ifilaOrigen, icolOrigen);
-            ModelFicha medio = getFicha(ifilaMedio, icolMedio);
-            ModelFicha destino = getFicha(ifilaDestino, icolDestino);
+            ModelFicha MForigen = MFgetFicha(ifilaOrigen, icolOrigen);
+            ModelFicha MFmedio = MFgetFicha(ifilaMedio, icolMedio);
+            ModelFicha MFdestino = MFgetFicha(ifilaDestino, icolDestino);
 
-            if (!origen.besInvisible() && !medio.besInvisible() && !destino.besInvisible()) {
-                origen.veliminar();
-                medio.veliminar();
-                destino.vactivar();
+            if (!MForigen.besInvisible() && !MFmedio.besInvisible() && !MFdestino.besInvisible()) {
+                MForigen.veliminar();
+                MFmedio.veliminar();
+                MFdestino.vactivar();
                 bmovimientoValido = true;
             }
         }

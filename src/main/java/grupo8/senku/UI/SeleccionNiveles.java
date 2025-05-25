@@ -11,15 +11,16 @@ import grupo8.senku.controller.ControllerUI;
  * @author Azurduy
  */
 public class SeleccionNiveles extends javax.swing.JFrame {
-    private ControllerUI control;
-    private FondoApp fondo;
+    private final ControllerUI CUIcontrol;
+    private final FondoApp FAfondo;
     /**
      * Creates new form SeleccionNiveles
+     * @param CUIcontrol
      */
-    public SeleccionNiveles(ControllerUI control) {
-        this.control = control;
-        fondo = new FondoApp();
-        this.setContentPane(fondo);
+    public SeleccionNiveles(ControllerUI CUIcontrol) {
+        this.CUIcontrol = CUIcontrol;
+        FAfondo = new FondoApp();
+        this.setContentPane(FAfondo);
         initComponents();
     }
 
@@ -87,17 +88,20 @@ public class SeleccionNiveles extends javax.swing.JFrame {
         seleccionNivelesLayout.setHorizontalGroup(
             seleccionNivelesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(seleccionNivelesLayout.createSequentialGroup()
-                .addComponent(botonesNiveles, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGroup(seleccionNivelesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(botonesNiveles, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(seleccionNivelesLayout.createSequentialGroup()
+                        .addGap(427, 427, 427)
+                        .addComponent(nivelUno, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(547, Short.MAX_VALUE))
         );
         seleccionNivelesLayout.setVerticalGroup(
             seleccionNivelesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, seleccionNivelesLayout.createSequentialGroup()
-                .addGap(0, 14, Short.MAX_VALUE)
-                .addComponent(botonesNiveles, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addComponent(botonesNiveles, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(69, 69, 69)
                 .addComponent(nivelUno, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(138, 138, 138))
+                .addContainerGap(117, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -114,22 +118,22 @@ public class SeleccionNiveles extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(0, 0, 0)
                 .addComponent(seleccionNiveles, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(305, Short.MAX_VALUE))
+                .addContainerGap(333, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void nivelUnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nivelUnoActionPerformed
-        control.iniciarJuego();
+        CUIcontrol.viniciarJuego();
     }//GEN-LAST:event_nivelUnoActionPerformed
 
     private void menuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuActionPerformed
-        control.irHome();
+        CUIcontrol.virHome();
     }//GEN-LAST:event_menuActionPerformed
 
     private void atrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_atrasActionPerformed
-        control.regresarPantalla();
+        CUIcontrol.vregresarPantalla();
     }//GEN-LAST:event_atrasActionPerformed
 
 

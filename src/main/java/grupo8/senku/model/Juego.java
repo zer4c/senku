@@ -4,8 +4,8 @@
  */
 package grupo8.senku.model;
 
-import grupo8.senku.controller.ControllerUI;
-import java.util.*;
+import java.beans.PropertyChangeListener;
+import java.beans.PropertyChangeSupport;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -14,129 +14,120 @@ import java.util.TimerTask;
  * @author pablo
  */
 public class Juego {
-    private ModelTablero tablero;
-    private final Stack<ModelTablero> histTablero;
-    private int tiempo;
-    private boolean enJuego;
-    private int movimientos;
-    private Timer cronometro;
-    private final ControllerUI control;
+    private final ModelTablero MTtablero;
+    private int itiempo;
+    private Timer Tcronometro;
+    private final PropertyChangeSupport PCS = new PropertyChangeSupport(this);
     
-    public Juego(ControllerUI control, ModelTablero tablero){
-        this.control = control;
-        this.tablero = tablero;
-        this.histTablero = new Stack<>();
-        this.enJuego = true;
-        this.movimientos = 0;
-        this.cronometro = new Timer();
-        histTablero.push(tablero);
-        tiempo = 0;
-        viniciarCronometro();
+    public static String SactTiempo = "tiempo";
+           /**
+     *
+     * @param MTtablero
+     */
+
+    public Juego(ModelTablero MTtablero){
+        this.MTtablero = MTtablero;
+        this.Tcronometro = null;
+        itiempo = 0;
     }
     
     public final void viniciarCronometro() {
-        TimerTask tarea = new TimerTask() {
+        Tcronometro = new Timer();
+        TimerTask TTtarea = new TimerTask() {
             @Override
             public void run() {
-                int minutos = tiempo / 60;
-                int seg = tiempo % 60;
-                tiempo++;
-                //control.actualizarVista();
+                int ianteriorTiempo = itiempo;
+                itiempo++;
+                PCS.firePropertyChange(SactTiempo, ianteriorTiempo, itiempo);
             }
         };
-        cronometro.scheduleAtFixedRate(tarea, 0, 1000);
+        Tcronometro.scheduleAtFixedRate(TTtarea, 0, 1000);
     }
     
-    public boolean deshacerMovimiento() {
-        boolean bres = false;
-        if (histTablero.size() > 1) { 
-            histTablero.pop(); 
-            tablero = histTablero.peek();
-            movimientos--;
-            //control.actualizarVista();
-            bres = true;
-        }
-        return bres;
-    }  
-     
-     
-    public void vreiniciar() {
-        if (!histTablero.isEmpty()) {
-            tablero = histTablero.firstElement();
-            histTablero.clear();
-            histTablero.push(tablero);
-            tiempo = 0;
-            movimientos = 0;
-            enJuego = true;
-            //control.actualizarVista();
-        }
+    public void vañadirObservador(PropertyChangeListener PCLescucha) {
+        PCS.addPropertyChangeListener(PCLescucha);
     }
-    
-    
-    private void vguardarEstado() {
-        try {
-            histTablero.push((ModelTablero) tablero.clone());
-        } catch (CloneNotSupportedException e) {
-            System.err.println("Error al clonar el tablero: " + e.getMessage());
-        }
+
+    public void veliminarObservador(PropertyChangeListener PCLescucha) {
+        PCS.removePropertyChangeListener(PCLescucha);
     }
-    
-    public boolean bjuegoTerminado() {
-        boolean bres = true;
+
+    public int ijuegoTerminado() {
+        int ires = 1;
         int ifichasActivas = 0;
-        //Verificar  si hay mas  de  una  ficha
-        for (int i = 0; i < tablero.igetFilas() && ifichasActivas>1; i++) {
-            for (int j = 0; j < tablero.igetColumnas() && ifichasActivas>1 ; j++) {
-                if (tablero.bactivarFicha(i, j)) {
+
+        for (int i = 0; i < MTtablero.igetFilas(); i++) {
+            for (int j = 0; j < MTtablero.igetColumnas(); j++) {
+                if (MTtablero.bfichaActiva(i, j)) {
                     ifichasActivas++;
                 }
+                if (ifichasActivas > 1) break;
             }
-        } 
-        // Verificar si hay movimientos posibles}
-        if(ifichasActivas != 1){
-            for (int i = 0; i < tablero.igetFilas(); i++) {
-                for (int j = 0; j < tablero.igetColumnas(); j++) {
-                    if (tablero.bactivarFicha(i, j)) {
-                        // Verificar todas las direcciones posibles
-                        String[] direcciones = tablero instanceof ModelTableroTriangular ? 
-                                new String[]{"ARRIBA_IZQUIERDA", "ARRIBA_DERECHA", "IZQUIERDA", 
-                                            "DERECHA", "ABAJO_IZQUIERDA", "ABAJO_DERECHA"} :
+            if (ifichasActivas > 1) break;
+        }
+
+        if (ifichasActivas != 1) {
+            boolean bhayMovimiento = false;
+            for (int i = 0; i < MTtablero.igetFilas() && !bhayMovimiento; i++) {
+                for (int j = 0; j < MTtablero.igetColumnas() && !bhayMovimiento; j++) {
+                    if (MTtablero.bfichaActiva(i, j)) {
+
+                        String[] Sdirecciones = MTtablero instanceof ModelTableroTriangular ?
+                                new String[]{"ARRIBA_IZQUIERDA", "ARRIBA_DERECHA", "IZQUIERDA",
+                                             "DERECHA", "ABAJO_IZQUIERDA", "ABAJO_DERECHA"} :
                                 new String[]{"ARRIBA", "ABAJO", "IZQUIERDA", "DERECHA"};
 
-                        for (String dir : direcciones) {
-                            if (tablero.bpuedeComer(i, j, dir)) {
-                                bres= false;
-                                break;
+                        for (String Sdir : Sdirecciones) {
+                            if (MTtablero.bpuedeComer(i, j, Sdir)) {
+                                ires = 0;
+                                bhayMovimiento = true;
                             }
                         }
                     }
                 }
             }
+
+            if (!bhayMovimiento) {
+                ires = -1;
+            }
         }
-        
-        return bres;
+        return ires;
     }
     
-    public void detenerCronometro() {
-        if (cronometro != null) {
-            cronometro.cancel();
-            cronometro.purge(); // Limpia las tareas canceladas
-            cronometro = null;
+    public void vdetenerCronometro() {
+        if (Tcronometro != null) {
+            Tcronometro.cancel();
+            Tcronometro.purge(); 
+            Tcronometro = null;
         }
+    }
+    
+    public boolean bestaPausa(){
+        boolean brespuesta;
+        if(Tcronometro == null){
+            brespuesta = true;
+        }else{
+            brespuesta = false;
+        }
+        return brespuesta;
+    }
+    
+    public void vreiniciarTiempo(){
+        itiempo = 0;
     }
     
     public ModelTablero MTgetTablero(){
-        return this.tablero;
+        return this.MTtablero;
     }
 
     public int igetTiempo() {
-        return tiempo;
+        return itiempo;
     }
     
     public int igetIfilasTablero(){
-        return tablero.igetFilas();
+        return MTtablero.igetFilas();
     }
     public int igetIcolumnasTablero(){
-        return tablero.igetColumnas();
+        return MTtablero.igetColumnas();
     }
 }

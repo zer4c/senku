@@ -9,45 +9,45 @@ package grupo8.senku.model;
  * @author INTEL
  */
 public class ModelFicha {
-    private boolean activa; // es pacman
-    private boolean eliminada; //es fantasma
-    private boolean invisible; //no forma parte del tablero, es invisible
+    private boolean bactiva; // es pacman
+    private boolean beliminada; //es fantasma
+    private boolean binvisible; //no forma parte del tablero, es invisible
     
     //le puse un estado por defecto tipo tablero vacio
     public ModelFicha(){
-        this.invisible = true;
-        this.activa = false;
-        this.eliminada = false;
+        this.binvisible = true;
+        this.bactiva = false;
+        this.beliminada = false;
     }
     
     //Cambia el estado de las fichas
     public void vactivar(){
-        this.activa = true;
-        this.eliminada = false;
-        this.invisible = false;
+        this.bactiva = true;
+        this.beliminada = false;
+        this.binvisible = false;
     }
     public void veliminar(){
-        this.activa = false;
-        this.eliminada = true;
-        this.invisible = false;
+        this.bactiva = false;
+        this.beliminada = true;
+        this.binvisible = false;
     }
     
     public void vhacerInvisible(){
-        this.activa = false;
-        this.eliminada = false;
-        this.invisible = true;
+        this.bactiva = false;
+        this.beliminada = false;
+        this.binvisible = true;
     }
     
     //Pregunta estado de las fichas 
     public boolean bestaActiva(){
-        return activa;
+        return bactiva;
     }
     
     public boolean bestaEliminada(){
-        return eliminada;
+        return beliminada;
     }
     
     public boolean besInvisible(){
-        return invisible;
+        return binvisible;
     }
 }
